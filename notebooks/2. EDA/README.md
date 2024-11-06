@@ -18,6 +18,7 @@ Hay 4 tipos de licenciamientos de vehículos:
 ### Tareas realizadas
 - Se confeccionó un [ETL](../../notebooks/1.%20ETL/ETL_Cloud.ipynb) que Screapea los datasets disponibles.
 - Para la elaboración del EDA se utilizó el set de datos del Enero 2021.
+- Se analizaron duplicados, nulos y outliers en el nootbook [EDA_Viajes_Diarios 1](EDA_Viajes_Diarios%201.ipynb) y se realizó el análsis de las distintas variables en el [EDA_Viajes_Diarios 2](EDA_Viajes_Diarios%202.ipynb)
 - Se cargaron los datasets en 4 DataFrames y se eliminaron duplicados de cada uno de forma individual.
     - Sólo presentaron duplicados los datasets de FHV y FHVHV.
 - Se trabajó sobre los datos para unificar la información en un único dataframe. Para ello se analizaron los diccionarios de datos y se elaboró una tabla de campos en común:
@@ -89,6 +90,8 @@ Hay 4 tipos de licenciamientos de vehículos:
     - Duración de los viajes:
         - Hay valores negativos de tiempo. Son todos en el dataset de Taxis Amarillos. Se invierten los valores de **`pickup_datatime`** y **`dropoff_datatime`** en este caso.
         - Hay algunos valores extremos muy elevados. Para los outliers (percentil 99.9%) se modifica **`dropoff_datetime`** en función del valor medio de duración del viaje para la relación entre **`pickup_location_id`** y **`dropoff_location_id`**.
+- Se incoporó el archivo Shape de [Zonas de Nueva York](../../datasets/1.%20Originales/taxi_zones/taxi_zones.shp) para el análisis geográfico.
+- Se incoporó el datset de [Feriados de Nueva York](../../datasets/1.%20Originales/feriados_nacionales_2021_2024.csv) para el análsisi de días Laborables y no Laborables.
 
     
 ### Conclusiones    
