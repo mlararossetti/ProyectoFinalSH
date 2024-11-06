@@ -22,7 +22,7 @@ Hay 4 tipos de licenciamientos de vehículos:
 - Se trabajó sobre los datos para unificar la información en un único dataframe. Para ello se analizaron los diccionarios de datos y se elaboró una tabla de campos en común:
 
 
-| Nombre unificado      | Yellow Taxis            | Green Taxis             | High Volume FHV        | FHV - Other           | Dato                                                                                      |
+| Nombre unificadoInc      | Yellow Taxis            | Green Taxis             | High Volume FHV        | FHV - Other           | Dato                                                                                      |
 |-----------------------|-------------------------|-------------------------|------------------------|-----------------------|------------------------------------------------------------------------------------------|
 | pickup_datetime       | tpep_pickup_datetime    | lpep_pickup_datetime    | pickup_datetime        | pickup_datetime       | The date and time when the meter was engaged / The date and time of the trip pick-up     |
 | dropoff_datetime      | tpep_dropoff_datetime   | lpep_dropoff_datetime   | dropoff_datetime       | dropoff_datetime      | The date and time when the meter was disengaged / The date and time of the trip drop-off |
