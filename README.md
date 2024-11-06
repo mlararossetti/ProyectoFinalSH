@@ -85,29 +85,55 @@ El objetivo principal de nuestro proyecto es poder analizar el mercado de taxis 
 
 <img src="./Images/KPIS.png" alt="Portada" width="1280"/>
 
-## 1) Reducción anual CO2 - Definir % en función del modelo ML.
+## 1) Incremento de la Cantidad Ahorrada de Emisiones de CO₂:
+Incrementar un cierto porcentaje la cantidad ahorrada de emisiones de CO2 anual en gramos, respecto al año anterior. Este KPI mide el porcentaje de aumento en la cantidad de emisiones de CO₂ ahorradas por la empresa en un año específico en comparación con el año anterior. Refleja el impacto de las estrategias de reducción de emisiones y el compromiso de la empresa con la sostenibilidad.
+### Fórmula de Cálculo
+Incremento de emisiones ahorradas (%) = (Emisiones de CO2 ahorradas este año − Emisiones de CO2 ahorradas el año anterior) / Emisiones de CO2 ahorradas el año anterior ∗ 100
+### Parámetros
+- Emisiones de CO₂ ahorradas este año: Total de gramos de CO₂ que la empresa evitó emitir durante el año de análisis.
+- Emisiones de CO₂ ahorradas el año anterior: Total de gramos de CO₂ que la empresa evitó emitir en el año anterior al periodo de análisis.
+### Objetivo del KPI
+Este KPI permite medir y visualizar el progreso en los esfuerzos de sostenibilidad de la empresa, buscando un incremento anual en las emisiones de CO₂ ahorradas. Así, se puede evaluar el impacto de las políticas y tecnologías de reducción de emisiones, establecer metas futuras y comunicar logros ambientales a las partes interesadas.
+
+## 2) Participación en el Mercado en cantidad de vehículos:
+Este KPI mide la participación de la empresa en el mercado en función de la cantidad de autos que posee la empresa en circulación, en un periodo específico, en relación con el total de vehículos en circulación de todas las empresas del mercado.
+### Fórmula de Cálculo
+Participación en el mercado en función a la cantidad de vehículos (%) = (Cantidad de vehículos en la flota de la empresa en un período específico)/Cantidad de vehículos en circulación  ∗ 100
+### Parámetros
+- Cantidad de vehículos de la empresa: Total de vehículos operativos de la empresa durante el periodo de análisis (por ejemplo, un mes o año).
+- Total de vehículos en el mercado global: Total de vehículos operativos en el mercado general, incluyendo todos los competidores, durante el mismo periodo.
+### Objetivo del KPI
+Este KPI ayuda a evaluar la posición de la empresa en el mercado, permitiendo medir su competitividad en términos de flota operativa y analizar el impacto de sus estrategias de crecimiento y expansión en su participación en el mercado global de vehículos..
 
 
-## 2) Incremento de viajes compartidos (actualmente es el 2% del total)
-
-
-## 3) Participación en el Mercado
+## 3) Participación en el Mercado en viajes
 Este KPI mide la participación de la empresa en el mercado en función de la **cantidad de viajes realizados** en un periodo específico, en relación con el **total de viajes en el mercado global**.
-#### Fórmula de Cálculo
+### Fórmula de Cálculo
 Participación en el mercado (%) = (Cantidad de viajes realizados por la empresa / Total de viajes en el mercado global) * 100
-#### Parámetros
-- **Cantidad de viajes realizados por la empresa**: Total de viajes realizados por la empresa durante el periodo de análisis (por ejemplo, un mes o año).
-- **Total de viajes en el mercado global**: Total de viajes realizados en el mercado general, incluyendo todos los competidores, durante el mismo periodo.
-#### Objetivo del KPI
+### Parámetros
+- Cantidad de viajes realizados por la empresa**: Total de viajes realizados por la empresa durante el periodo de análisis (por ejemplo, un mes o año).
+- Total de viajes en el mercado global**: Total de viajes realizados en el mercado general, incluyendo todos los competidores, durante el mismo periodo.
+### Objetivo del KPI
 Este KPI ayuda a evaluar la posición de la empresa en el mercado, permitiendo analizar su competitividad y medir el impacto de las estrategias comerciales en la participación de mercado.
-   
-## 4) Participación en el mercado en función a la cantidad de autos sobre el total 
+
+
+## 4) Retorno sobre la Inversión (ROI): 
+Este KPI mide la rentabilidad de las inversiones realizadas por la empresa en un periodo específico, reflejando el retorno financiero generado en relación con el total de la inversión. 
+Se utiliza para evaluar la eficiencia de las inversiones en función de las ganancias obtenidas.
+### Fórmula de Cálculo 
+Retorno sobre la Inversión (ROI) (%) = (Ganancias obtenidas – Inversión total) / Inversión total ∗ 100 Parámetros 
+### Parámetros
+- Ganancias obtenidas: Total de ingresos o beneficios generados a partir de la inversión durante el periodo de análisis. 
+- Inversión total: Monto total invertido en el proyecto, área o actividad durante el mismo periodo. 
+### Objetivo del KPI 
+Este KPI permite a la empresa evaluar la efectividad de sus inversiones, proporcionando una métrica clara de rentabilidad. Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión están alineadas con el crecimiento financiero y la sostenibilidad de la organización.
+
 
 
 
 # Tecnologías
 
-
+<img src="./Images/Pipeline.png" alt="Portada" width="1280"/>
 
 # Metodología de trabajo
 
@@ -130,6 +156,7 @@ El mismo nos permite:
    - Planificación Detallada: Definimos las tareas de forma secuencial, donde las dependencias son importantes.
    - Monitoreo del Progreso: Nos permite ir conociendo el estado actual del proyecto, mostrando las tareas completadas y las que están en progreso.
 
+<img src="./Images/Gantt.png" alt="Portada" width="1280"/>
 
 # Producto
 Una vez concluido el analisis detallado previamente procederemos a entregar a nuestro cliente un MVP que contiene:
