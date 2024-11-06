@@ -24,7 +24,7 @@ Hay 4 tipos de licenciamientos de vehículos:
 - Se trabajó sobre los datos para unificar la información en un único dataframe. Para ello se analizaron los diccionarios de datos y se elaboró una tabla de campos en común:
 
 
-| Nombre unificadoInc      | Yellow Taxis            | Green Taxis             | High Volume FHV        | FHV - Other           | Dato                                                                                      |
+| Nuevo Nombre     | Yellow Taxis            | Green Taxis             | High Volume FHV        | FHV - Other           | Descripción                                                                                      |
 |-----------------------|-------------------------|-------------------------|------------------------|-----------------------|------------------------------------------------------------------------------------------|
 | pickup_datetime       | tpep_pickup_datetime    | lpep_pickup_datetime    | pickup_datetime        | pickup_datetime       | The date and time when the meter was engaged / The date and time of the trip pick-up     |
 | dropoff_datetime      | tpep_dropoff_datetime   | lpep_dropoff_datetime   | dropoff_datetime       | dropoff_datetime      | The date and time when the meter was disengaged / The date and time of the trip drop-off |
@@ -105,6 +105,26 @@ Hay 4 tipos de licenciamientos de vehículos:
     - trip_duration con fare_amount y total_amount
 - Los Borough de mayor actividad son Mahattan y Brooklyn
 
+---
+## Datasets de datos de Viajes Mensual
+- Buena calidad de datos. 
+- Se renombraron campos para mantener uniformidad de criterios.
+- Se corrigeron "-" como nulos, "," como separadores de miles y tipos de datos. 
+- No se observan outliers.
+
+
+### Conclusiones
+- Se observa el fenómeno de la pandemia durante el año 2020.
+- Se puede ver como la cantidad de viajes, conductores y vehículos de la categoría FHV - High Volume es la que empieza a liderar el mercado desde que hay datos en el año 2015.
+- No hay información de la facturación de la industria FHV.
+- Se observa el crecimiento constante de la cantidad de pagos realizados con tarjeta de crédito.
+- Se observa que a partir de la pandemia hubo una gran reducción y aún no se ha recuperado.
+
+<p align="center">
+<img src="../../Images/Evolución Temporal.png"   style="max-width: 100%; height: auto;">
+</p>
+
+
 
 ---
 ## Datasets de Contaminación y Calidad del Aire
@@ -116,9 +136,10 @@ Se analiza un Informe resumido del índice de calidad del aire de AirData, el cu
 ### Conclusiones
 
 #### Impacto a corto plazo - Calidad del Aire
-- Dataset consolidado a partir de la siguiente fuente de datos Link: 
+- Dataset se consolido manualmente a partir de la información disponible de [EPA: Enviromental Protection Agency](https://www.epa.gov/outdoor-air-quality-data/air-quality-index-report).
 - No hay duplicados ni nulos.
-- Se puede observar como existe un importante incremento desde 2022 a 2023.
+- El índice de calidad del aire es un indicador de la calidad general del aire, ya que tiene en cuenta todos los contaminantes del aire medidos dentro de un área geográfica. Cuanto más alto sea el valor del AQI, mayor será el nivel de contaminación del aire y mayor será el riesgo para la salud.
+- Se puede observar el AQI tuvo un importante incremento desde 2022 a 2023.
 - Se observa que la mayor cantidad de días son "Buenos" y "Moderados", por sobre los días "No saludables" y "Peligrosos".
     - Días Buenos: Han disminuido notablemente en el último año bajo análisis.
     - Días Moderados: Se ha incrementado en el último período, posiblemente a causa de la disminución de días Buenos.
