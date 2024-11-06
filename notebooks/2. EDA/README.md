@@ -1,5 +1,6 @@
 # EDA de Datasets
 
+---
 ## Datasets de Viajes
 
 Los datos se obtienen de la web de la [Comisión de Taxis y Limusinas (TLC)](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
@@ -98,3 +99,23 @@ Hay 4 tipos de licenciamientos de vehículos:
 - Las correlaciones más elevadas se dan para:
     - trip_distance con fare_amount y total_amount
     - trip_duration con fare_amount y total_amount
+
+
+---
+## Datasets de Contaminación y Calidad del Aire
+
+Se analiza un Informe resumido del índice de calidad del aire de AirData, el cual muestra un resumen anual de los valores del índice de calidad del aire (AQI) para 27 condados de Nueva York. El índice de calidad del aire es un indicador de la calidad general del aire, ya que tiene en cuenta todos los contaminantes del aire medidos dentro de un área geográfica. Cuanto más alto sea el valor del AQI, mayor será el nivel de contaminación del aire y mayor será el riesgo para la salud. Se analiza la cantidad de días que fueron categorizados según el AQI. Asimismo se analiza  la cantidad de días que cada contaminante afecto en mayor medida en el periodo analizado. (Ej. Días CO: muestra la cantidad de días en el que CO fue el contaminante principal).
+
+
+
+### Conclusiones
+- Se puede observar como existe un importante incremento desde 2022 a 2023.
+- Se observa que la mayor cantidad de días son "Buenos" y "Moderados", por sobre los días "No saludables" y "Peligrosos".
+    - Días Buenos: Han disminuido notablemente en el último año bajo análisis.
+    - Días Moderados: Se ha incrementado en el último período, posiblemente a causa de la disminución de días Buenos.
+    - Días Insalubres: En 2023 ha aumentado 5 veces respecto del año anterior.
+    - Días Muy Insalubres: Si bien se mantenía en cero desde 2019 a 2022 se incrementaron notablemnte en el 2023. 
+    - Días Peligrosos: Mantiene su tendencia en 0.
+
+
+
