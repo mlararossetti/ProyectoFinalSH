@@ -16,9 +16,9 @@ Hay 4 tipos de licenciamientos de vehículos:
 
 
 ### Tareas realizadas
-- Se confeccionó un ETL que Screapea los datasets disponibles.
+- Se confeccionó un [ETL](../../notebooks/1.%20ETL/ETL_Cloud.ipynb) que Screapea los datasets disponibles.
 - Para la elaboración del EDA se utilizó el set de datos del Enero 2021.
-- Se cargaron los datasets en 4 DataFrames y se eliminaron duplicados de cada uno de forma indificidual.
+- Se cargaron los datasets en 4 DataFrames y se eliminaron duplicados de cada uno de forma individual.
     - Sólo presentaron duplicados los datasets de FHV y FHVHV.
 - Se trabajó sobre los datos para unificar la información en un único dataframe. Para ello se analizaron los diccionarios de datos y se elaboró una tabla de campos en común:
 
@@ -69,7 +69,7 @@ Hay 4 tipos de licenciamientos de vehículos:
         - Dejamos el set de datos ya que cuenta para la cantidad de viajes total.
         - Se reemplazó con nulo los valores 0 de cantidad de pasajeros.
 
-- Se detectaron y corrieron outliers. Se completaron datos faltantes:
+- Se detectaron y corrigieron outliers. Se completaron datos faltantes:
     - Distancia de Viajes: 
         - Eliminación de outliers por método de Rango Intercuartílico ya que es los valores extremos son muy elevados y alejados de la media con mínimo en 0.01. Se reemplazan los valores por nulos pero no se eliminan del dataset ya que cuentan para la cantidad de viajes.
         - Se completan los datos faltantes con los valores de distancia promedio entre pickup_locations_id y dropoff_locations_id
@@ -92,13 +92,15 @@ Hay 4 tipos de licenciamientos de vehículos:
 
     
 ### Conclusiones    
-- La mayoría de los viajes son con un único pasajero
+- Buena calidad de datos de los datasets **`Yellow Taxis`**, **`Green Taxis`** y **`FHV - High Volume`**.
+- Mala calidad de datos del dataset **`FHV - Others`**.
+- La mayoría de los viajes son con un único pasajero.
 - 82% de los viajes se realizan bajo el licenciamiento del tipo FHV - High Volume (empresas como Uber)
-- Se observa que sólo el 2% de los viajes son compartidos.
-- Esto podría tener gran implicancia en la reducción de la huella de carbono.
-- Las correlaciones más elevadas se dan para:
+- Se observa que sólo el 2% de los viajes son compartidos. 
+- Las correlaciones más elevadas son entre:
     - trip_distance con fare_amount y total_amount
     - trip_duration con fare_amount y total_amount
+- Los Borough de mayor actividad son Mahattan y Brooklyn
 
 
 ---
@@ -109,6 +111,10 @@ Se analiza un Informe resumido del índice de calidad del aire de AirData, el cu
 
 
 ### Conclusiones
+
+#### Impacto a corto plazo - Calidad del Aire
+- Dataset consolidado a partir de la siguiente fuente de datos Link: 
+- No hay duplicados ni nulos.
 - Se puede observar como existe un importante incremento desde 2022 a 2023.
 - Se observa que la mayor cantidad de días son "Buenos" y "Moderados", por sobre los días "No saludables" y "Peligrosos".
     - Días Buenos: Han disminuido notablemente en el último año bajo análisis.
@@ -116,6 +122,14 @@ Se analiza un Informe resumido del índice de calidad del aire de AirData, el cu
     - Días Insalubres: En 2023 ha aumentado 5 veces respecto del año anterior.
     - Días Muy Insalubres: Si bien se mantenía en cero desde 2019 a 2022 se incrementaron notablemnte en el 2023. 
     - Días Peligrosos: Mantiene su tendencia en 0.
+- PM2.5 y O3 sonn los contaminantes principales.
+- Queens es el Borough con un promedio mas alto de AQI máximo y Kings es el que tiene un promedio menor.
 
+#### Impacto a largo plazo - Emisiones de CO2
+- El Daset se obtuvo de los datos disponibles en la web de ["Mayor's Office of Climate & Enviromental Justice"](https://climate.cityofnewyork.us/initiatives/nyc-greenhouse-gas-inventories/)
+- Se utilizan sólo las columnas de cantidad de CO2 Equivalente para el periodo 2010 a 2022.
+- Durante los últimos 3 años, si bien hubo una caída en 2020 por la pandamia, se puede ver un evolución incrementan en 2021 y 2022.
+- Si bien se puede notar que el Sector que más impacta en la generación de CO2 es "Energía", el "Transporte" en general es el segundo mayor generador con el 30% del total.
+- El transporte de pasajeros (particulares como taxis) es ampliamente superior en la generación de CO2 por su volumen, superando ampliamente los 12 Mill de toneladas.
 
 
