@@ -96,6 +96,7 @@ El objetivo principal de nuestro proyecto es poder analizar el mercado de taxis 
 <img src="./Images/KPIS.png"  style="max-width: 100%; height: auto;">
 </p>
 
+
 ## 1) Proporción total de ahorro de CO2 por mes:
 Esta proporción se calcula comparando la cantidad de carbono emitido por milla en el mes usando el mix de vehículos REAL (incluyendo convencionales y eléctricos) con la cantidad de carbono que se emitiría si toda la flota fuera de vehículos convencionales.
 ### `Fórmula de Cálculo`
