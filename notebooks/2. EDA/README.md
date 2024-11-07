@@ -1,7 +1,7 @@
 # EDA de Datasets
 
 ---
-## Datasets de Viajes
+## Datasets de Viajes Diarios
 
 Los datos se obtienen de la web de la [Comisión de Taxis y Limusinas (TLC)](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
 
@@ -12,16 +12,16 @@ Hay 4 tipos de licenciamientos de vehículos:
 
    - `For-Hire Vehicles (FHVs)`: Los vehículos de alquiler (For-Hire Vehicles, FHVs) son una parte integral del sistema de transporte de Nueva York. Son vehículos que están afiliados a bases de vehículos de alquiler y que ofrecen servicios de transporte a través de despachos preorganizados en toda la ciudad de Nueva York. Estos vehículos no pueden ser detenidos en la calle como los taxis amarillos, y su uso generalmente implica la reserva previa a través de aplicaciones o servicios telefónicos.
 
-   - `FHV - High Volume (FHVHV)`:Los FHVs de alto volumen son aquellos vehículos que están afiliados a bases de alquiler que despachan al menos 10.000 viajes por día. Actualmente, Lyft y Uber son las únicas bases que están autorizadas y clasificadas como FHV - High Volume.
+   - `FHV - High Volume (FHVHV)`: Los FHVs de alto volumen son aquellos vehículos que están afiliados a bases de alquiler que despachan al menos 10.000 viajes por día. Actualmente, Lyft y Uber son las únicas bases que están autorizadas y clasificadas como FHV - High Volume.
 
 
 ### Tareas realizadas
-- Se confeccionó un [ETL](../../notebooks/1.%20ETL/ETL_Cloud.ipynb) que Screapea los datasets disponibles.
+- Se confeccionó un [ETL](../../notebooks/1.%20ETL/Scrapping_Datasets.ipynb) que Screapea los datasets disponibles desde el año 2021 y los descarga localmente.
 - Para la elaboración del EDA se utilizó el set de datos del Enero 2021.
-- Se analizaron duplicados, nulos y outliers en el nootbook [EDA_Viajes_Diarios 1](EDA_Viajes_Diarios%201.ipynb) y se realizó el análsis de las distintas variables en el [EDA_Viajes_Diarios 2](EDA_Viajes_Diarios%202.ipynb)
+- Se analizaron duplicados, nulos y outliers en el notebook [EDA_Viajes_Diarios 1](./EDA_Viajes_Diarios%201.ipynb) y se realizó el análsis de las distintas variables en el [EDA_Viajes_Diarios 2](./EDA_Viajes_Diarios%202.ipynb)
 - Se cargaron los datasets en 4 DataFrames y se eliminaron duplicados de cada uno de forma individual.
     - Sólo presentaron duplicados los datasets de FHV y FHVHV.
-- Se trabajó sobre los datos para unificar la información en un único dataframe. Para ello se analizaron los diccionarios de datos y se elaboró una tabla de campos en común:
+- Se trabajó sobre los datos para unificar la información en un único dataframe. Para ello se analizaron los diccionarios de datos y se elaboró una tabla de campos en común disponibilizada en el [Diccionario de Datos](../../datasets/1.%20Originales/dictionarys/Diccionario%20de%20Datos.xlsx)
 
 
 | Nuevo Nombre     | Yellow Taxis            | Green Taxis             | High Volume FHV        | FHV - Other           | Descripción                                                                                      |
@@ -38,25 +38,6 @@ Hay 4 tipos de licenciamientos de vehículos:
 | congestion_surcharge  | congestion_surcharge    | congestion_surcharge    | congestion_surcharge   | No hay dato           | Total amount collected in trip for NYS congestion surcharge.                             |
 | shared_request_flag   | No hay dato             | No hay dato             | shared_request_flag    | No hay dato           | Did the passenger agree to a shared/pooled ride, regardless of whether they were matched? (Y/N) |
 | shared_match_flag     | No hay dato             | No hay dato             | shared_match_flag      | SR_Flag               | Did the passenger share the vehicle with another passenger who booked separately at any point during the trip? (Y/N) |
-|                       | VendorID                | VendorID                | hvfhs_license_num      | dispatching_base_num  | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       | store_and_fwd_flag      | dispatching_base_num    | SR_Flag                |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       | RatecodeID              | originating_base_num    | Affiliated_base_number |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       | extra                   | request_datetime        |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       | mta_tax                 | on_scene_datetime       |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       | tip_amount              | tolls                   |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       | tolls_amount            | bcf                     |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       | ehail_fee               | sales_tax               |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       | improvement_surcharge   | trip_time               |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       | congestion_surcharge    | airport_fee             |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       | trip_type               | congestion_surcharge    |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       |                         | tips                    |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       |                         | driver_pay              |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       |                         | shared_request_flag     |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       |                         | shared_match_flag       |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       |                         | access_a_ride_flag      |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       |                         | wav_request_flag        |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-|                       |                         | wav_match_flag          |                        |                       | Otros datos no utilizados. Tomar de referencia los diccionarios de datos originales.    |
-
 
 - Se reemplazaron los valores de Y y N por valores booleanos True y False.
 - Se creó un campo "industry" para determinar bajo que tipo de licenciamiento se realiza cada viaje.
@@ -103,27 +84,48 @@ Hay 4 tipos de licenciamientos de vehículos:
 - Las correlaciones más elevadas son entre:
     - trip_distance con fare_amount y total_amount
     - trip_duration con fare_amount y total_amount
-- Los Borough de mayor actividad son Mahattan y Brooklyn
+- Los Borough de mayor actividad son Mahattan y Brooklyn.
+- Los findes de semana (viernes, sábados y domingos) hay mayor cantidad de viajes.
+    - En días Laborables la mayor cantidad de viajes sucede a las 08.00 horas y a las 18.00 horas conicendete con los horarios de entrada y salida laboral.
+    - En días No Laborables la mayor cantidad de viajes es durante la tarde entre las 15.00 y 18.00 horas.
+- En días Laborables la duración de los viajes se incrementa  06.00 y 08.00 horas y principalmente entre las 15.00 y 18.00 horas conicendete con los horarios de entrada y salida laboral.
+- La duración promedio de los viajes es menor en días No Laborables.
+- En días No Laborables el máximo diurno está entre las 05.00 y 06.00 horas y durante la tarde entre las 14.00 y 17.00, desfazado una hora respecto de los días laborables.
+- En días Laborables el precio medio se incrementa de 08.00 a 18.00 horas.
+- En días No Laborables el precio medio es mayor durante la madrugada respecto de días No Laborables.
+- El medio de pago más utilizado es el Tarjeta de Crédito
+
 
 ---
 ## Datasets de datos de Viajes Mensual
+
+Los datos se obtienen de la web de la [Comisión de Taxis y Limusinas (TLC)](https://www.nyc.gov/site/tlc/about/aggregated-reports.page).
+
+Se analizó el set de datos en el notebook [EDA Viajes Mensual](./EDA_Viajes_Mensual.ipynb).
+
+[Diccionario de Datos](../../datasets/1.%20Originales/dictionarys/Diccionario%20de%20Datos.xlsx)
+
 - Buena calidad de datos. 
 - Se renombraron campos para mantener uniformidad de criterios.
 - Se corrigeron "-" como nulos, "," como separadores de miles y tipos de datos. 
 - No se observan outliers.
 
-
 ### Conclusiones
-- Se observa el fenómeno de la pandemia durante el año 2020.
+- Se observa el fenómeno de la pandemia durante el año 2020 en la cual se produjo una gran reducción de todas las variables que aún no se ha recuperado.
+- En cuanto a cantidad de conductores y vehículos, si bien no se ha alcanzado el nivel pre-pandemia, los niveles son más cercanos.
+- Se puede concluir que un análsis de series temporales podría proyectarse desde el año 2021 en adelante para evitar el sesgo de pandemia.
 - Se puede ver como la cantidad de viajes, conductores y vehículos de la categoría FHV - High Volume es la que empieza a liderar el mercado desde que hay datos en el año 2015.
 - No hay información de la facturación de la industria FHV.
 - Se observa el crecimiento constante de la cantidad de pagos realizados con tarjeta de crédito.
-- Se observa que a partir de la pandemia hubo una gran reducción y aún no se ha recuperado.
+
 
 <p align="center">
-<img src="../../Images/Evolución Temporal.png"   style="max-width: 100%; height: auto;">
+<img src="../../Images/Evolución Temporal 1.png"   style="max-width: 100%; height: auto;">
 </p>
 
+<p align="center">
+<img src="../../Images/Evolución Temporal 2.png"   style="max-width: 100%; height: auto;">
+</p>
 
 
 ---
@@ -131,7 +133,9 @@ Hay 4 tipos de licenciamientos de vehículos:
 
 Se analiza un Informe resumido del índice de calidad del aire de AirData, el cual muestra un resumen anual de los valores del índice de calidad del aire (AQI) para 27 condados de Nueva York. El índice de calidad del aire es un indicador de la calidad general del aire, ya que tiene en cuenta todos los contaminantes del aire medidos dentro de un área geográfica. Cuanto más alto sea el valor del AQI, mayor será el nivel de contaminación del aire y mayor será el riesgo para la salud. Se analiza la cantidad de días que fueron categorizados según el AQI. Asimismo se analiza  la cantidad de días que cada contaminante afecto en mayor medida en el periodo analizado. (Ej. Días CO: muestra la cantidad de días en el que CO fue el contaminante principal).
 
+Se analizó el set de datos en el notebook [EDA Air Quality + Emission CO2](./EDA_AirQuality+EmissionCO2.ipynb).
 
+[Diccionario de Datos](../../datasets/1.%20Originales/dictionarys/Diccionario%20de%20Datos.xlsx)
 
 ### Conclusiones
 
@@ -156,4 +160,56 @@ Se analiza un Informe resumido del índice de calidad del aire de AirData, el cu
 - Si bien se puede notar que el Sector que más impacta en la generación de CO2 es "Energía", el "Transporte" en general es el segundo mayor generador con el 30% del total.
 - El transporte de pasajeros (particulares como taxis) es ampliamente superior en la generación de CO2 por su volumen, superando ampliamente los 12 Mill de toneladas.
 
+<p align="center">
+<img src="../../Images/Evolución Temporal 3.png"   style="max-width: 100%; height: auto;">
+</p>
 
+
+---
+## Datasets de vehículos que utilizan energás alternativas y autos eléctricos
+
+Este proyecto se centra en el análisis exploratorio de datos de un conjunto de datos relacionado con vehículos de combustible alternativo y coches eléctricos. El objetivo es entender mejor las características y tendencias de estos vehículos, incluyendo el año del modelo, la eficiencia, relación precio autonomía y modelos disponibles.
+
+### Dataset de Vehiculos Alternativos
+
+Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternativecars.ipynb).
+
+[Diccionario de Datos](../../datasets/1.%20Originales/dictionarys/Diccionario%20de%20Datos.xlsx)
+
+- Se analizaron y corrigieron tipos de datos, nulos, duplicados y outliers.
+- La calidad de los datos de este dataset no es tan bueno, dado que si bien hay solo una fila duplicada, hay numerosos valores nulos y faltantes. A su vez se observa que hay columnas que no serán necesarias para el trabajo que estamos realizando. Por ello se realizará un ETL para descartar datos irrelevantes.
+
+
+#### Conclusiones
+
+- Los vehículos de los que más modelos se tiene de acuerdo a la carrocería son los SEDAN/WAGON y SUV, que son en general autos espaciosos pero a su vez no tan grandes. 
+- En cuanto al top 10 de fabricantes de vehículos notamos tanto marcas caracterizadas por fabricar vehículos de lujo como así también algunas que son de acceso masivo. El número 1 de hecho es un fabricante de autos que usa todo tipo de publico americano, Ford. 
+- Respecto de la distribución de acuerdo al tipo de energía utlizada, se nota una claro liderazgo de los autos eléctricos, en primero lugar electricos híbridos pero le siguen los eléctricos puros y los enchufables. Luego le siguen energias alternativas renobables como: biodisel, etanol e hidrógeno. En menor medida aparecen múltiples variantes de combustibles no renovables como energía, principalmente alrededor del gas natural (GNC).
+- En cuanto a la eficiencia de vehículos que usan energía convencional vs los alternativos en carreteras, en ciudades, autopistas y combinadas, es más efiuciente el auto eléctrico aunque en lo que se refiere a ciudad la diferencia es muy leve.
+
+**Economía de Combustible:** Mide la eficiencia con la que un vehículo utiliza el combustible para recorrer una distancia. Se expresa en millas por galón (mpg) o litros por cada 100 kilómetros (L/100 km). Ej: Un auto con una economía de combustible de 30 mpg puede recorrer 30 millas con un galón de gasolina.
+
+<p align="center">
+<img src="./../Images/economia_de_combustible.png"   style="max-width: 100%; height: auto;">
+</p>
+
+
+### Dataset de Vehiculos Eléctricos
+
+Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternativecars.ipynb).
+
+[Diccionario de Datos](../../datasets/1.%20Originales/dictionarys/Diccionario%20de%20Datos.xlsx)
+
+- Se analizaron y corrigieron tipos de datos, nulos, duplicados y outliers.
+- La calidad de los datos de este dataset es muy bueno. No hay filas duplicadas, ni datos nulos y a excepción de un solo dato, FastCharge_KmH, el resto tenían el tipo de dato adecuado para su análisis. A su vez se observa que hay columnas que no serán necesarias para el trabajo que estamos realizando. Por ello se realizará un ETL para descartar datos irrelevantes.
+- Se observaron pocos outliers, pero se concluyó que probablemente se deba a son datos atípicos respecto de los demás, pero correctos. Por ejemplo en el boxplot de precio, hay unos pocos datos muy por encima del precio de los demás, pero eso se debe a que entre los modelos del dataset hay autos de muy alta gama, que lógicamente tendrán un precio muy diferente.
+
+#### Conclusiones
+
+- En cuanto al top 10 de marcas fabricantes de vehiculos existe un claro líder que es Tesla mientras que Ford ya aprece en el último puesto de esta lista pero hay más presencia de marcas más populares que en el otro dataset.
+- En relación al promedio del precio de un vehiculo por marca, se observa que las marcas de lujo tienen un precio promedio por encima de los 100.000 euros, mientras que hay modelos con precios en promedio más acequibles, rondando la mayoría valores entre 20.000 y 40.000 euros en promedio.
+- En sintonía con lo analizado en el dataset de autos de energías alternativas, vemos que los vehículos de los que más modelos se fabrica de acuerdo a la carrocería son los SUV y Hatchback, a la cabeza y ya más relegado vienen los SEDAN.
+
+- En cuanto a la relación Eficiencia Energética / Autonomía en función del precio, hay una correlación positiva, donde los vehículos con mayor eficiencia energética (menor consumo de Wh/km) y autonomía, tienden a ser más caros. 
+
+<img src="../../Images/precio_autonomia.png"  style="max-width: 100%; height: auto;"/>
