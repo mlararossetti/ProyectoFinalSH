@@ -1,7 +1,29 @@
 # EDA de Datasets
 
+# Índice
+
+1. [Datasets de Viajes Diarios](#1)
+    -   [Conclusiones del EDA de Viajes Diarios](#2)
+
+2. [Datasets de Viajes Mensuales](#3)
+   - [Conclusiones del EDA de Viajes Mensuales](#4)
+
+3. [Datasets de Contaminación y Calidad del Aire](#5)
+   - [Conclusiones del EDA de Impacto a corto plazo - Calidad del Aire](#7)
+   - [Conclusiones del EDA de Impacto a largo plazo - Emisiones de CO2](#8)
+
+4. [Dataset de Consumo de Energías Renovables](#9)
+    - [Conclusiones del EDA Consumo de Energías Renovables](#10)
+
+5. [Datasets de vehículos que utilizan energías alternativas y autos eléctricos](#11)
+   - [Dataset de Vehiculos Alternativos](#12)
+   - [Dataset de Vehiculos Eléctricos](#14)
+
+
+
 ---
-## Datasets de Viajes Diarios
+---
+## <h2 id="1"> Datasets de Viajes Diarios
 
 Los datos se obtienen de la web de la [Comisión de Taxis y Limusinas (TLC)](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
 
@@ -55,10 +77,11 @@ Hay 4 tipos de licenciamientos de vehículos:
         - Hay valores negativos de tiempo. Son todos en el dataset de Taxis Amarillos. Se invierten los valores de **`pickup_datatime`** y **`dropoff_datatime`** en este caso.
         - Hay algunos valores extremos muy elevados. Para los outliers (percentil 99.9%) se modifica **`dropoff_datetime`** en función del valor medio de duración del viaje para la relación entre **`pickup_location_id`** y **`dropoff_location_id`**.
 - Se incoporó el archivo Shape de [Zonas de Nueva York](../../datasets/1.%20Originales/taxi_zones/taxi_zones.shp) para el análisis geográfico.
-- Se incoporó el datset de [Feriados de Nueva York](../../datasets/1.%20Originales/feriados_nacionales_2021_2024.csv) para el análsisi de días Laborables y no Laborables.
+- Se incoporó el datset de [Feriados de Nueva York](../../datasets/1.%20Originales/feriados_nacionales_2021_2024.csv) para el análisis de días Laborables y no Laborables.
 
+[Volver al índice](#índice)
     
-### Conclusiones    
+### <h3 id="2"> Conclusiones    
 - Buena calidad de datos de los datasets **`Yellow Taxis`**, **`Green Taxis`** y **`FHV - High Volume`**.
 - Mala calidad de datos del dataset **`FHV - Others`**.
 - La mayoría de los viajes son con un único pasajero.
@@ -78,9 +101,10 @@ Hay 4 tipos de licenciamientos de vehículos:
 - En días No Laborables el precio medio es mayor durante la madrugada respecto de días No Laborables.
 - El medio de pago más utilizado es el Tarjeta de Crédito
 
+[Volver al índice](#índice)
 
 ---
-## Datasets de datos de Viajes Mensual
+## <h2 id="3"> Datasets de datos de Viajes Mensual
 
 Los datos se obtienen de la web de la [Comisión de Taxis y Limusinas (TLC)](https://www.nyc.gov/site/tlc/about/aggregated-reports.page).
 
@@ -93,7 +117,9 @@ Se analizó el set de datos en el notebook [EDA Viajes Mensual](./EDA_Viajes_Men
 - Se corrigeron "-" como nulos, "," como separadores de miles y tipos de datos. 
 - No se observan outliers.
 
-### Conclusiones
+[Volver al índice](#índice)
+
+### <h3 id="4"> Conclusiones
 - Se observa el fenómeno de la pandemia durante el año 2020 en la cual se produjo una gran reducción de todas las variables que aún no se ha recuperado.
 - En cuanto a cantidad de conductores y vehículos, si bien no se ha alcanzado el nivel pre-pandemia, los niveles son más cercanos.
 - Se puede concluir que un análsis de series temporales podría proyectarse desde el año 2021 en adelante para evitar el sesgo de pandemia.
@@ -110,9 +136,10 @@ Se analizó el set de datos en el notebook [EDA Viajes Mensual](./EDA_Viajes_Men
 <img src="../../Images/Evolución Temporal 2.png"   style="max-width: 100%; height: auto;">
 </p>
 
+[Volver al índice](#índice)
 
 ---
-## Datasets de Contaminación y Calidad del Aire
+## <h2 id="5"> Datasets de Contaminación y Calidad del Aire
 
 Se analiza un Informe resumido del índice de calidad del aire de AirData, el cual muestra un resumen anual de los valores del índice de calidad del aire (AQI) para 27 condados de Nueva York. El índice de calidad del aire es un indicador de la calidad general del aire, ya que tiene en cuenta todos los contaminantes del aire medidos dentro de un área geográfica. Cuanto más alto sea el valor del AQI, mayor será el nivel de contaminación del aire y mayor será el riesgo para la salud. Se analiza la cantidad de días que fueron categorizados según el AQI. Asimismo se analiza  la cantidad de días que cada contaminante afecto en mayor medida en el periodo analizado. (Ej. Días CO: muestra la cantidad de días en el que CO fue el contaminante principal).
 
@@ -120,9 +147,11 @@ Se analizó el set de datos en el notebook [EDA Air Quality + Emission CO2](./ED
 
 [Diccionario de Datos](../../datasets/1.%20Originales/dictionarys/Diccionario%20de%20Datos.xlsx)
 
+[Volver al índice](#índice)
+
 ### Conclusiones
 
-#### Impacto a corto plazo - Calidad del Aire
+#### <h4 id="7"> Impacto a corto plazo - Calidad del Aire
 - Dataset se consolido manualmente a partir de la información disponible de [EPA: Enviromental Protection Agency](https://www.epa.gov/outdoor-air-quality-data/air-quality-index-report).
 - El dataset tiene buena calidad.
 - El índice de calidad del aire es un indicador de la calidad general del aire, ya que tiene en cuenta todos los contaminantes del aire medidos dentro de un área geográfica. Cuanto más alto sea el valor del AQI, mayor será el nivel de contaminación del aire y mayor será el riesgo para la salud.
@@ -136,7 +165,9 @@ Se analizó el set de datos en el notebook [EDA Air Quality + Emission CO2](./ED
 - PM2.5 y O3 sonn los contaminantes principales.
 - Queens es el Borough con un promedio mas alto de AQI máximo y Kings es el que tiene un promedio menor.
 
-#### Impacto a largo plazo - Emisiones de CO2
+[Volver al índice](#índice)
+
+#### <h4 id="8"> Impacto a largo plazo - Emisiones de CO2
 - El Daset se obtuvo de los datos disponibles en la web de ["Mayor's Office of Climate & Enviromental Justice"](https://climate.cityofnewyork.us/initiatives/nyc-greenhouse-gas-inventories/).
 - El dataset tiene buena calidad.
 - Se utilizan sólo las columnas de cantidad de CO2 Equivalente para el periodo 2010 a 2022.
@@ -148,12 +179,14 @@ Se analizó el set de datos en el notebook [EDA Air Quality + Emission CO2](./ED
 <img src="../../Images/Evolución Temporal 3.png"   style="max-width: 100%; height: auto;">
 </p>
 
+[Volver al índice](#índice)
+
 ---
-## Dataset de Consumo de Energías Renovables
+## <h2 id="9"> Dataset de Consumo de Energías Renovables
 - Se analizó el set de datos en el notebook [EDA Consumo Energías Renovables](./EDA_Consumo_Energías_Renovables.ipynb).
 - La calidad de datos es buena.
 
-### Conclusiones
+### <h3 id="10"> Conclusiones
 - Las fuentes de generación renovable se han convertido en una fuente de energía con crecimiento exponencial desde la decada de los 70.
 - Se puede observar su fortalecimiento y aceptación por parte de consumidores y productores.
 - La mayor cantidad de Generación de Energía de origen Renovable se produce a partir de centrales Hidroeléctricas, seguido por generación Eólica y Solar. 
@@ -167,13 +200,14 @@ Se analizó el set de datos en el notebook [EDA Air Quality + Emission CO2](./ED
 <img src="../../Images/Proyección EERR.png"   style="max-width: 100%; height: auto;">
 </p>
 
+[Volver al índice](#índice)
 
 ---
-## Datasets de vehículos que utilizan energás alternativas y autos eléctricos
+## <h2 id="11"> Datasets de vehículos que utilizan energás alternativas y autos eléctricos
 
 Este proyecto se centra en el análisis exploratorio de datos de un conjunto de datos relacionado con vehículos de combustible alternativo y coches eléctricos. El objetivo es entender mejor las características y tendencias de estos vehículos, incluyendo el año del modelo, la eficiencia, relación precio autonomía y modelos disponibles.
 
-### Dataset de Vehiculos Alternativos
+### <h3 id="12"> Dataset de Vehiculos Alternativos
 
 Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternativecars.ipynb).
 
@@ -182,8 +216,7 @@ Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternat
 - Se analizaron y corrigieron tipos de datos, nulos, duplicados y outliers.
 - La calidad de los datos de este dataset no es tan bueno, dado que si bien hay solo una fila duplicada, hay numerosos valores nulos y faltantes. A su vez se observa que hay columnas que no serán necesarias para el trabajo que estamos realizando. Por ello se realizará un ETL para descartar datos irrelevantes.
 
-
-### Conclusiones
+#### <h4 id="13"> Conclusiones
 
 - Los vehículos de los que más modelos se tiene de acuerdo a la carrocería son los SEDAN/WAGON y SUV, que son en general autos espaciosos pero a su vez no tan grandes. 
 - En cuanto al top 10 de fabricantes de vehículos notamos tanto marcas caracterizadas por fabricar vehículos de lujo como así también algunas que son de acceso masivo. El número 1 de hecho es un fabricante de autos que usa todo tipo de publico americano, Ford. 
@@ -196,8 +229,9 @@ Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternat
 <img src="../../Images/economia_de_combustible.png"   style="max-width: 100%; height: auto;">
 </p>
 
+[Volver al índice](#índice)
 
-### Dataset de Vehiculos Eléctricos
+### <h3 id="14"> Dataset de Vehiculos Eléctricos
 
 Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternativecars.ipynb).
 
@@ -207,7 +241,7 @@ Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternat
 - La calidad de los datos de este dataset es muy bueno. No hay filas duplicadas, ni datos nulos y a excepción de un solo dato, FastCharge_KmH, el resto tenían el tipo de dato adecuado para su análisis. A su vez se observa que hay columnas que no serán necesarias para el trabajo que estamos realizando. Por ello se realizará un ETL para descartar datos irrelevantes.
 - Se observaron pocos outliers, pero se concluyó que probablemente se deba a son datos atípicos respecto de los demás, pero correctos. Por ejemplo en el boxplot de precio, hay unos pocos datos muy por encima del precio de los demás, pero eso se debe a que entre los modelos del dataset hay autos de muy alta gama, que lógicamente tendrán un precio muy diferente.
 
-### Conclusiones
+### <h4 id="15">  Conclusiones
 
 - En cuanto al top 10 de marcas fabricantes de vehiculos existe un claro líder que es Tesla mientras que Ford ya aprece en el último puesto de esta lista pero hay más presencia de marcas más populares que en el otro dataset.
 - En relación al promedio del precio de un vehiculo por marca, se observa que las marcas de lujo tienen un precio promedio por encima de los 100.000 euros, mientras que hay modelos con precios en promedio más acequibles, rondando la mayoría valores entre 20.000 y 40.000 euros en promedio.
@@ -217,3 +251,5 @@ Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternat
 <p align="center">
 <img src="../../Images/precio_eficiencia.png"  style="max-width: 100%; height: auto;"/>
 </p>
+
+[Volver al índice](#índice)
