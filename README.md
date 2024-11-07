@@ -96,15 +96,15 @@ El objetivo principal de nuestro proyecto es poder analizar el mercado de taxis 
 <img src="./Images/KPIS.png"  style="max-width: 100%; height: auto;">
 </p>
 
-## 1) Incremento de la Cantidad Ahorrada de Emisiones de CO₂:
-Incrementar un cierto porcentaje la cantidad ahorrada de emisiones de CO2 anual en gramos, respecto al año anterior. Este KPI mide el porcentaje de aumento en la cantidad de emisiones de CO₂ ahorradas por la empresa en un año específico en comparación con el año anterior. Refleja el impacto de las estrategias de reducción de emisiones y el compromiso de la empresa con la sostenibilidad.
+## 1) Proporción total de ahorro de CO2 por mes:
+Esta proporción se calcula comparando la cantidad de carbono emitido por milla en el mes usando el mix de vehículos REAL (incluyendo convencionales y eléctricos) con la cantidad de carbono que se emitiría si toda la flota fuera de vehículos convencionales.
 ### `Fórmula de Cálculo`
-Incremento de emisiones ahorradas (%) = (Emisiones de CO2 ahorradas este año − Emisiones de CO2 ahorradas el año anterior) / Emisiones de CO2 ahorradas el año anterior ∗ 100
+Proporción de ahorro total de carbono por mes = Cantidad de carbono emitido por milla por el mix de la flota REAL en el Mes /  Cantidad de carbono promedio por milla emitido si la flota fuera totalmente convencional en el mes
 ### `Parámetros`
-- Emisiones de CO₂ ahorradas este año: Total de gramos de CO₂ que la empresa evitó emitir durante el año de análisis.
-- Emisiones de CO₂ ahorradas el año anterior: Total de gramos de CO₂ que la empresa evitó emitir en el año anterior al periodo de análisis.
+- Carbono emitido por milla si la flota fuera totalmente convencional: Este valor se calcula utilizando la emisión promedio de carbono (gCO₂ por milla) de una flota convencional, basada en datos de la Agencia de Protección Ambiental (EPA).
+- Carbono emitido por milla en el mix de la flota REAL: Se calcula en función de la combinación de vehículos convencionales y eléctricos que el Cliente planea incorporar. Las emisiones para vehículos eléctricos consideran la intensidad promedio de carbono de la electricidad, estimada en aproximadamente 404 gCO₂/kWh según la EPA.
 ### `Objetivo del KPI`
-Este KPI permite medir y visualizar el progreso en los esfuerzos de sostenibilidad de la empresa, buscando un incremento anual en las emisiones de CO₂ ahorradas. Así, se puede evaluar el impacto de las políticas y tecnologías de reducción de emisiones, establecer metas futuras y comunicar logros ambientales a las partes interesadas.
+El objetivo es lograr una reducción del 30% en las emisiones de carbono en comparación con una flota totalmente convencional.
 
 ## 2) Participación en el Mercado en cantidad de vehículos:
 Este KPI mide la participación de la empresa en el mercado en función de la cantidad de autos que posee la empresa en circulación, en un periodo específico, en relación con el total de vehículos en circulación de todas las empresas del mercado.
@@ -137,8 +137,7 @@ Retorno sobre la Inversión (ROI) (%) = (Ganancias obtenidas – Inversión tota
 - Ganancias obtenidas: Total de ingresos o beneficios generados a partir de la inversión durante el periodo de análisis. 
 - Inversión total: Monto total invertido en el proyecto, área o actividad durante el mismo periodo. 
 ### `Objetivo del KPI` 
-Este KPI permite a la empresa evaluar la efectividad de sus inversiones, proporcionando una métrica clara de rentabilidad. Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión están alineadas con el crecimiento financiero y la sostenibilidad de la organización.
-
+Este KPI permite a la empresa evaluar la efectividad de sus inversiones, proporcionando una métrica clara de rentabilidad con un objetivo de crecimiento del 10%. Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización.
 
 
 
