@@ -22,23 +22,6 @@ Hay 4 tipos de licenciamientos de vehículos:
 - Se cargaron los datasets en 4 DataFrames y se eliminaron duplicados de cada uno de forma individual.
     - Sólo presentaron duplicados los datasets de FHV y FHVHV.
 - Se trabajó sobre los datos para unificar la información en un único dataframe. Para ello se analizaron los diccionarios de datos y se elaboró una tabla de campos en común disponibilizada en el [Diccionario de Datos](../../datasets/1.%20Originales/dictionarys/Diccionario%20de%20Datos.xlsx)
-
-
-| Nuevo Nombre     | Yellow Taxis            | Green Taxis             | High Volume FHV        | FHV - Other           | Descripción                                                                                      |
-|-----------------------|-------------------------|-------------------------|------------------------|-----------------------|------------------------------------------------------------------------------------------|
-| pickup_datetime       | tpep_pickup_datetime    | lpep_pickup_datetime    | pickup_datetime        | pickup_datetime       | The date and time when the meter was engaged / The date and time of the trip pick-up     |
-| dropoff_datetime      | tpep_dropoff_datetime   | lpep_dropoff_datetime   | dropoff_datetime       | dropoff_datetime      | The date and time when the meter was disengaged / The date and time of the trip drop-off |
-| pickup_location_id    | PULocationID            | PULocationID            | PULocationID           | PUlocationID          | TLC Taxi Zone in which the taximeter was engaged / TLC Taxi Zone in which the trip began |
-| dropoff_location_id   | DOLocationID            | DOLocationID            | DOLocationID           | DOlocationID          | TLC Taxi Zone in which the taximeter was disengaged / TLC Taxi Zone in which the trip ended|
-| passenger_count       | passenger_count         | passenger_count         | No hay dato            | No hay dato           | The number of passengers in the vehicle.                                                 |
-| trip_distance         | trip_distance           | trip_distance           | trip_miles             | No hay dato           | The elapsed trip distance in miles reported by the taximeter. / total miles for passenger trip |
-| payment_type          | payment_type            | payment_type            | No hay dato            | No hay dato           | A numeric code signifying how the passenger paid for the trip.                           |
-| fare_amount           | fare_amount             | fare_amount             | base_passenger_fare    | No hay dato           | The time-and-distance fare calculated by the meter/ Base passenger fare before tolls, tips, taxes, and fees |
-| total_amount          | total_amount            | total_amount            | total_amount (Creado)  | No hay dato           | The total amount charged to passengers. Does not include cash tips. / Campo Creado a partir de: base_passenger_fare - sales_tax - bcf - tips - tolls |
-| congestion_surcharge  | congestion_surcharge    | congestion_surcharge    | congestion_surcharge   | No hay dato           | Total amount collected in trip for NYS congestion surcharge.                             |
-| shared_request_flag   | No hay dato             | No hay dato             | shared_request_flag    | No hay dato           | Did the passenger agree to a shared/pooled ride, regardless of whether they were matched? (Y/N) |
-| shared_match_flag     | No hay dato             | No hay dato             | shared_match_flag      | SR_Flag               | Did the passenger share the vehicle with another passenger who booked separately at any point during the trip? (Y/N) |
-
 - Se reemplazaron los valores de Y y N por valores booleanos True y False.
 - Se creó un campo "industry" para determinar bajo que tipo de licenciamiento se realiza cada viaje.
 - Se unificaron en un único dataset todos los datos.
@@ -141,7 +124,7 @@ Se analizó el set de datos en el notebook [EDA Air Quality + Emission CO2](./ED
 
 #### Impacto a corto plazo - Calidad del Aire
 - Dataset se consolido manualmente a partir de la información disponible de [EPA: Enviromental Protection Agency](https://www.epa.gov/outdoor-air-quality-data/air-quality-index-report).
-- No hay duplicados ni nulos.
+- El dataset tiene buena calidad.
 - El índice de calidad del aire es un indicador de la calidad general del aire, ya que tiene en cuenta todos los contaminantes del aire medidos dentro de un área geográfica. Cuanto más alto sea el valor del AQI, mayor será el nivel de contaminación del aire y mayor será el riesgo para la salud.
 - Se puede observar el AQI tuvo un importante incremento desde 2022 a 2023.
 - Se observa que la mayor cantidad de días son "Buenos" y "Moderados", por sobre los días "No saludables" y "Peligrosos".
@@ -154,7 +137,8 @@ Se analizó el set de datos en el notebook [EDA Air Quality + Emission CO2](./ED
 - Queens es el Borough con un promedio mas alto de AQI máximo y Kings es el que tiene un promedio menor.
 
 #### Impacto a largo plazo - Emisiones de CO2
-- El Daset se obtuvo de los datos disponibles en la web de ["Mayor's Office of Climate & Enviromental Justice"](https://climate.cityofnewyork.us/initiatives/nyc-greenhouse-gas-inventories/)
+- El Daset se obtuvo de los datos disponibles en la web de ["Mayor's Office of Climate & Enviromental Justice"](https://climate.cityofnewyork.us/initiatives/nyc-greenhouse-gas-inventories/).
+- El dataset tiene buena calidad.
 - Se utilizan sólo las columnas de cantidad de CO2 Equivalente para el periodo 2010 a 2022.
 - Durante los últimos 3 años, si bien hubo una caída en 2020 por la pandamia, se puede ver un evolución incrementan en 2021 y 2022.
 - Si bien se puede notar que el Sector que más impacta en la generación de CO2 es "Energía", el "Transporte" en general es el segundo mayor generador con el 30% del total.
@@ -162,6 +146,25 @@ Se analizó el set de datos en el notebook [EDA Air Quality + Emission CO2](./ED
 
 <p align="center">
 <img src="../../Images/Evolución Temporal 3.png"   style="max-width: 100%; height: auto;">
+</p>
+
+---
+## Dataset de Consumo de Energías Renovables
+- Se analizó el set de datos en el notebook [EDA Consumo Energías Renovables](./EDA_Consumo_Energías_Renovables.ipynb).
+- La calidad de datos es buena.
+
+### Conclusiones
+- Las fuentes de generación renovable se han convertido en una fuente de energía con crecimiento exponencial desde la decada de los 70.
+- Se puede observar su fortalecimiento y aceptación por parte de consumidores y productores.
+- La mayor cantidad de Generación de Energía de origen Renovable se produce a partir de centrales Hidroeléctricas, seguido por generación Eólica y Solar. 
+- Se puede evidenciar una transición gradual hacia energías amigables con el medio ambiente.
+
+- Teniendo en cuenta la proyección efecutada se pueden plantear las siguientes hipotesis:
+    - Cada vez más consumidores basan su decision de compra en mayor a medida a productos con un ciclo de vida "eco-friendly". Lo que traduce a fuentes de energía renovable como su principal fuente de producción.
+    - Debido a la idea anteriormente expuesta se puede afirmar que una estrategia potencializadora para toda empresa, en cuanto, a adquisicon y preferencia de clientes, es incoporar políticas de sustentabilidad. Ya que estas medidas se traducen a mejor aceptación, atracción de clientes y por lo tanto, incremento de ventas.
+
+<p align="center">
+<img src="../../Images/Proyección EERR.png"   style="max-width: 100%; height: auto;">
 </p>
 
 
@@ -180,7 +183,7 @@ Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternat
 - La calidad de los datos de este dataset no es tan bueno, dado que si bien hay solo una fila duplicada, hay numerosos valores nulos y faltantes. A su vez se observa que hay columnas que no serán necesarias para el trabajo que estamos realizando. Por ello se realizará un ETL para descartar datos irrelevantes.
 
 
-#### Conclusiones
+### Conclusiones
 
 - Los vehículos de los que más modelos se tiene de acuerdo a la carrocería son los SEDAN/WAGON y SUV, que son en general autos espaciosos pero a su vez no tan grandes. 
 - En cuanto al top 10 de fabricantes de vehículos notamos tanto marcas caracterizadas por fabricar vehículos de lujo como así también algunas que son de acceso masivo. El número 1 de hecho es un fabricante de autos que usa todo tipo de publico americano, Ford. 
@@ -190,7 +193,7 @@ Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternat
 **Economía de Combustible:** Mide la eficiencia con la que un vehículo utiliza el combustible para recorrer una distancia. Se expresa en millas por galón (mpg) o litros por cada 100 kilómetros (L/100 km). Ej: Un auto con una economía de combustible de 30 mpg puede recorrer 30 millas con un galón de gasolina.
 
 <p align="center">
-<img src="./../Images/economia_de_combustible.png"   style="max-width: 100%; height: auto;">
+<img src="../../Images/economia_de_combustible.png"   style="max-width: 100%; height: auto;">
 </p>
 
 
@@ -204,12 +207,13 @@ Se analizó el set de datos en el notebook [EDA Alternative Cars](./EDA_alternat
 - La calidad de los datos de este dataset es muy bueno. No hay filas duplicadas, ni datos nulos y a excepción de un solo dato, FastCharge_KmH, el resto tenían el tipo de dato adecuado para su análisis. A su vez se observa que hay columnas que no serán necesarias para el trabajo que estamos realizando. Por ello se realizará un ETL para descartar datos irrelevantes.
 - Se observaron pocos outliers, pero se concluyó que probablemente se deba a son datos atípicos respecto de los demás, pero correctos. Por ejemplo en el boxplot de precio, hay unos pocos datos muy por encima del precio de los demás, pero eso se debe a que entre los modelos del dataset hay autos de muy alta gama, que lógicamente tendrán un precio muy diferente.
 
-#### Conclusiones
+### Conclusiones
 
 - En cuanto al top 10 de marcas fabricantes de vehiculos existe un claro líder que es Tesla mientras que Ford ya aprece en el último puesto de esta lista pero hay más presencia de marcas más populares que en el otro dataset.
 - En relación al promedio del precio de un vehiculo por marca, se observa que las marcas de lujo tienen un precio promedio por encima de los 100.000 euros, mientras que hay modelos con precios en promedio más acequibles, rondando la mayoría valores entre 20.000 y 40.000 euros en promedio.
 - En sintonía con lo analizado en el dataset de autos de energías alternativas, vemos que los vehículos de los que más modelos se fabrica de acuerdo a la carrocería son los SUV y Hatchback, a la cabeza y ya más relegado vienen los SEDAN.
-
 - En cuanto a la relación Eficiencia Energética / Autonomía en función del precio, hay una correlación positiva, donde los vehículos con mayor eficiencia energética (menor consumo de Wh/km) y autonomía, tienden a ser más caros. 
 
-<img src="../../Images/precio_autonomia.png"  style="max-width: 100%; height: auto;"/>
+<p align="center">
+<img src="../../Images/precio_eficiencia.png"  style="max-width: 100%; height: auto;"/>
+</p>
