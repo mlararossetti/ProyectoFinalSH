@@ -100,7 +100,7 @@ El objetivo principal de nuestro proyecto es poder analizar el mercado de taxis 
 ## 1) Proporción total de ahorro de CO2 por mes:
 Esta proporción se calcula comparando la cantidad de carbono emitido por milla en el mes usando el mix de vehículos REAL (incluyendo convencionales y eléctricos) con la cantidad de carbono que se emitiría si toda la flota fuera de vehículos convencionales.
 ### `Fórmula de Cálculo`
-Proporción de ahorro total de carbono por mes = Cantidad de carbono emitido por milla por el mix de la flota REAL en el Mes /  Cantidad de carbono promedio por milla emitido si la flota fuera totalmente convencional en el mes
+Proporción de ahorro total de carbono por mes = 1 - (Cantidad de carbono emitido por milla por el mix de la flota REAL en el Mes /  Cantidad de carbono promedio por milla emitido si la flota fuera totalmente convencional en el mes)
 ### `Parámetros`
 - Carbono emitido por milla si la flota fuera totalmente convencional: Este valor se calcula utilizando la emisión promedio de carbono (gCO₂ por milla) de una flota convencional, basada en datos de la Agencia de Protección Ambiental (EPA).
 - Carbono emitido por milla en el mix de la flota REAL: Se calcula en función de la combinación de vehículos convencionales y eléctricos que el Cliente planea incorporar. Las emisiones para vehículos eléctricos consideran la intensidad promedio de carbono de la electricidad, estimada en aproximadamente 404 gCO₂/kWh según la EPA.
@@ -131,7 +131,7 @@ Se quiere lograr una participación del 1% en la cantidad de viajes realizados m
 Este KPI mide la rentabilidad de las inversiones realizadas por la empresa por mes, reflejando el retorno financiero generado en relación con la inversión total mensual. 
 Se utiliza para evaluar la eficiencia de las inversiones en función de las ganancias obtenidas.
 ### `Fórmula de Cálculo` 
-Retorno sobre la Inversión (ROI) (%) = (Ganancias mensuales obtenidas – Inversión mensual total) / Inversión mensual total ∗ 100 
+Retorno sobre la Inversión (ROI) (%) = (Ganancias mensuales obtenidas – Inversión mensual total) / Inversión total ∗ 100 
 ### `Parámetros`
 - Ganancias obtenidas: Total de ingresos o beneficios generados a partir de la inversión durante el mes de análisis. 
 - Inversión total: Monto total invertido en el proyecto durante el mismo mes. 
