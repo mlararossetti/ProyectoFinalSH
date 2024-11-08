@@ -107,39 +107,36 @@ Proporción de ahorro total de carbono por mes = Cantidad de carbono emitido por
 ### `Objetivo del KPI`
 El objetivo es lograr una reducción del 30% en las emisiones de carbono en comparación con una flota totalmente convencional.
 
-## 2) Participación en el Mercado en cantidad de vehículos:
-Este KPI mide la participación de la empresa en el mercado en función de la cantidad de autos que posee la empresa en circulación, en un periodo específico, en relación con el total de vehículos en circulación de todas las empresas del mercado.
+## 2) Participación mensual en el Mercado en cantidad de vehículos:
+Este KPI mide la participación de la empresa en el mercado, en un período mensual, en función de la cantidad de autos que posee la empresa en circulación, en un periodo específico, en relación con el total de vehículos en circulación de todas las empresas del mercado.
 ### `Fórmula de Cálculo`
-Participación en el mercado en función a la cantidad de vehículos (%) = (Cantidad de vehículos en la flota de la empresa en un período específico)/Cantidad de vehículos en circulación  ∗ 100
+Participación mensual en el mercado en función a la cantidad de vehículos (%) = (Cantidad mensual de vehículos de la flota de la empresa)/Cantidad mensual de vehículos en circulación  ∗ 100
 ### `Parámetros`
-- Cantidad de vehículos de la empresa: Total de vehículos operativos de la empresa durante el periodo de análisis (por ejemplo, un mes o año).
-- Total de vehículos en el mercado global: Total de vehículos operativos en el mercado general, incluyendo todos los competidores, durante el mismo periodo.
+- Cantidad mensual de vehículos de la empresa: Total de vehículos operativos de la empresa durante el mes de referencia.
+- Total de vehículos en el mercado global: Total de vehículos operativos en el mercado general, incluyendo todos los competidores, durante el mismo mes.
 ### `Objetivo del KPI`
-Este KPI ayuda a evaluar la posición de la empresa en el mercado, permitiendo medir su competitividad en términos de flota operativa y analizar el impacto de sus estrategias de crecimiento y expansión en su participación en el mercado global de vehículos..
+La meta de la empresa es alcanzar una participación de mercado del 1% mensual en términos de flota operativa en el mercado global de vehículos. Este KPI permitirá evaluar el progreso mensual en la competitividad, midiendo de forma continua cómo contribuyen las diferentes estrategias de crecimiento y expansión.
 
-
-## 3) Participación en el Mercado en viajes
-Este KPI mide la participación de la empresa en el mercado en función de la **cantidad de viajes realizados** en un periodo específico, en relación con el **total de viajes en el mercado global**.
+## 3) Participación mensual en el Mercado en cantidad de viajes:
+Este KPI mide la participación de la empresa en el mercado en función de la **cantidad de viajes realizados** en un mes dado, en relación con el **total de viajes en el mercado global** en el mismo mes.
 ### `Fórmula de Cálculo`
-Participación en el mercado (%) = (Cantidad de viajes realizados por la empresa / Total de viajes en el mercado global) * 100
+Participación mensual en el mercado (%) = (Cantidad de viajes realizados por la empresa en un mes / Total de viajes en el mercado global en un mes) * 100
 ### `Parámetros`
-- Cantidad de viajes realizados por la empresa**: Total de viajes realizados por la empresa durante el periodo de análisis (por ejemplo, un mes o año).
-- Total de viajes en el mercado global**: Total de viajes realizados en el mercado general, incluyendo todos los competidores, durante el mismo periodo.
+- Cantidad de viajes realizados por la empresa**: Total de viajes realizados por la empresa durante el mes de análisis.
+- Total de viajes en el mercado global**: Total de viajes realizados en el mercado general, incluyendo todos los competidores, durante el mismo mes.
 ### `Objetivo del KPI`
-Este KPI ayuda a evaluar la posición de la empresa en el mercado, permitiendo analizar su competitividad y medir el impacto de las estrategias comerciales en la participación de mercado.
-
+Se quiere lograr una participación del 1% en la cantidad de viajes realizados mensualmente en el mercado global de transporte. Este KPI permitirá medir la competitividad de la empresa en términos de actividad operativa, evaluando de forma continua el impacto de nuestras estrategias de crecimiento en el volumen de viajes realizados y en nuestra expansión dentro del mercado.
 
 ## 4) Retorno sobre la Inversión (ROI): 
-Este KPI mide la rentabilidad de las inversiones realizadas por la empresa en un periodo específico, reflejando el retorno financiero generado en relación con el total de la inversión. 
+Este KPI mide la rentabilidad de las inversiones realizadas por la empresa por mes, reflejando el retorno financiero generado en relación con la inversión total mensual. 
 Se utiliza para evaluar la eficiencia de las inversiones en función de las ganancias obtenidas.
 ### `Fórmula de Cálculo` 
-Retorno sobre la Inversión (ROI) (%) = (Ganancias obtenidas – Inversión total) / Inversión total ∗ 100 Parámetros 
+Retorno sobre la Inversión (ROI) (%) = (Ganancias mensuales obtenidas – Inversión mensual total) / Inversión mensual total ∗ 100 
 ### `Parámetros`
-- Ganancias obtenidas: Total de ingresos o beneficios generados a partir de la inversión durante el periodo de análisis. 
-- Inversión total: Monto total invertido en el proyecto, área o actividad durante el mismo periodo. 
+- Ganancias obtenidas: Total de ingresos o beneficios generados a partir de la inversión durante el mes de análisis. 
+- Inversión total: Monto total invertido en el proyecto durante el mismo mes. 
 ### `Objetivo del KPI` 
-Este KPI permite a la empresa evaluar la efectividad de sus inversiones, proporcionando una métrica clara de rentabilidad con un objetivo de crecimiento del 10%. Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización.
-
+Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad mensual. Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización.
 
 
 # Tecnologías
