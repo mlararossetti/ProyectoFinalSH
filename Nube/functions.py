@@ -419,7 +419,7 @@ def download_and_upload_to_gcs(base_urls, start_date, csv_url, fechas_csv, retri
         current_date += relativedelta(months=1)
 
 # Función para descargar y subir un archivo directamente a Google Cloud Storage
-def download_and_upload_file(url, bucket_name, blob_name, retries=3, delay=5):
+def download_file(url, bucket_name, blob_name, retries=3, delay=5):
     """
     Descargar un archivo y subirlo directamente a Google Cloud Storage.
     """

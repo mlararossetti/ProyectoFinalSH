@@ -1,7 +1,7 @@
 import logging
 from google.cloud import storage
 import os
-from functions import get_start_date_from_csv, download_file
+from functions import get_start_date_from_csv, download_file, upload_to_gcs
 
 # Configuración del Bucket (usando GCS)
 output_folder = 'gs://henry-taxis'  # Ruta del Bucket en GCS
@@ -41,11 +41,11 @@ upload_logs_to_gcs(log_file, "henry-taxis", "error_log.log")
 os.remove(log_file)
 
 
-
+# La función de Cloud Functions debe aceptar "request"
 def process_files(request):
     try:
         # Definir las rutas necesarias
-        fechas_csv = output_folder + "/fechas_levantadas.csv"
+        fechas_csv = "gs://henry-taxis/fechas_levantadas.csv"
         start_date = get_start_date_from_csv(fechas_csv)
         download_file(base_urls, output_folder, start_date, csv_url, fechas_csv)
 
@@ -54,7 +54,7 @@ def process_files(request):
 
         # Limpiar el archivo de log temporal
         os.remove(log_file)
-        
+
         return "Proceso completado correctamente", 200
 
     except Exception as e:
