@@ -1,4 +1,4 @@
-year,month,industry,total_trips,passenger_count,trip_distance,trip_duration,avg_trip_distance,avg_trip_duration,fare_amount,total_amount,shared_requests
+year,month,industry,total_trips,passenger_count,trip_distance,trip_duration,avg_trip_distance,avg_trip_duration,fare_amount,total_amount,shared_match_flag
 2021,1,FHV - High Volume,11507828,0,40319277.55989981,182400002.2719616,3.640480042724021,15.850080681772576,163194158.46,191768840.69,0
 2021,1,FHV - Other,181335,0,600032.5930171091,3517329.819610024,3.6330162266946138,19.39686116640485,0.0,0.0,0
 2021,1,Green Taxi,75094,47164,242119.4275369708,1280682.9566150524,3.459244307020385,17.054397909487474,1096283.27,1320948.9,3794
