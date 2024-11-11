@@ -8,36 +8,22 @@ from sklearn.linear_model import LinearRegression # type: ignore
 import re
 from pandas.tseries.offsets import MonthEnd
 
-def process_taxi_data(event, context):
+def process_taxi_data(year_month):
     # Cliente de Cloud Storage
     storage_client = storage.Client()
     bucket_name = "henry-taxis"
     bucket = storage_client.bucket(bucket_name)
-    
-    # Obtener el nombre del archivo que activó la función
-    trigger_file_name = event['name']  # Nombre del archivo que activó la función
-    
-    # Extraer el año y el mes del archivo de trigger usando regex
-    match = re.search(r"(\d{4})-(\d{2})", trigger_file_name)
-    if not match:
-        print("No se pudo extraer la fecha del archivo de trigger.")
-        return
 
-    year, month = match.groups()
-    year_month = f"{year}-{month}"
-    
-    print(f"Procesando archivos para el año {year} y el mes {month}.")
-    
     # Construir los nombres de los archivos en función del año y mes extraídos
     files_to_download = {
-        "yellow": f"TLC Trip Record Data/yellow_tripdata_{year}-{month}.parquet",
-        "green": f"TLC Trip Record Data/green_tripdata_{year}-{month}.parquet",
-        "fhvhv": f"TLC Trip Record Data/fhvhv_tripdata_{year}-{month}.parquet",
-        "fhv": f"TLC Trip Record Data/fhv_tripdata_{year}-{month}.parquet"
+        "yellow": f"TLC Trip Record Data/yellow_tripdata_"+year_month+".parquet",
+        "green": f"TLC Trip Record Data/green_tripdata_"+year_month+".parquet",
+        "fhvhv": f"TLC Trip Record Data/fhvhv_tripdata_"+year_month+".parquet",
+        "fhv": f"TLC Trip Record Data/fhv_tripdata_"+year_month+".parquet"
     }
     
     # Ruta local temporal para almacenar archivos descargados
-    local_file_paths = {key: f"/tmp/{key}_tripdata.parquet" for key in files_to_download.keys()}
+    local_file_paths = {key: f"/tmp/{key}" for key in files_to_download.keys()}
     
     # Descargar archivos de datos desde el bucket
     for key, blob_name in files_to_download.items():
@@ -271,7 +257,6 @@ def process_taxi_data(event, context):
 
     # Se define el límite de valores de tiempo de viaje superiores a al percentil 99%
     Limit = df['trip_duration'].quantile(.999)
-    duration_count_99 = df[df['trip_duration'] > Limit].groupby('industry').size().reset_index(name='count')
 
     # Calculo la duración media de trip_duration por combinación de pickup y dropoff location
     mean_duration_by_location = (
@@ -302,47 +287,19 @@ def process_taxi_data(event, context):
     df['day_of_week_num'] = df['pickup_datetime'].dt.dayofweek #(0=Lunes, ..., 6=Domingo)
     df['date'] = pd.to_datetime(df['pickup_datetime']).dt.date
 
-    file_path = 'TLC Trip Record Data/feriados_nacionales_2021_2024.csv'
-
-   # Cliente de Google Cloud Storage
-    client = storage.Client()
-
-   # Obtiene el bucket
-    bucket = client.get_bucket(bucket_name)
-
-   # Obtiene el blob (archivo) desde el bucket
-    blob = bucket.blob(file_path)
-
-   # Lee el contenido del archivo en memoria
-    data = blob.download_as_text()
-
-   # Cargar el CSV en un DataFrame de pandas
-    df_feriados = pd.read_csv(io.StringIO(data))
-
-   # Convertir la columna 'date' a formato fecha (solo fecha sin hora)
-    df_feriados['date'] = pd.to_datetime(df_feriados['date']).dt.date
-
-    # Realizamos el merge para identificar los días feriados
-    df = df.merge(df_feriados[['date','name']], how='left', left_on='date', right_on='date')
-
-    # Creamos la columna 'is_holiday' que marca True si es feriado y False en caso contrario
-    df['is_holiday'] = df['name'].notna()
-
-    # Creamos la columna 'working_day'
-    # Marcamos como 'No Laborable' (False) los días feriados o los fines de semana (sábado y domingo)
-    df['working_day'] = ~((df['is_holiday']) | (df['day_of_week_num'] >= 5))
-
-    # Opcional: Convertimos el campo 'working_day' a 'Laborable' o 'No Laborable' para mejor comprensión
-    df['working_day'] = df['working_day'].map({True: 'Laborable', False: 'No Laborable'})
-
-    # Eliminamos columnas temporales si ya no son necesarias
-    df.drop(columns=['date', 'is_holiday'], inplace=True)
 
 
-#/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    
+#///////////////////////////////////////////////////////////////////////
+# Creamos el campo que vincula los df
+    df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str), format='%Y-%m')
+    df['date'] = pd.to_datetime(df['date'], errors='coerce')
+
+
     # 1. DataFrame de agregaciones por mes, año y industry
     df_by_industry = df.groupby(
-        ['year', 'month', 'industry']
+        ['date', 'industry']
     ).agg(
         total_trips=('pickup_datetime', 'count'),
         passenger_count=('passenger_count', 'sum'),
@@ -357,7 +314,7 @@ def process_taxi_data(event, context):
 
     # 2. DataFrame de agregaciones por mes, año y combinación de pickup_location_id y dropoff_location_id
     df_by_location = df.groupby(
-        ['year', 'month', 'pickup_location_id', 'dropoff_location_id']
+        ['date', 'pickup_location_id', 'dropoff_location_id']
     ).agg(
         total_trips=('pickup_datetime', 'count'),
         passenger_count=('passenger_count', 'sum'),
@@ -371,6 +328,23 @@ def process_taxi_data(event, context):
     ).reset_index()
 
 
+
+    # Redondear las columnas de tipo DECIMAL antes de cargarlas en SQL
+    df_by_location['trip_distance'] = df_by_location['trip_distance'].round(2)
+    df_by_location['trip_duration'] = df_by_location['trip_duration'].round(2)
+    df_by_location['avg_trip_distance'] = df_by_location['avg_trip_distance'].round(2)  # DECIMAL(5, 2)
+    df_by_location['avg_trip_duration'] = df_by_location['avg_trip_duration'].round(2)  # DECIMAL(5, 2)
+
+
+    # Las columnas como 'pickup_location_id', 'dropoff_location_id', 'total_trips', 'passenger_count', y 'shared_match_flag'
+    # son de tipo INT y no requieren redondeo:
+    df_by_location['pickup_location_id'] = df_by_location['pickup_location_id'].astype('Int64')
+    df_by_location['dropoff_location_id'] = df_by_location['dropoff_location_id'].astype('Int64')
+    df_by_location['total_trips'] = df_by_location['total_trips'].astype('Int64')
+    df_by_location['passenger_count'] = df_by_location['passenger_count'].astype('Int64')
+    df_by_location['shared_match_flag'] = df_by_location['shared_match_flag'].astype('Int64')
+    df_by_location['fare_amount'] = df_by_location['fare_amount'].astype('Int64')
+    df_by_location['total_amount'] = df_by_location['total_amount'].astype('Int64')
 
         # Agregación industry
     try:
@@ -400,10 +374,6 @@ def process_taxi_data(event, context):
 
     # Liberar memoria
     del df_existing1, df_updated1
-    gc.collect()
-
-    # Liberar memoria
-    del df_YT, df_GT, df_FHVHV, df_FHV
     gc.collect()
 
         # Agregación location
@@ -436,7 +406,4 @@ def process_taxi_data(event, context):
     del df_existing2, df_updated2
     gc.collect()
 
-    # Liberar memoria
-    del df_YT, df_GT, df_FHVHV, df_FHV
-    gc.collect()
 
