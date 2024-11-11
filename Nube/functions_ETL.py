@@ -8,20 +8,21 @@ from sklearn.linear_model import LinearRegression # type: ignore
 import re
 from pandas.tseries.offsets import MonthEnd
 
-def process_taxi_data(year_month):
+
+def process_taxi_data(bucket_name, year_month):
+    
+#///////////////////////////////////////////////////////////////////////////////////////
     # Cliente de Cloud Storage
     storage_client = storage.Client()
-    bucket_name = "henry-taxis"
     bucket = storage_client.bucket(bucket_name)
 
     # Construir los nombres de los archivos en función del año y mes extraídos
     files_to_download = {
-        "yellow": f"TLC Trip Record Data/yellow_tripdata_"+year_month+".parquet",
-        "green": f"TLC Trip Record Data/green_tripdata_"+year_month+".parquet",
-        "fhvhv": f"TLC Trip Record Data/fhvhv_tripdata_"+year_month+".parquet",
-        "fhv": f"TLC Trip Record Data/fhv_tripdata_"+year_month+".parquet"
+        "yellow": f"TLC Trip Record Data/yellow_tripdata_{year_month}.parquet",
+        "green": f"TLC Trip Record Data/green_tripdata_{year_month}.parquet",
+        "fhvhv": f"TLC Trip Record Data/fhvhv_tripdata_{year_month}.parquet",
+        "fhv": f"TLC Trip Record Data/fhv_tripdata__{year_month}.parquet"
     }
-    
     # Ruta local temporal para almacenar archivos descargados
     local_file_paths = {key: f"/tmp/{key}" for key in files_to_download.keys()}
     
@@ -34,7 +35,9 @@ def process_taxi_data(year_month):
         except Exception as e:
             print(f"Error al descargar el archivo {blob_name}: {e}")
             return
-    
+
+#///////////////////////////////////////////////////////////////////////////////////////
+ 
     # Cargar los DataFrames
     df_YT = pd.read_parquet(local_file_paths["yellow"])
     df_GT = pd.read_parquet(local_file_paths["green"])
@@ -116,7 +119,6 @@ def process_taxi_data(year_month):
     df_FHVHV['industry'] = 'FHV - High Volume'
     df_FHV['industry'] = 'FHV - Other'
 
-
     # Lista de columnas que se conservan de todos los df
     columnas_a_conservar = [
         'industry',
@@ -165,11 +167,8 @@ def process_taxi_data(year_month):
 
     # Identificar fechas fuera de rango 
     # Este rango deberá ser variable en función del mes de los archivos levantados para el ETL de carga en la Nube)
-    # fecha_inicio = '2020-12-01'
-    # fecha_fin = '2021-02-28'
     fecha_inicio = datetime.strptime(year_month + "-01", "%Y-%m-%d")
     fecha_fin = fecha_inicio + MonthEnd(0)
-
 
     df = df[(df['pickup_datetime'] >= fecha_inicio) & (df['pickup_datetime'] <= fecha_fin)]
     df = df[(df['dropoff_datetime'] >= fecha_inicio) & (df['dropoff_datetime'] <= fecha_fin)]
@@ -280,15 +279,7 @@ def process_taxi_data(year_month):
     # Recalculo la duración
     df['trip_duration'] = (df['dropoff_datetime'] - df['pickup_datetime']).dt.total_seconds() / 60
 
-    df['year'] = df['pickup_datetime'].dt.year
-    df['month'] = df['pickup_datetime'].dt.month
-    df['day_of_week'] = df['pickup_datetime'].dt.day_name()
-    df['hour'] = df['pickup_datetime'].dt.hour
-    df['day_of_week_num'] = df['pickup_datetime'].dt.dayofweek #(0=Lunes, ..., 6=Domingo)
     df['date'] = pd.to_datetime(df['pickup_datetime']).dt.date
-
-
-
 
     
 #///////////////////////////////////////////////////////////////////////
@@ -309,7 +300,7 @@ def process_taxi_data(year_month):
         avg_trip_duration=('trip_duration', 'mean'),
         fare_amount=('fare_amount', 'sum'),
         total_amount=('total_amount', 'sum'),
-        shared_requests=('shared_match_flag', lambda x: (x == True).sum())
+        shared_match_flag=('shared_match_flag', lambda x: (x == True).sum())
     ).reset_index()
 
     # 2. DataFrame de agregaciones por mes, año y combinación de pickup_location_id y dropoff_location_id
@@ -327,7 +318,9 @@ def process_taxi_data(year_month):
         shared_match_flag=('shared_match_flag', lambda x: (x == True).sum())
     ).reset_index()
 
-
+    # Liberar memoria
+    del df
+    gc.collect()
 
     # Redondear las columnas de tipo DECIMAL antes de cargarlas en SQL
     df_by_location['trip_distance'] = df_by_location['trip_distance'].round(2)
@@ -345,65 +338,229 @@ def process_taxi_data(year_month):
     df_by_location['shared_match_flag'] = df_by_location['shared_match_flag'].astype('Int64')
     df_by_location['fare_amount'] = df_by_location['fare_amount'].astype('Int64')
     df_by_location['total_amount'] = df_by_location['total_amount'].astype('Int64')
-
-        # Agregación industry
-    try:
-        # Intentar descargar el archivo existente
-        existing_file_path1 = "TLC Trip Record Data/viajes_depurado_by_industry.csv"
-        temp_local_path1 = "/tmp/viajes_depurado_by_industry.csv"
-        blob1 = bucket.blob(existing_file_path1)
-        blob1.download_to_filename(temp_local_path1)
-        print(f"Archivo existente descargado desde {existing_file_path1}")
-
-        # Cargar el archivo existente en un DataFrame
-        df_existing1 = pd.read_csv(temp_local_path1)
-    except Exception as e:
-        # Si el archivo no existe, crear un DataFrame vacío con las columnas necesarias
-        print(f"Archivo no encontrado en {existing_file_path1}. Se creará uno nuevo.")
-        df_existing1 = pd.DataFrame(columns=df_by_industry.columns)
-
-    # Concatenar el DataFrame existente con el nuevo DataFrame
-    df_updated1 = pd.concat([df_existing1, df_by_industry], ignore_index=True)
-
-    # Guardar el DataFrame actualizado en un archivo temporal local
-    df_updated1.to_csv(temp_local_path1, index=False)
-
-    # Subir el archivo actualizado al bucket en Cloud Storage
-    blob1.upload_from_filename(temp_local_path1)
-    print(f"Archivo actualizado guardado en {existing_file_path1} en Cloud Storage.")
-
-    # Liberar memoria
-    del df_existing1, df_updated1
-    gc.collect()
-
-        # Agregación location
-    try:
-        # Intentar descargar el archivo existente
-        existing_file_path2 = "TLC Trip Record Data/viajes_depurado_by_location.csv"
-        temp_local_path2 = "/tmp/viajes_depurado_by_location.csv"
-        blob2 = bucket.blob(existing_file_path2)
-        blob2.download_to_filename(temp_local_path2)
-        print(f"Archivo existente descargado desde {existing_file_path2}")
-
-        # Cargar el archivo existente en un DataFrame
-        df_existing2 = pd.read_csv(temp_local_path2)
-    except Exception as e:
-        # Si el archivo no existe, crear un DataFrame vacío con las columnas necesarias
-        print(f"Archivo no encontrado en {existing_file_path2}. Se creará uno nuevo.")
-        df_existing2 = pd.DataFrame(columns=df_by_location.columns)
-
-    # Concatenar el DataFrame existente con el nuevo DataFrame
-    df_updated2 = pd.concat([df_existing2, df_by_location], ignore_index=True)
-
-    # Guardar el DataFrame actualizado en un archivo temporal local
-    df_updated2.to_csv(temp_local_path2, index=False)
-
-    # Subir el archivo actualizado al bucket en Cloud Storage
-    blob2.upload_from_filename(temp_local_path2)
-    print(f"Archivo actualizado guardado en {existing_file_path2} en Cloud Storage.")
-
-    # Liberar memoria
-    del df_existing2, df_updated2
-    gc.collect()
+   
+    print("El ETL Corrió Bien")
 
 
+# #///////////////////////////////////////////////////////////////////////    
+#     # Agregación location
+#     try:
+#         # Intentar descargar el archivo existente
+#         existing_file_by_location = "TLC Trip Record Data/viajes_depurado_by_location.csv"
+#         temp_local_by_location = "/tmp/viajes_depurado_by_location.csv"
+#         blob2 = bucket.blob(existing_file_by_location)
+#         blob2.download_to_filename(temp_local_by_location)
+#         print(f"Archivo existente descargado desde {existing_file_by_location}")
+
+#         # Cargar el archivo existente en un DataFrame
+#         df_by_location_old = pd.read_csv(temp_local_by_location)
+#     except Exception as e:
+#         # Si el archivo no existe, crear un DataFrame vacío con las columnas necesarias
+#         print(f"Archivo no encontrado en {existing_file_by_location}. Se creará uno nuevo.")
+
+#     # Concatenar el DataFrame existente con el nuevo DataFrame
+#     df_by_location_new = pd.concat([df_by_location_old, df_by_location], ignore_index=True)
+
+#     # Guardar el DataFrame actualizado en un archivo temporal local
+#     df_by_location_new.to_csv(temp_local_by_location, index=False)
+
+#     # Subir el archivo actualizado al bucket en Cloud Storage
+#     blob2.upload_from_filename(temp_local_by_location)
+#     print(f"Archivo actualizado guardado en {existing_file_by_location} en Cloud Storage.")
+
+#     # Liberar memoria
+#     del df_by_location_old, df_by_location_new
+#     gc.collect()
+
+
+# #///////////////////////////////////////////////////////////////////////    
+#     # Agregación industry
+#     try:
+#         # Intentar descargar el archivo existente
+#         existing_file_by_industry = "TLC Trip Record Data/viajes_depurado_by_industry.csv"
+#         temp_local_industry = "/tmp/viajes_depurado_by_industry.csv"
+#         blob1 = bucket.blob(existing_file_by_industry)
+#         blob1.download_to_filename(temp_local_industry)
+#         print(f"Archivo existente descargado desde {existing_file_by_industry}")
+
+#         # Cargar el archivo existente en un DataFrame
+#         df_by_industry_old= pd.read_csv(temp_local_industry)
+#     except Exception as e:
+#         # Si el archivo no existe, crear un DataFrame vacío con las columnas necesarias
+#         print(f"Archivo no encontrado en {existing_file_by_industry}. Se creará uno nuevo.")
+
+#     # Concatenar el DataFrame existente con el nuevo DataFrame
+#     df_by_industry_new = pd.concat([df_by_industry_old, df_by_industry], ignore_index=True)
+
+#     # Guardar el DataFrame actualizado en un archivo temporal local
+#     df_by_industry_new.to_csv(temp_local_industry, index=False)
+
+#     # Subir el archivo actualizado al bucket en Cloud Storage
+#     blob1.upload_from_filename(temp_local_industry)
+#     print(f"Archivo actualizado guardado en {existing_file_by_industry} en Cloud Storage.")
+
+#     # Liberar memoria
+#     del df_by_industry_old #, df_by_industry_new
+#     gc.collect()
+
+
+# #///////////////////////////////////////////////////////////////////////
+
+#     # Agregación datos mensuales
+#     try:
+#         # Intentar descargar el archivo existente
+#         existing_file_monthly = "TLC Aggregated Data/tripdata_{year_month}.csv"
+#         temp_local_monthl = "/tmp/tripdata_{year_month}.csv"
+#         blob3 = bucket.blob(existing_file_monthly)
+#         blob3.download_to_filename(temp_local_monthl)
+#         print(f"Archivo existente descargado desde {temp_local_monthl}")
+
+#         # Cargar el archivo existente en un DataFrame
+#         df = pd.read_csv(temp_local_monthl)
+#     except Exception as e:
+#         # Si el archivo no existe, crear un DataFrame vacío con las columnas necesarias
+#         print(f"Archivo no encontrado en {existing_file_monthly}. Se creará uno nuevo.")
+
+
+# #///////////////////////////////////////////////////////////////////////
+#     # ETL de datos mensuales
+
+#     df.columns = [
+#     'date', 'industry', 'trips_per_day', 'farebox_per_day',
+#     'unique_drivers', 'unique_vehicles', 'vehicles_per_day',
+#     'avg_days_vehicles_on_road', 'avg_hours_per_day_per_vehicle',
+#     'avg_days_drivers_on_road', 'avg_hours_per_day_per_driver',
+#     'avg_minutes_per_trip', 'percent_of_trips_paid_with_credit_card',
+#     'trips_per_day_shared'
+# ]
+
+#     # Columnas incuidas
+#     columns_to_replace = df.columns.difference(['date', 'industry'])
+#     # Reemplazar '-' por '' en las columnas seleccionadas
+#     df[columns_to_replace] = df[columns_to_replace].replace({'-':np.nan,',':'','%': ''}, regex=True)
+
+#     df['date'] = pd.to_datetime(df['date'], format='%Y-%m')
+#     df['industry'] = df['industry'].astype('category')
+#     df['trips_per_day'] = df['trips_per_day'].astype('Int64')
+#     df['farebox_per_day'] = df['farebox_per_day'].astype('Int64')
+#     df['unique_drivers'] = df['unique_drivers'].astype('Int64')
+#     df['unique_vehicles'] = df['unique_vehicles'].astype('Int64')
+#     df['vehicles_per_day'] = df['vehicles_per_day'].astype('Int64')
+#     df['percent_of_trips_paid_with_credit_card'] = pd.to_numeric(df['percent_of_trips_paid_with_credit_card'], errors='coerce') / 100
+#     df['trips_per_day_shared'] = pd.to_numeric(df['trips_per_day_shared'], errors='coerce') 
+
+#     # Reemplazar 'Green' y 'Yellow' para igual al datset diario
+#     df['industry'] = df['industry'].replace({'Green': 'Green Taxi', 'Yellow': 'Yellow Taxi'})
+
+#     # Agregar "FHV - Other" a las categorías de la columna 'industry' para reemplazar las que no están en el datset diario  
+#     df['industry'] = df['industry'].cat.add_categories('FHV - Other')
+
+#     # Luego, realizar la asignación de las industrias
+#     other_industries = ['FHV - Black Car', 'FHV - Livery', 'FHV - Lux Limo']
+#     df.loc[df['industry'].isin(other_industries), 'industry'] = 'FHV - Other'
+
+#     # Agrupar por 'month_year' y 'industry', y agregar 'FHV - Other' por mes
+#     df_other = df[df['industry'] == 'FHV - Other'].groupby('date').agg({
+#         'trips_per_day': 'sum',
+#         'farebox_per_day': 'sum',
+#         'unique_drivers': 'sum',
+#         'unique_vehicles': 'sum',
+#         'vehicles_per_day': 'sum',
+#         'avg_days_vehicles_on_road': 'mean',
+#         'avg_hours_per_day_per_vehicle': 'mean',
+#         'avg_days_drivers_on_road': 'mean',
+#         'avg_hours_per_day_per_driver': 'mean',
+#         'avg_minutes_per_trip': 'mean',
+#         'percent_of_trips_paid_with_credit_card': 'mean',
+#         'trips_per_day_shared': 'sum'
+#     }).reset_index()
+
+#     # Reasignar índices y juntar los DataFrames
+#     df_other['industry'] = 'FHV - Other'  # Asegurarse de que la columna 'industry' sea consistente
+#     df = pd.concat([df[df['industry'] != 'FHV - Other'], df_other], ignore_index=True)
+
+#     # Acululamos desde el 2021
+#     df = df[df['date'] >= '2021-01-01']
+
+# #////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#     # Creamos el campo que vincula los df
+#     df_by_industry_new['date'] = pd.to_datetime(df_by_industry_new['year'].astype(str) + '-' + df_by_industry_new['month'].astype(str), format='%Y-%m')
+#     df_by_industry_new['date'] = pd.to_datetime(df_by_industry_new['date'], errors='coerce')
+    
+#     df['date'] = pd.to_datetime(df['date'], errors='coerce')
+
+#     df_total = pd.merge(df,df_by_industry_new, on=['date', 'industry'], how='outer')
+
+# #////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#        # Obtener la cantidad de días en el mes de cada registro
+#     df_total['days_in_month'] = df_total['date'].dt.days_in_month
+#     # Calcular total_trips como trips_per_day * days_in_month
+#     df_total['total_trips'] = df_total['trips_per_day'] * df_total['days_in_month']
+
+#     # Crear el nuevo campo 'farebox_per_day' con valores diferenciados
+#     df_total['farebox_per_day'] = np.where(
+#         df_total['industry'] == 'FHV - High Volume',
+#         df_total['total_amount'] / df_total['days_in_month'],
+#         df_total['farebox_per_day']
+#     )
+
+#     # Crear el nuevo campo 'total_amount' con valores diferenciados
+#     df_total['total_amount'] = np.where(
+#         df_total['industry'] == 'FHV - High Volume',
+#         df_total['total_amount'],
+#         df_total['farebox_per_day'] * df_total['days_in_month']
+#     )
+
+#     # Lo mismo pero para cantidad de viajes compartidos
+#     df_total['shared_match_flag'] = np.where(
+#         df_total['industry'] == 'FHV - High Volume',
+#         df_total['trips_per_day_shared'] * df_total['days_in_month'],
+#         df_total['shared_match_flag']
+#     )
+
+#     # Lo mismo pero para cantidad de viajes compartidos
+#     df_total['trips_per_day_shared'] = np.where(
+#         df_total['industry'] == 'FHV - High Volume',
+#         df_total['trips_per_day_shared'],
+#         df_total['shared_match_flag'] / df_total['days_in_month']
+#     )
+
+#     df_total['farebox_per_day_per_distance']=df_total['farebox_per_day']/df_total['avg_trip_distance']
+
+#     df_total['total_co2_emission'] = df_total['avg_trip_distance'] * df_total['total_trips'] * 400 / 1000000
+
+
+#     # Redondear las columnas de tipo DECIMAL antes de cargarlas en SQL
+#     df_total['farebox_per_day'] = df_total['farebox_per_day'].round(2)
+#     df_total['avg_days_vehicles_on_road'] = df_total['avg_days_vehicles_on_road'].round(2)
+#     df_total['avg_hours_per_day_per_vehicle'] = df_total['avg_hours_per_day_per_vehicle'].round(2)
+#     df_total['avg_days_drivers_on_road'] = df_total['avg_days_drivers_on_road'].round(2)
+#     df_total['avg_hours_per_day_per_driver'] = df_total['avg_hours_per_day_per_driver'].round(2)
+#     df_total['percent_of_trips_paid_with_credit_card'] = df_total['percent_of_trips_paid_with_credit_card'].round(2)
+#     df_total['avg_trip_distance'] = df_total['avg_trip_distance'].round(2)
+#     df_total['avg_trip_duration'] = df_total['avg_trip_duration'].round(2)
+#     df_total['total_amount'] = df_total['total_amount'].round(2)
+#     df_total['farebox_per_day_per_distance'] = df_total['farebox_per_day_per_distance'].round(4)
+#     df_total['total_co2_emission'] = df_total['total_co2_emission'].round(4)
+
+#     # Empezamos a trabajar con el dataset eliminando columnas o componiendo datos
+#     df_total = df_total.drop(columns=['year', 'month','trip_distance','trip_duration','fare_amount','avg_minutes_per_trip'])
+#     df_total['farebox_per_day'] = df_total['farebox_per_day'].replace(0, np.nan) 
+#     df_total['trips_per_day_shared'] = df_total['trips_per_day_shared'].replace(0, np.nan) 
+#     df_total['passenger_count'] = df_total['passenger_count'].replace(0, np.nan) 
+#     df_total['total_amount'] = df_total['total_amount'].replace(0, np.nan) 
+#     df_total['shared_match_flag'] = df_total['shared_match_flag'].replace(0, np.nan)
+#     df_total['farebox_per_day_per_distance'] = df_total['farebox_per_day_per_distance'].replace(0, np.nan)
+
+#     # Eliminar columnas duplicadas
+#     df_total = df_total.loc[:, ~df_total.columns.duplicated()]
+
+#     temp_local_path = "/tmp/merged_taxi_data.csv"
+#     # Guardar el DataFrame actualizado en un archivo temporal local
+#     df_total.to_csv(temp_local_path, index=False)
+
+#     # Subir el archivo actualizado al bucket en Cloud Storage
+#     blob2.upload_from_filename(temp_local_path)
+#     print(f"ETL Finalizado. Archivo actualizado guardado en {temp_local_path} en Cloud Storage.")

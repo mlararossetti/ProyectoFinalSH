@@ -1,14 +1,11 @@
 import logging
 from google.cloud import storage
-from functions import get_start_date_from_csv, download_and_upload_to_gcs # upload_logs_to_gcs
+from functions import get_start_date_from_csv, download_and_upload_to_gcs # upload_logs_to_gcs.
 from io import BytesIO
 import warnings
 import os
 
 warnings.filterwarnings("ignore")
-
-# Configuración del Bucket (usando GCS)
-output_folder = 'gs://henry-taxis'  # Ruta del Bucket en GCS
 
 # Configuración de logging para registrar errores en un archivo log
 #log_file = '/tmp/error_log.log'
@@ -21,19 +18,16 @@ base_urls = {
     "fhv": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_{}.parquet",
     "fhvhv": "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_{}.parquet",
 }
-
-csv_url = "https://www.nyc.gov/assets/tlc/downloads/csv/data_reports_monthly.csv"
+monthly_url = "https://www.nyc.gov/assets/tlc/downloads/csv/data_reports_monthly.csv"
 
 # Nombre del bucket en GCS
-BUCKET_NAME = 'henry-taxis'
+bucket_name = 'henry-taxis'
 
 try:
     # Definir las rutas necesarias
     fechas_csv = "Fechas_Archivos_Levantados.csv"
-    start_date = get_start_date_from_csv(BUCKET_NAME, fechas_csv)
-    print(start_date)
-    print(type(start_date))
-    download_and_upload_to_gcs(base_urls, start_date, csv_url, fechas_csv, BUCKET_NAME)
+    start_date = get_start_date_from_csv(bucket_name, fechas_csv)
+    download_and_upload_to_gcs(base_urls, start_date, monthly_url, fechas_csv, bucket_name)
 
     print("Terminó OK")
 
