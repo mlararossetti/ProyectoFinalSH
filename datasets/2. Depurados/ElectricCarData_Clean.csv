@@ -1,4 +1,4 @@
-Brand,Model,AccelSec,TopSpeed_KmH,Range_Km,Efficiency_WhKm,FastCharge_KmH,RapidCharge,PowerTrain,PlugType,BodyStyle,Segment,Seats,PriceEuro
+brand,model,accelsec,top_speed_kmh,range_km,efficiency_whkm,fast_charge_kmh,rapid_charge,power_train,plug_type,body_style,segment,seats,price_euro
 Tesla ,Model 3 Long Range Dual Motor,4.6,233,450,161,940,Yes,AWD,Type 2 CCS,Sedan,D,5,55480
 Volkswagen ,ID.3 Pure,10.0,160,270,167,250,Yes,RWD,Type 2 CCS,Hatchback,C,5,30000
 Polestar ,2,4.7,210,400,181,620,Yes,AWD,Type 2 CCS,Liftback,D,5,56440
