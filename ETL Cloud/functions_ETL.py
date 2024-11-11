@@ -265,30 +265,30 @@ def ETL_Viajes_Diarios (output_folder,year_month):
 
     df['year'] = df['pickup_datetime'].dt.year
     df['month'] = df['pickup_datetime'].dt.month
-    df['day_of_week'] = df['pickup_datetime'].dt.day_name()
-    df['hour'] = df['pickup_datetime'].dt.hour
-    df['day_of_week_num'] = df['pickup_datetime'].dt.dayofweek #(0=Lunes, ..., 6=Domingo)
-    df['date'] = pd.to_datetime(df['pickup_datetime']).dt.date
+    # df['day_of_week'] = df['pickup_datetime'].dt.day_name()
+    # df['hour'] = df['pickup_datetime'].dt.hour
+    # df['day_of_week_num'] = df['pickup_datetime'].dt.dayofweek #(0=Lunes, ..., 6=Domingo)
+    # df['date'] = pd.to_datetime(df['pickup_datetime']).dt.date
 
-    # Cargamos el dataset de feriados y convertimos la columna 'date' a solo fecha
-    df_feriados = pd.read_csv(output_folder + "/feriados_nacionales_2021_2024.csv")
-    df_feriados['date'] = pd.to_datetime(df_feriados['date']).dt.date
+    # # Cargamos el dataset de feriados y convertimos la columna 'date' a solo fecha
+    # df_feriados = pd.read_csv(output_folder + "/feriados_nacionales_2021_2024.csv")
+    # df_feriados['date'] = pd.to_datetime(df_feriados['date']).dt.date
 
-    # Realizamos el merge para identificar los días feriados
-    df = df.merge(df_feriados[['date','name']], how='left', left_on='date', right_on='date')
+    # # Realizamos el merge para identificar los días feriados
+    # df = df.merge(df_feriados[['date','name']], how='left', left_on='date', right_on='date')
 
-    # Creamos la columna 'is_holiday' que marca True si es feriado y False en caso contrario
-    df['is_holiday'] = df['name'].notna()
+    # # Creamos la columna 'is_holiday' que marca True si es feriado y False en caso contrario
+    # df['is_holiday'] = df['name'].notna()
 
-    # Creamos la columna 'working_day'
-    # Marcamos como 'No Laborable' (False) los días feriados o los fines de semana (sábado y domingo)
-    df['working_day'] = ~((df['is_holiday']) | (df['day_of_week_num'] >= 5))
+    # # Creamos la columna 'working_day'
+    # # Marcamos como 'No Laborable' (False) los días feriados o los fines de semana (sábado y domingo)
+    # df['working_day'] = ~((df['is_holiday']) | (df['day_of_week_num'] >= 5))
 
-    # Opcional: Convertimos el campo 'working_day' a 'Laborable' o 'No Laborable' para mejor comprensión
-    df['working_day'] = df['working_day'].map({True: 'Laborable', False: 'No Laborable'})
+    # # Opcional: Convertimos el campo 'working_day' a 'Laborable' o 'No Laborable' para mejor comprensión
+    # df['working_day'] = df['working_day'].map({True: 'Laborable', False: 'No Laborable'})
 
-    # Eliminamos columnas temporales si ya no son necesarias
-    df.drop(columns=['date', 'is_holiday'], inplace=True)
+    # # Eliminamos columnas temporales si ya no son necesarias
+    # df.drop(columns=['date', 'is_holiday'], inplace=True)
 
 
 #/////////////////////////////////////////////////////////////////////////////////////////////////////////////
