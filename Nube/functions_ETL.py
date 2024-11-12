@@ -336,8 +336,8 @@ def process_taxi_data(bucket_name, year_month):
     df_by_location['total_trips'] = df_by_location['total_trips'].astype('Int64')
     df_by_location['passenger_count'] = df_by_location['passenger_count'].astype('Int64')
     df_by_location['shared_match_flag'] = df_by_location['shared_match_flag'].astype('Int64')
-    df_by_location['fare_amount'] = df_by_location['fare_amount'].astype('Int64')
-    df_by_location['total_amount'] = df_by_location['total_amount'].astype('Int64')
+    # df_by_location['fare_amount'] = df_by_location['fare_amount'].astype('Int64')
+    # df_by_location['total_amount'] = df_by_location['total_amount'].astype('Int64')
    
     print("El ETL Corrió Bien")
 
