@@ -1,6 +1,4 @@
 import logging
-import colorlog
-
 import warnings
 from google.cloud import pubsub_v1
 from functions import get_start_date_from_csv, download_and_upload_to_gcs, publish_message
@@ -15,37 +13,6 @@ message_text = "Archivos cargados correctamente"
 # Bucket y archivos
 bucket_name = "henry-taxis-g5"
 fechas_csv = "Fechas_Archivos_Levantados.csv"
-
-
-# Configuración de logging para registrar errores en un archivo log
-#log_file = '/tmp/error_log.log'
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
-handler = colorlog.StreamHandler()
-# Definir el formato con colores
-formatter = colorlog.ColoredFormatter(
-    "%(asctime)s - %(levelname)s - %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
-    reset=True,
-    log_colors={
-        'DEBUG': 'cyan',     # Azul para Debug
-        'INFO': 'green',     # Verde para Info
-        'WARNING': 'yellow', # Amarillo para Warning
-        'ERROR': 'red',      # Rojo para Error
-        'CRITICAL': 'bold_red', # Rojo negrita para Critical
-    }
-)
-# Asignar el formatter al handler
-handler.setFormatter(formatter)
-
-# Agregar el handler al logger
-logger.addHandler(handler)
-
-# Ejemplos de mensajes
-logger.info("Este es un mensaje informativo.")
-logger.error("Este es un mensaje de error.")
-
 
 
 # Configuración de logging para registrar errores en un archivo log
