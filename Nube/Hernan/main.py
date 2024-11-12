@@ -3,6 +3,7 @@ import warnings
 from google.cloud import pubsub_v1
 from functions import get_start_date_from_csv, download_and_upload_to_gcs, publish_message
 from functions_ETL import process_taxi_data
+from SQL_Big_Query import update_table_from_csv
 warnings.filterwarnings("ignore")
 
 
@@ -32,6 +33,16 @@ try:
     start_date = get_start_date_from_csv(bucket_name, fechas_csv)
     download_and_upload_to_gcs(base_urls, start_date, monthly_url, fechas_csv, bucket_name)
     process_taxi_data (bucket_name, start_date)
+    
+    TABLE_ID = 'Data_viajes_by_industry'
+    CSV_FILE_NAME = 'TLC Aggregated Data/TLC Trip Record Data_viajes_by_industry.csv'  # Ruta dentro del bucket
+        
+    update_table_from_csv(bucket_name,TABLE_ID,CSV_FILE_NAME)
+    
+    TABLE_ID = 'Data_viajes_by_location'
+    CSV_FILE_NAME = 'TLC Aggregated Data/TLC Trip Record Data_viajes_by_location.csv'  # Ruta dentro del bucket
+    update_table_from_csv(bucket_name,TABLE_ID,CSV_FILE_NAME)    
+
     # publish_message(project_id, topic_id, message_text, start_date)
     print("Proceso completado correctamente y mensaje enviado.")
 except ValueError as e:

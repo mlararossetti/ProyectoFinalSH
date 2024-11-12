@@ -36,8 +36,12 @@ class GCSClient:
 
     
     def upload_file_to_gcs(self, bucket_name, blob_name, temp_file_path):
-        # Subir el archivo CSV al bucket de GCS1
-        self.client.upload_blob_from_filename(bucket_name, blob_name, temp_file_path)
+         # Obtener el bucket
+        bucket = self.client.bucket(bucket_name)
+        # Crear un blob en el bucket con el nombre especificado
+        blob = bucket.blob(blob_name)
+        # Subir el archivo
+        blob.upload_from_filename(temp_file_path)
         print(f"Archivo CSV '{blob_name}' subido exitosamente a '{bucket_name}'.")
 
 

@@ -1,7 +1,7 @@
 from datetime import datetime
 import pandas as pd
 import numpy as np
-from google.cloud import storage,pubsub_v1
+from google.cloud import storage
 import gc
 from sklearn.linear_model import LinearRegression # type: ignore
 from pandas.tseries.offsets import MonthEnd
@@ -41,14 +41,12 @@ def process_taxi_data (bucket_name, start_date):
     client.delete_client()
 
     #///////////////////////////////////////////////////////////////////////////////////////
-    print("antes de cargar los df")
     # Cargar los DataFrames
     df_YT = pd.read_parquet(local_file_paths["yellow"])
     df_GT = pd.read_parquet(local_file_paths["green"])
     df_FHVHV = pd.read_parquet(local_file_paths["fhvhv"])
     df_FHV = pd.read_parquet(local_file_paths["fhv"])
 
-    print("despues de cargar los df")
     # Realizar todas las transformaciones de datos de ETL
     # Eliminar datos duplicados
     df_YT = df_YT.drop_duplicates()
@@ -85,7 +83,6 @@ def process_taxi_data (bucket_name, start_date):
         'SR_Flag': 'shared_match_flag'
     })
 
-    print("hasta acá renombró columnas")
     # Reemplazo "Y" por True y otros valores por False
     df_FHVHV['shared_request_flag'] = df_FHVHV['shared_request_flag'].map({'Y': True}).fillna(False)
     df_FHVHV['shared_match_flag'] = df_FHVHV['shared_match_flag'].map({'Y': True}).fillna(False)
@@ -148,7 +145,6 @@ def process_taxi_data (bucket_name, start_date):
     df_FHVHV = df_FHVHV.loc[:, columnas_a_conservar]
     df_FHV = df_FHV.loc[:, columnas_a_conservar]
 
-    print("antes de concatenar")
     # Lista de dataframes
     dataframes = [df_YT, df_GT, df_FHVHV, df_FHV]
     # Se concatenean los df con todas las columnas y se reinicia el índice.
@@ -160,7 +156,6 @@ def process_taxi_data (bucket_name, start_date):
     # Se llama al recolector de basura para liberar la memoria
     gc.collect()
 
-    print("dsp de concatenar")
     # Convierto los tipos de datos
     df['pickup_datetime'] = df['pickup_datetime'].astype('datetime64[ns]')
     df['dropoff_datetime'] = df['dropoff_datetime'].astype('datetime64[ns]')
@@ -231,7 +226,7 @@ def process_taxi_data (bucket_name, start_date):
     y = df_no_nan['total_amount']
 
     # Ajusto el modelo de regresión lineal
-    model = LinearRegression()
+    model = LinearRegression(n_jobs=-1)
     model.fit(X, y)
 
     # Predigo los valores de 'total_amount'
@@ -248,17 +243,16 @@ def process_taxi_data (bucket_name, start_date):
 
     # Pongo nulo cuando se supera el umbral en los índices que superaron el threshold
     df.loc[outlier_indices, 'total_amount'] = np.nan
-
     # No puede haber valores negativos
     #df['congestion_surcharge'] = np.where(df['congestion_surcharge'] < 0, np.nan, df['congestion_surcharge'])
 
     # Configurar el valor de shared_match_flag basado en passenger_count
-    df['shared_match_flag'] = df['passenger_count'].fillna(0).apply(lambda x: True if x > 1 else False)
+    #df['shared_match_flag'] = df['passenger_count'].fillna(0).apply(lambda x: True if x > 1 else False)
 
     # Máscara donde dropoff_datetime es menor que pickup_datetime
-    mask = df['dropoff_datetime'] < df['pickup_datetime']
+    # mask = df['dropoff_datetime'] < df['pickup_datetime']
     # Intercambio los valores en esas filas
-    df.loc[mask, ['pickup_datetime', 'dropoff_datetime']] = df.loc[mask, ['dropoff_datetime', 'pickup_datetime']].values
+    # df.loc[mask, ['pickup_datetime', 'dropoff_datetime']] = df.loc[mask, ['dropoff_datetime', 'pickup_datetime']].values
     # Recalculo la duración
     df['trip_duration'] = (df['dropoff_datetime'] - df['pickup_datetime']).dt.total_seconds() / 60
 
@@ -267,7 +261,6 @@ def process_taxi_data (bucket_name, start_date):
 
     # Modificación por falta de memoria en la Nube
     df.loc[df['trip_duration'] > Limit, 'trip_duration'] = np.nan
-
 
     # # Calculo la duración media de trip_duration por combinación de pickup y dropoff location
     # mean_duration_by_location = (
@@ -292,18 +285,20 @@ def process_taxi_data (bucket_name, start_date):
     # Recalculo la duración
     #df['trip_duration'] = (df['dropoff_datetime'] - df['pickup_datetime']).dt.total_seconds() / 60
 
-    df['date'] = pd.to_datetime(df['pickup_datetime']).dt.date
+    df['year'] = df['pickup_datetime'].dt.year
+    df['month'] = df['pickup_datetime'].dt.month
+    #df['date'] = pd.to_datetime(df['pickup_datetime']).dt.date
 
 
     #///////////////////////////////////////////////////////////////////////
     # Creamos el campo que vincula los df
-    df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str), format='%Y-%m')
-    df['date'] = pd.to_datetime(df['date'], errors='coerce')
+    # df['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str), format='%Y-%m')
+    # df['date'] = pd.to_datetime(df['date'], errors='coerce')
 
 
     # 1. DataFrame de agregaciones por mes, año y industry
     df_by_industry = df.groupby(
-        ['date', 'industry']
+        ['year','month', 'industry']
     ).agg(
         total_trips=('pickup_datetime', 'count'),
         passenger_count=('passenger_count', 'sum'),
@@ -316,9 +311,12 @@ def process_taxi_data (bucket_name, start_date):
         shared_match_flag=('shared_match_flag', lambda x: (x == True).sum())
     ).reset_index()
 
+    df_by_industry['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str), format='%Y-%m')
+
+
     # 2. DataFrame de agregaciones por mes, año y combinación de pickup_location_id y dropoff_location_id
     df_by_location = df.groupby(
-        ['date', 'pickup_location_id', 'dropoff_location_id']
+        ['year','month', 'pickup_location_id', 'dropoff_location_id']
     ).agg(
         total_trips=('pickup_datetime', 'count'),
         passenger_count=('passenger_count', 'sum'),
@@ -330,6 +328,8 @@ def process_taxi_data (bucket_name, start_date):
         total_amount=('total_amount', 'sum'),
         shared_match_flag=('shared_match_flag', lambda x: (x == True).sum())
     ).reset_index()
+
+    df_by_location['date'] = pd.to_datetime(df['year'].astype(str) + '-' + df['month'].astype(str), format='%Y-%m')
 
     # Liberar memoria
     del df
@@ -349,16 +349,13 @@ def process_taxi_data (bucket_name, start_date):
     df_by_location['passenger_count'] = df_by_location['passenger_count'].astype('Int64')
     df_by_location['shared_match_flag'] = df_by_location['shared_match_flag'].astype('Int64')
 
-    print("El ETL Corrió Bien")
-
-
 # #///////////////////////////////////////////////////////////////////////    
     # Agregación location
     try:
         # Intentar descargar el archivo existente
         client = GCSClient()
         blob_name = "TLC Aggregated Data/TLC Trip Record Data_viajes_by_location.csv"
-        temp_local = "/tmp/TLC Aggregated Data/TLC Trip Record Data_viajes_by_location.csv"    
+        temp_local = "/tmp/TLC Trip Record Data_viajes_by_location.csv"    
         client.download_blob_file(bucket_name, blob_name, temp_local)
        
         # Cargar el archivo existente en un DataFrame
@@ -393,7 +390,7 @@ def process_taxi_data (bucket_name, start_date):
         # Intentar descargar el archivo existente
         client = GCSClient()
         blob_name = "TLC Aggregated Data/TLC Trip Record Data_viajes_by_industry.csv"
-        temp_local = "/tmp/TLC Aggregated Data/TLC Trip Record Data_viajes_by_industry.csv"    
+        temp_local = "/tmp/TLC Trip Record Data_viajes_by_industry.csv"    
         client.download_blob_file(bucket_name, blob_name, temp_local)
        
         # Cargar el archivo existente en un DataFrame
@@ -418,18 +415,16 @@ def process_taxi_data (bucket_name, start_date):
     client.delete_client()
 
     # Liberar memoria
-    del df_by_location_old, df_by_location_new
+    del df_by_industry_old
     gc.collect()
 
 #///////////////////////////////////////////////////////////////////////
-    print("Carga datos mensuales")
-
     # Agregación al archivo Mensual
     try:
         # Intentar descargar el archivo existente
         client = GCSClient()
-        blob_name = "TLC Aggregated Data/TLC Aggregated Data/tripdata_{year_month}.csv"
-        temp_local = "/tmp/TLC Aggregated Data/TLC Aggregated Data/tripdata_{year_month}.csv"    
+        blob_name = f"TLC Aggregated Data/tripdata_{year_month}.csv"
+        temp_local = f"/tmp/tripdata_{year_month}.csv"    
         client.download_blob_file(bucket_name, blob_name, temp_local)
        
         # Cargar el archivo existente en un DataFrame
@@ -512,7 +507,6 @@ def process_taxi_data (bucket_name, start_date):
     del df_by_industry_new, df
     gc.collect()
 
-    print("merge de datos mensuakes")
 #////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
      # Obtener la cantidad de días en el mes de cada registro
@@ -552,6 +546,10 @@ def process_taxi_data (bucket_name, start_date):
 
     df_total['total_co2_emission'] = df_total['avg_trip_distance'] * df_total['total_trips'] * 400 / 1000000
 
+    # Se convierten los tipos de datos    
+    df_total['farebox_per_day'] = df_total['farebox_per_day'].astype('float64')
+    df_total['total_amount'] = df_total['total_amount'].astype('float64')
+    df_total['farebox_per_day_per_distance'] = df_total['farebox_per_day_per_distance'].astype('float64')
 
     # Redondear las columnas de tipo DECIMAL antes de cargarlas en SQL
     df_total['farebox_per_day'] = df_total['farebox_per_day'].round(2)
@@ -580,7 +578,7 @@ def process_taxi_data (bucket_name, start_date):
 
     
     # Guardar el DataFrame actualizado en un archivo temporal local
-    temp_local = "/tmp/TLC Aggregated Data/merged_taxi_data.csv"
+    temp_local = "/tmp/merged_taxi_data.csv"
     df_total.to_csv(temp_local, index=False)
 
     # Subir el archivo actualizado al bucket en Cloud Storage

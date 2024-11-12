@@ -7,3 +7,5 @@ pyarrow==12.0.0
 fsspec
 gcsfs
 google-cloud-pubsub
+google-cloud-bigquery==3.11.4
+google-api-core==2.12.0
