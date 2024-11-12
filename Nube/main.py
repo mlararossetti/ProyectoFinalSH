@@ -1,9 +1,16 @@
 import logging
 from google.cloud import storage
-from functions import get_start_date_from_csv, download_and_upload_to_gcs # upload_logs_to_gcs.
+from functions import get_start_date_from_csv, download_and_upload_to_gcs, publish_message # upload_logs_to_gcs.
 from io import BytesIO
 import warnings
 import os
+from google.cloud import pubsub_v1
+
+
+# Configura el proyecto y el tema de Pub/Sub
+project_id = "proyecto-final-sh-441422"
+topic_id = "file_download_complete"
+message_text = "Archivos cargados correctamente" 
 
 warnings.filterwarnings("ignore")
 
@@ -21,7 +28,7 @@ base_urls = {
 monthly_url = "https://www.nyc.gov/assets/tlc/downloads/csv/data_reports_monthly.csv"
 
 # Nombre del bucket en GCS
-bucket_name = 'henry-taxis'
+bucket_name = 'henry-taxi'
 
 try:
     # Definir las rutas necesarias
@@ -30,6 +37,10 @@ try:
     download_and_upload_to_gcs(base_urls, start_date, monthly_url, fechas_csv, bucket_name)
 
     print("Terminó OK")
+
+    # Publica el mensaje en Pub/Sub indicando que el proceso ha terminado
+    publish_message(project_id, topic_id, message_text, start_date)
+    print('Mensaje enviado')
 
     # Subir los logs a GCS
     #upload_logs_to_gcs(log_file, BUCKET_NAME, "error_log.log")
@@ -41,3 +52,4 @@ except ValueError as e:
 except Exception as e:
     logging.error(f"Error en la ejecución: {e}")
     print(f"Error en la ejecución: {str(e)}")  # Opcional: imprime el error en la consola para más visibilidad
+

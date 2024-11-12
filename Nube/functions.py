@@ -6,7 +6,8 @@ import urllib.request
 import csv
 from dateutil.relativedelta import relativedelta
 from io import StringIO
-from functions_ETL import process_taxi_data
+#from functions_ETL import process_taxi_data
+from google.cloud import pubsub_v1
 
 
 #log_file = '/tmp/error_log.log'  # Archivo local temporal para logs
@@ -50,7 +51,7 @@ def download_and_upload_to_gcs(base_urls, start_date, monthly_url, fechas_csv, b
         download_and_upload_file(monthly_url, bucket_name, csv_blob_name, retries, delay)
 
         # Realiza el ETL de los archivos descargados
-        process_taxi_data(bucket_name, year_month)
+        #process_taxi_data(bucket_name, year_month)
 
         # Guardar la fecha en Fechas_Archivos_Levantados.csv
         save_date_to_csv(start_date,bucket_name, fechas_csv)
@@ -161,3 +162,20 @@ def get_start_date_from_csv(bucket_name, fechas_csv):
 #     blob = bucket.blob(destination_blob_name)
 #     blob.upload_from_filename(log_file)
 #     print(f"Log file uploaded to {bucket_name}/{destination_blob_name}")
+
+def publish_message(project_id, topic_id, message_text, start_date):
+    publisher = pubsub_v1.PublisherClient()
+    topic_path = publisher.topic_path(project_id, topic_id)
+    
+    # Formatea el start_date si es necesario
+    formatted_date = start_date.strftime("%Y-%m-%d")  # Si start_date es un objeto datetime
+    
+    # Crea el mensaje combinando el mensaje de texto y la fecha de inicio
+    full_message = f"{message_text}|{formatted_date}"
+    
+    # Convierte el mensaje a bytes (Pub/Sub solo acepta bytes)
+    message_data = full_message.encode("utf-8")
+    
+    # Publica el mensaje en el tema de Pub/Sub
+    future = publisher.publish(topic_path, message_data)
+    print(f"Published message ID: {future.result()}")
