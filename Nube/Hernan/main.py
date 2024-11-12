@@ -14,7 +14,6 @@ message_text = "Archivos cargados correctamente"
 bucket_name = "henry-taxis-g5"
 fechas_csv = "Fechas_Archivos_Levantados.csv"
 
-
 # Configuración de logging para registrar errores en un archivo log
 #log_file = '/tmp/error_log.log'
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
