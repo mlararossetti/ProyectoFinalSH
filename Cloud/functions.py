@@ -103,20 +103,6 @@ def save_date_to_csv(date, bucket_name, file_path):
 
 
 ## //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-def publish_message(project_id, topic_id, message_text, start_date):
-    publisher = pubsub_v1.PublisherClient()
-    topic_path = publisher.topic_path(project_id, topic_id)
-    full_message = f"{message_text}|{start_date.strftime('%Y-%m-%d')}"
-    
-    try:
-        future = publisher.publish(topic_path, full_message.encode("utf-8"))
-        logging.info(f"Mensaje publicado en Pub/Sub con ID: {future.result()}")
-    except Exception as e:
-        logging.error(f"Error al publicar el mensaje en Pub/Sub: {e}")
-        raise
-
-
 def enviar_correo(start_date):
     """Envía un correo de notificación indicando que los datos se cargaron correctamente."""
     
@@ -126,7 +112,7 @@ def enviar_correo(start_date):
 
     # Configura el contenido del correo
     message = Mail(
-        from_email="hernanlussiatti@gmail.com",  # Cambia esto a tu correo de remitente
+        from_email="marialararossetti@gmail.com",  # Cambia esto a tu correo de remitente
         to_emails="hernanlussiatti@gmail.com",
         subject=asunto,
         plain_text_content=mensaje
@@ -134,9 +120,11 @@ def enviar_correo(start_date):
 
     try:
         # Cargar la API key desde la variable de entorno
-        sendgrid_api_key = os.getenv("SENDGRID_API_KEY")
+        sendgrid_api_key = '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'  #os.getenv("SENDGRID_API_KEY")
         sg = SendGridAPIClient(sendgrid_api_key)
+        print("dsp de instanciar")
         response = sg.send(message)
+        print("dsp de response")
         logging.info(f"Correo enviado: {response.status_code}")
     except Exception as e:
         logging.error(f"Error al enviar el correo: {e}")

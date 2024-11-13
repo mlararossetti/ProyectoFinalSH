@@ -1,9 +1,10 @@
 import logging
 import warnings
 from google.cloud import pubsub_v1
-from functions import get_start_date_from_csv, download_and_upload_to_gcs, publish_message, enviar_correo
+from functions import get_start_date_from_csv, download_and_upload_to_gcs, enviar_correo
 from functions_ETL import process_taxi_data
 from SQL_Big_Query import update_table_from_csv
+
 
 warnings.filterwarnings("ignore")
 
@@ -30,18 +31,24 @@ monthly_url = "https://www.nyc.gov/assets/tlc/downloads/csv/data_reports_monthly
 
 
 try:
+    # Obtiene última fecha cargada
     start_date = get_start_date_from_csv(bucket_name, fechas_csv)
+    # Descarga los archivos en el bucket
     download_and_upload_to_gcs(base_urls, start_date, monthly_url, fechas_csv, bucket_name)
+    # Realiza el proceso de ETL y carga incremental
     process_taxi_data (bucket_name, start_date)
     
+    # Carga los datos en Big Query
     TABLE_ID = 'Data_viajes_by_industry'
-    CSV_FILE_NAME = 'TLC Aggregated Data/TLC Trip Record Data_viajes_by_industry.csv'  # Ruta dentro del bucket
+    CSV_FILE_NAME = 'TLC Aggregated Data/TLC Trip Record Data_viajes_by_industry.csv'  
         
     update_table_from_csv(bucket_name,TABLE_ID,CSV_FILE_NAME)
     
     TABLE_ID = 'Data_viajes_by_location'
-    CSV_FILE_NAME = 'TLC Aggregated Data/TLC Trip Record Data_viajes_by_location.csv'  # Ruta dentro del bucket
+    CSV_FILE_NAME = 'TLC Aggregated Data/TLC Trip Record Data_viajes_by_location.csv'
     update_table_from_csv(bucket_name,TABLE_ID,CSV_FILE_NAME)
+    
+    # Envía un correo para avisar que finalizó
     enviar_correo(start_date)    
 
     # publish_message(project_id, topic_id, message_text, start_date)
