@@ -102,30 +102,31 @@ def save_date_to_csv(date, bucket_name, file_path):
         client.delete_client()
 
 
-## //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-def enviar_correo(start_date):
-    """Envía un correo de notificación indicando que los datos se cargaron correctamente."""
+# ## //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# ## Se comenta para no generar inconvenientes con github
+# def enviar_correo(start_date):
+#     """Envía un correo de notificación indicando que los datos se cargaron correctamente."""
     
-    # Define el mensaje y asunto
-    mensaje = f"Los datos de {start_date} fueron cargados y actualizados correctamente en BigQuery."
-    asunto = f"Actualización de datos: {start_date}"
+#     # Define el mensaje y asunto
+#     mensaje = f"Los datos de {start_date} fueron cargados y actualizados correctamente en BigQuery."
+#     asunto = f"Actualización de datos: {start_date}"
 
-    # Configura el contenido del correo
-    message = Mail(
-        from_email="marialararossetti@gmail.com",  # Cambia esto a tu correo de remitente
-        to_emails="hernanlussiatti@gmail.com",
-        subject=asunto,
-        plain_text_content=mensaje
-    )
+#     # Configura el contenido del correo
+#     message = Mail(
+#         from_email="marialararossetti@gmail.com",  # Cambia esto a tu correo de remitente
+#         to_emails="hernanlussiatti@gmail.com",
+#         subject=asunto,
+#         plain_text_content=mensaje
+#     )
 
-    try:
-        # Cargar la API key desde la variable de entorno
-        sendgrid_api_key = ''  #os.getenv("SENDGRID_API_KEY")
-        sg = SendGridAPIClient(sendgrid_api_key)
-        print("dsp de instanciar")
-        response = sg.send(message)
-        print("dsp de response")
-        logging.info(f"Correo enviado: {response.status_code}")
-    except Exception as e:
-        logging.error(f"Error al enviar el correo: {e}")
-        raise
+#     try:
+#         # Cargar la API key desde la variable de entorno
+#         sendgrid_api_key = ''  #os.getenv("SENDGRID_API_KEY")
+#         sg = SendGridAPIClient(sendgrid_api_key)
+#         print("dsp de instanciar")
+#         response = sg.send(message)
+#         print("dsp de response")
+#         logging.info(f"Correo enviado: {response.status_code}")
+#     except Exception as e:
+#         logging.error(f"Error al enviar el correo: {e}")
+#         raise
