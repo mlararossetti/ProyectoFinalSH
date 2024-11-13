@@ -17,7 +17,7 @@ CREATE TABLE calendar (
     dia_semana INT,
     PRIMARY KEY (date),
     UNIQUE (anio, mes),
-	FOREIGN KEY (anio) REFERENCES anos(anios)
+	FOREIGN KEY (anio) REFERENCES anios(anio)
 );
 
 -- Tabla: merged_taxi_data
@@ -114,7 +114,7 @@ CREATE TABLE consolidados_por_ciudad (
     days_pm10 INT,
     
 	PRIMARY KEY (year, code),
-	FOREIGN KEY (year) REFERENCES anos(anios)
+	FOREIGN KEY (year) REFERENCES  anios(anio)
 );
 
 -- Tabla: NY CO2 Emissions Inv
@@ -129,25 +129,8 @@ CREATE TABLE ny_co2_emissions_inv (
     year INT,
     emission_tco2e DECIMAL(10, 2),
 	PRIMARY KEY (year, inventory_type, sectors_sector, category_label),
-    FOREIGN KEY (year) REFERENCES anos(anios)
+    FOREIGN KEY (year) REFERENCES  anios(anio)
 );
 
--- Tabla: Electric Vehicles
-CREATE TABLE electric_vehicles (
-    brand VARCHAR(50),
-    model VARCHAR(100),
-    accelsec DECIMAL(5, 2),
-    topSpeed_kmh DECIMAL(5, 2),
-    range_km DECIMAL(5, 2),
-    efficiency_whkm DECIMAL(5, 2),
-    fastCharge_kmh DECIMAL(5, 2),
-    rapid_charge VARCHAR(3),
-    power_train VARCHAR(10),
-    plug_type VARCHAR(20),
-    body_style VARCHAR(20),
-    segment VARCHAR(20),
-    seats INT,
-    price_euro DECIMAL(10, 2)
-);
 
 
