@@ -120,7 +120,7 @@ def enviar_correo(start_date):
 
     try:
         # Cargar la API key desde la variable de entorno
-        sendgrid_api_key = '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'  #os.getenv("SENDGRID_API_KEY")
+        sendgrid_api_key = ''  #os.getenv("SENDGRID_API_KEY")
         sg = SendGridAPIClient(sendgrid_api_key)
         print("dsp de instanciar")
         response = sg.send(message)
