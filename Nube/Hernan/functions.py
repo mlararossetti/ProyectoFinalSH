@@ -7,6 +7,8 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from google.cloud import storage #, pubsub_v1
 from gcs_client import GCSClient
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 
 # Configuración de logging para registrar errores en un archivo log
@@ -111,4 +113,29 @@ def publish_message(project_id, topic_id, message_text, start_date):
         logging.info(f"Mensaje publicado en Pub/Sub con ID: {future.result()}")
     except Exception as e:
         logging.error(f"Error al publicar el mensaje en Pub/Sub: {e}")
+        raise
+
+
+def enviar_correo(start_date):
+    """Envía un correo de notificación indicando que los datos se cargaron correctamente."""
+    
+    # Define el mensaje y asunto
+    mensaje = f"Los datos de {start_date} fueron cargados y actualizados correctamente en BigQuery."
+    asunto = f"Actualización de datos: {start_date}"
+
+    # Configura el contenido del correo
+    message = Mail(
+        from_email="hernanlussiatti@gmail.com",  # Cambia esto a tu correo de remitente
+        to_emails="hernanlussiatti@gmail.com",
+        subject=asunto,
+        plain_text_content=mensaje
+    )
+
+    try:
+        # Reemplaza 'YOUR_SENDGRID_API_KEY' con tu clave de SendGrid
+        sg = SendGridAPIClient('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')
+        response = sg.send(message)
+        logging.info(f"Correo enviado: {response.status_code}")
+    except Exception as e:
+        logging.error(f"Error al enviar el correo: {e}")
         raise

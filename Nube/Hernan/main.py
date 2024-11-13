@@ -1,11 +1,11 @@
 import logging
 import warnings
 from google.cloud import pubsub_v1
-from functions import get_start_date_from_csv, download_and_upload_to_gcs, publish_message
+from functions import get_start_date_from_csv, download_and_upload_to_gcs, publish_message, enviar_correo
 from functions_ETL import process_taxi_data
 from SQL_Big_Query import update_table_from_csv
-warnings.filterwarnings("ignore")
 
+warnings.filterwarnings("ignore")
 
 # Configura el proyecto y el tema de Pub/Sub
 project_id = "proyectofinalsh"
@@ -41,7 +41,8 @@ try:
     
     TABLE_ID = 'Data_viajes_by_location'
     CSV_FILE_NAME = 'TLC Aggregated Data/TLC Trip Record Data_viajes_by_location.csv'  # Ruta dentro del bucket
-    update_table_from_csv(bucket_name,TABLE_ID,CSV_FILE_NAME)    
+    update_table_from_csv(bucket_name,TABLE_ID,CSV_FILE_NAME)
+    enviar_correo(start_date)    
 
     # publish_message(project_id, topic_id, message_text, start_date)
     print("Proceso completado correctamente y mensaje enviado.")
