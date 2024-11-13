@@ -1,0 +1,716 @@
+inventory_type,sectors_sector,category_full,category_label,source_full,source_label,source_units,year,emission_tco2e
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2010,1460616.98
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2010,837553.17
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2010,2171792.92
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2010,9.42
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2010,5550419.75
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2010,8547848.58
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2010,329450.67
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2010,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2010,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2010,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2010,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2010,827681.53
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2010,149485.42
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2010,266500.68
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2010,2.37
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2010,8602459.57
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2010,4839941.11
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2010,744373.69
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2010,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2010,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2010,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2010,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2010,190814.98
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2010,32207.17
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2010,20578.67
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2010,0.42
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2010,3031619.1
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2010,1147601.82
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2010,223312.11
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2010,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2010,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2010,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2010,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2010,411535.63
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2010,758079.2
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2010,13824.05
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2010,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2010,51541.69
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2010,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2010,1898.44
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2010,1881202.32
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2010,4161.42
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2010,258077.4
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2010,74097.71
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2010,12619175.98
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2010,392316.69
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2010,1353434.07
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2010,66544.43
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2010,57329.01
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2010,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2010,403.26
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2010,0
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2010,0
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2010,594743.8
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2010,32443.6
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2011,1429474.5
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2011,812476.85
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2011,2038819.57
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2011,15.36
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2011,5007826.86
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2011,8889422.48
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2011,323143.06
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2011,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2011,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2011,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2011,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2011,810034.16
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2011,145009.83
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2011,250183.52
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2011,3.87
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2011,7724568.06
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2011,5052715.95
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2011,708083.99
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2011,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2011,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2011,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2011,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2011,186746.53
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2011,31242.89
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2011,19318.69
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2011,0.69
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2011,2774598.8
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2011,1186779.03
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2011,212425.2
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2011,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2011,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2011,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2011,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2011,428339.93
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2011,655243.57
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2011,14167.14
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2011,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2011,53780.96
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2011,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2011,1564.9
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2011,1925476.22
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2011,3849.4
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2011,278777.1
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2011,73681.63
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2011,12202449.45
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2011,386197.57
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2011,1348893.88
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2011,66729.46
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2011,59448.58
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2011,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2011,526.53
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2011,0
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2011,0
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2011,563982.05
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2011,33418.18
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2012,1295395.41
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2012,806233.09
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2012,1590843.58
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2012,46.11
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2012,5184113.49
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2012,8019305.92
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2012,255842.12
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2012,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2012,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2012,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2012,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2012,734056.14
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2012,143895.45
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2012,195212.4
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2012,11.61
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2012,7817946.2
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2012,4644065.63
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2012,509345.56
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2012,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2012,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2012,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2012,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2012,169230.44
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2012,31002.79
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2012,15073.93
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2012,2.06
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2012,2896991.49
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2012,1091225.94
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2012,152803.67
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2012,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2012,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2012,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2012,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2012,389429.27
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2012,705737.61
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2012,12941.06
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2012,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2012,31605.36
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2012,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2012,1326.94
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2012,1898970.54
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2012,3587.11
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2012,209998.6
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2012,68535.62
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2012,11972767.4
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2012,385609.16
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2012,1324447.18
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2012,66913.97
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2012,61600.89
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2012,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2012,671.68
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2012,0
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2012,0
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2012,566297.38
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2012,36728.55
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2013,1658720.73
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2013,965266.25
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2013,1180663.93
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2013,66.03
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2013,4667425.49
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2013,4108153.74
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2013,306006.48
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2013,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2013,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2013,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2013,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2013,939940.13
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2013,172279.49
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2013,144879.26
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2013,16.62
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2013,7156621.22
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2013,5416915.43
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2013,573787.49
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2013,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2013,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2013,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2013,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2013,216695.25
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2013,37118.23
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2013,11187.3
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2013,2.95
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2013,2656647.69
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2013,6042758.86
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2013,172136.25
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2013,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2013,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2013,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2013,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2013,440766.66
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2013,659435.58
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2013,14898.46
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2013,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2013,89396.32
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2013,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2013,1765.83
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2013,1889692.29
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2013,3937.71
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2013,184713.04
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2013,68074.01
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2013,11931734.6
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2013,398914.43
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2013,1329090
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2013,67098.07
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2013,63785.93
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2013,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2013,862.9
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2013,0
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2013,0
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2013,567108.79
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2013,40033.78
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2014,1272380.74
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2014,589794.17
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2014,308996.85
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2014,44.42
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2014,4915571.04
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2014,9822759.09
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2014,322741.27
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2014,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2014,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2014,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2014,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2014,721014.51
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2014,105265.71
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2014,37917
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2014,11.18
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2014,7888927.09
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2014,5793517.18
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2014,605166.61
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2014,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2014,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2014,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2014,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2014,166223.8
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2014,22679.87
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2014,2927.88
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2014,1.98
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2014,2915356.12
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2014,1359310.85
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2014,181549.98
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2014,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2014,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2014,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2014,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2014,480624.06
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2014,703276.42
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2014,14933.79
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2014,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2014,52702.17
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2014,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2014,1986.24
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2014,1906241.58
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2014,5593.23
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2014,159564.63
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2014,67701.95
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2014,11844931.68
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2014,412604.74
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2014,1291586.18
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2014,67277.6
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2014,66003.31
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2014,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2014,1085.01
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2014,0
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2014,0
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2014,579754.91
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2014,43790.62
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2015,1659115.95
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2015,1035033.95
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2015,143515.13
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2015,57.78
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2015,5010081.41
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2015,9665007.52
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2015,286270.18
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2015,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2015,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2015,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2015,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2015,940164.09
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2015,184731.54
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2015,17610.74
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2015,14.54
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2015,7754764.7
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2015,5681167.06
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2015,569855.98
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2015,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2015,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2015,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2015,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2015,216746.88
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2015,39801.07
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2015,1359.87
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2015,2.58
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2015,2879091.34
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2015,1356116.02
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2015,170956.79
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2015,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2015,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2015,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2015,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2015,472886.31
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2015,690178.5
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2015,14883.71
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2015,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2015,55663.27
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2015,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2015,2253.4
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2015,1882070.45
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2015,7048.67
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2015,171329.51
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2015,66597.03
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2015,12157010.71
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2015,429137.24
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2015,1322537.46
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2015,67465.05
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2015,68254.19
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2015,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2015,1346.08
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2015,0
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2015,0
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2015,561324.45
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2015,46945.82
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2016,1268252.31
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2016,757617.82
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2016,19218.42
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2016,48.54
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2016,4958238.64
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2016,10369820.21
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2016,270730.85
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2016,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2016,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2016,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2016,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2016,718675.07
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2016,135218.66
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2016,2358.29
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2016,12.22
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2016,7748657.8
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2016,5524627.34
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2016,481515.67
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2016,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2016,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2016,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2016,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2016,165684.46
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2016,29133.35
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2016,182.1
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2016,2.17
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2016,2889773.18
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2016,1356309.04
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2016,144454.7
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2016,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2016,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2016,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2016,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2016,488414.84
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2016,683094.54
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2016,13728.22
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2016,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2016,85997.53
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2016,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2016,2159.43
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2016,1893833.41
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2016,8384.51
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2016,115935.88
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2016,62705.15
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2016,12437484.31
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2016,428919.15
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2016,1345703.82
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2016,67558.17
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2016,67714.77
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2016,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2016,1186.2
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2016,664.04
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2016,1445.47
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2016,547879.57
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2016,47338.58
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2017,1094269
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2017,812185.37
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2017,10625.71
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2017,76.66
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2017,4324533.42
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2017,9907746.48
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2017,250268.82
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2017,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2017,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2017,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2017,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2017,620084.7
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2017,144957.81
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2017,1303.88
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2017,19.3
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2017,6838458.93
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2017,6089448.28
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2017,430822.68
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2017,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2017,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2017,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2017,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2017,142955.29
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2017,31231.68
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2017,100.68
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2017,3.43
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2017,2505968.35
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2017,1440069.56
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2017,129246.8
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2017,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2017,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2017,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2017,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2017,493695.37
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2017,589804.24
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2017,14742
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2017,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2017,61049.99
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2017,0.01
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2017,2132.1
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2017,1898667.56
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2017,10934.28
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2017,89383.73
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2017,65960.75
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2017,12484566.31
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2017,432210.93
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2017,1362498.68
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2017,67681.57
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2017,67090.43
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2017,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2017,1030.4
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2017,1332.19
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2017,2930.25
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2017,532070.52
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2017,42847.19
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2018,1391243.07
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2018,722944.34
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2018,48120.13
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2018,95.61
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2018,4908552.59
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2018,10519436.78
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2018,315402.06
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2018,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2018,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2018,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2018,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2018,788369.72
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2018,129030.18
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2018,5904.82
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2018,24.07
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2018,7668443.02
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2018,6068129.88
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2018,559159.02
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2018,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2018,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2018,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2018,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2018,181751.98
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2018,27800.02
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2018,455.96
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2018,4.27
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2018,2822527.53
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2018,1587816.68
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2018,167747.71
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2018,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2018,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2018,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2018,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2018,514593.49
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2018,678642.48
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2018,15101.71
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2018,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2018,101763.86
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2018,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2018,1900.53
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2018,1908818.84
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2018,13968.06
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2018,139612.07
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2018,67647.48
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2018,12805237.63
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2018,440329.43
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2018,1417949.74
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2018,67838.03
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2018,66367.04
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2018,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2018,876.55
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2018,2623.98
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2018,4579.44
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2018,538990.59
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2018,45703.15
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2019,1409700.65
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2019,627736.15
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2019,0
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2019,106.09
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2019,4462329.58
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2019,10273055.81
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2019,285361.97
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2019,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2019,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2019,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2019,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2019,798828.99
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2019,112037.55
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2019,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2019,26.7
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2019,7020499.64
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2019,6651450.21
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2019,487922.81
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2019,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2019,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2019,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2019,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2019,184163.27
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2019,24138.89
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2019,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2019,4.74
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2019,2587768.26
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2019,1542988.81
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2019,146376.84
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2019,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2019,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2019,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2019,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2019,522863.94
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2019,645501.07
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2019,17484.05
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2019,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2019,98943.63
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2019,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2019,1683.86
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2019,1911906.96
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2019,13108.46
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2019,170557.72
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2019,65032.84
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2019,12997213.55
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2019,439349.82
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2019,1448966.85
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2019,67962.6
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2019,65551.6
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2019,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2019,696.83
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2019,3509.49
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2019,6246.62
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2019,484765.46
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2019,35223.08
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2020,1003726.23
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2020,407438.15
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2020,0
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2020,95.33
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2020,4219821.64
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2020,9770423.83
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2020,245060.6
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2020,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2020,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2020,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2020,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2020,568777.22
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2020,72719.04
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2020,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2020,24
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2020,5866112.46
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2020,6025296.42
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2020,401058.82
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2020,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2020,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2020,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2020,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2020,131126.78
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2020,15667.58
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2020,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2020,4.26
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2020,2130015.71
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2020,1399494.68
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2020,120317.65
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2020,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2020,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2020,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2020,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2020,486842.31
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2020,535884.29
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2020,13344.24
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2020,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2020,82256.44
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2020,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2020,1597.59
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2020,1960324.8
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2020,8550.91
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2020,74061.74
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2020,56501.83
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2020,9961821.7
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2020,365491.82
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2020,1352997.6
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2020,68087.3
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2020,64651.68
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2020,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2020,427.2
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2020,4400.46
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2020,7299.46
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2020,377994.77
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2020,24940.03
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2021,977218.37
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2021,482042.75
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2021,0
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2021,79.25
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2021,4801106.85
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2021,9684518.27
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2021,190067.35
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2021,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2021,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2021,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2021,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2021,553756.12
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2021,86034.37
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2021,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2021,19.95
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2021,6852433.12
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2021,6081653.79
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2021,349564.88
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2021,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2021,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2021,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2021,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2021,127663.79
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2021,18536.41
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2021,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2021,3.54
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2021,2460289.79
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2021,1370614.25
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2021,104869.47
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2021,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2021,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2021,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2021,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2021,485188.04
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2021,654198.85
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2021,15296.08
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2021,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2021,92622.71
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2021,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2021,1404.71
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2021,1927824.57
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2021,7550.5
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2021,63584.02
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2021,57280.18
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2021,12054820.41
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2021,399760.51
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2021,1462166.9
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2021,68212.11
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2021,63652.27
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2021,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2021,295.22
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2021,5296.92
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2021,9540.95
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2021,455592.29
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2021,25662.96
+GPC,Stationary Energy,Residential (small and large residential),Residential,#2 fuel oil,#2 fuel oil,gallon,2022,1096146.81
+GPC,Stationary Energy,Residential (small and large residential),Residential,#4 fuel oil,#4 fuel oil,gallon,2022,445893.7
+GPC,Stationary Energy,Residential (small and large residential),Residential,#6 fuel oil,#6 fuel oil,gallon,2022,0
+GPC,Stationary Energy,Residential (small and large residential),Residential,Biofuel,Biofuel,gallon,2022,82.32
+GPC,Stationary Energy,Residential (small and large residential),Residential,Electricity,Electricity,kWh,2022,4681763.73
+GPC,Stationary Energy,Residential (small and large residential),Residential,Natural gas,Natural gas,SCF,2022,9970279.93
+GPC,Stationary Energy,Residential (small and large residential),Residential,Steam,Steam,kg,2022,215187.49
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Electricity,Upstream Electricity,kWh,2022,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Steam,Upstream Steam,kg,2022,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Upstream Natural gas,Upstream Natural gas,SCF,2022,0
+CLCPA Addition,Stationary Energy,Residential (small and large residential),Residential,Downstream Natural gas,Downstream Natural gas,SCF,2022,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#2 fuel oil,#2 fuel oil,gallon,2022,621148.79
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#4 fuel oil,#4 fuel oil,gallon,2022,79582.54
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,#6 fuel oil,#6 fuel oil,gallon,2022,0
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Biofuel,Biofuel,gallon,2022,20.72
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Electricity,Electricity,kWh,2022,6955574.96
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Natural gas,Natural gas,SCF,2022,6385593.55
+GPC,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Steam,Steam,kg,2022,409431.58
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Electricity,Upstream Electricity,kWh,2022,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Steam,Upstream Steam,kg,2022,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Upstream Natural gas,Upstream Natural gas,SCF,2022,0
+CLCPA Addition,Stationary Energy,Commercial and Institutional (commercial. institutional. and streetlights),Commercial and Institutional,Downstream Natural gas,Downstream Natural gas,SCF,2022,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#2 fuel oil,#2 fuel oil,gallon,2022,143200.6
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#4 fuel oil,#4 fuel oil,gallon,2022,17146.34
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,#6 fuel oil,#6 fuel oil,gallon,2022,0
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Biofuel,Biofuel,gallon,2022,3.68
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Electricity,Electricity,kWh,2022,2486108.76
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Natural gas,Natural gas,SCF,2022,1438492.34
+GPC,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Steam,Steam,kg,2022,122829.47
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Electricity,Upstream Electricity,kWh,2022,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Steam,Upstream Steam,kg,2022,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Upstream Natural gas,Upstream Natural gas,SCF,2022,0
+CLCPA Addition,Stationary Energy,Manufacturing and Construction (Industrial),Manufacturing and Construction,Downstream Natural gas,Downstream Natural gas,SCF,2022,0
+GPC,Stationary Energy,Fugitive natural gas,Fugitive,CH4 - natural gas distribution,Fugitive CH4,GJ,2022,503805.87
+GPC,Transportation,Railways,Railways,Electricity - subway and commuter rail,Electricity,kWh,2022,689503.64
+GPC,Transportation,Railways,Railways,Diesel - commuter rail,Diesel,gallon,2022,16615.37
+CLCPA Addition,Transportation,Railways,Railways,Upstream Electricity,Upstream Electricity,kWh,2022,0
+GPC,Transportation,Marine Navigation,Marine Navigation,Diesel - marine navigation,Marine diesel,gallon,2022,93038.39
+GPC,Transportation,Marine Navigation,Marine Navigation,Biofuel,Biofuel,gallon,2022,0
+GPC,Transportation,Aviation,Aviation,Jet fuel - aviation,Jet fuel,gallon,2022,1422.13
+GPC,Waste,Landfills,Landfills,Exported solid waste - landfills,CH4,MT,2022,1912703.71
+GPC,Waste,Biological treatment,Biological treatment,CH4 and N2O - composting,CH4 and N2O from composting,MT,2022,8663.46
+GPC,Waste,Wastewater treatment,Wastewater treatment,CH4 - wastewater treatment plants,CH4,MT,2022,89393.3
+GPC,Waste,Wastewater treatment,Wastewater treatment,N2O - wastewater treatment plants,N2O,MT,2022,58363.1
+GPC,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2022,12652887.64
+GPC,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2022,423766.3
+GPC,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2022,1516471.88
+GPC,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2022,68337.04
+GPC,Transportation,On-Road,On-Road,School Bus,School Bus,VMT,2022,63430.21
+CLCPA Addition,Transportation,On-Road,On-Road,Passenger cars,Passenger cars,VMT,2022,0
+CLCPA Addition,Transportation,On-Road,On-Road,Medium duty trucks,Medium duty trucks,VMT,2022,125.15
+CLCPA Addition,Transportation,On-Road,On-Road,SWCV,SWCV,VMT,2022,6198.9
+CLCPA Addition,Transportation,On-Road,On-Road,Heavy duty trucks,Heavy duty trucks,VMT,2022,11480.34
+GPC,Transportation,On-Road,On-Road,Bus,Bus,VMT,2022,486650.49
+CLCPA Addition,Transportation,On-Road,On-Road,Bus,Bus,VMT,2022,33744.97
