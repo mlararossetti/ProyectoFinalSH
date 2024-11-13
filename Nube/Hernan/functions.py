@@ -1,4 +1,5 @@
 import logging
+import os
 import time
 import urllib.request
 import csv
@@ -132,8 +133,9 @@ def enviar_correo(start_date):
     )
 
     try:
-        # Reemplaza 'YOUR_SENDGRID_API_KEY' con tu clave de SendGrid
-        sg = SendGridAPIClient('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')
+        # Cargar la API key desde la variable de entorno
+        sendgrid_api_key = os.getenv("SENDGRID_API_KEY")
+        sg = SendGridAPIClient(sendgrid_api_key)
         response = sg.send(message)
         logging.info(f"Correo enviado: {response.status_code}")
     except Exception as e:
