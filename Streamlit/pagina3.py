@@ -7,7 +7,7 @@ st.subheader("Introducción del Proyecto")
 
 st.markdown(
     """
-Este proyecto tiene como objetivo proporcionar una visión integral del mercado de taxis en Nueva York, explorando aspectos claves como la evolución de la flota, la geolocalización de los viajes, el impacto ambiental  asociado a esta industria, como así también un y un detalle financiero sobre la propuesta de negocio. Para ello, se desarrollaron tres dashboards en Power BI que permiten analizar y comprender las dinámicas y tendencias del mercado de taxis entre 2021 y 2024. Estas visualizaciones interactivas facilitan la toma de decisiones estratégicas para quienes buscan insights profundos sobre el funcionamiento y el impacto de esta industria en la ciudad.
+Este proyecto tiene como objetivo proporcionar una visión integral del mercado de taxis en Nueva York, explorando aspectos claves como la evolución de la flota, la geolocalización de los viajes, el impacto ambiental  asociado a esta industria, como así también un detalle financiero sobre la propuesta de negocio. Para ello, se desarrollaron cuatro dashboards en Power BI que permiten analizar y comprender las dinámicas y tendencias del mercado de taxis entre 2021 y 2024. Estas visualizaciones interactivas facilitan la toma de decisiones estratégicas para quienes buscan insights profundos sobre el funcionamiento y el impacto de esta industria en la ciudad.
    """
 )
 
@@ -20,8 +20,7 @@ Asimismo, en el sector derecho del dashboard, se muestra un apartado interactivo
 )
 
 # URL del dashboard de Power BI
-power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiZmZmYzQ3NDgtOTI3MC00MDg0LWI2NDUtOTAxYWVlMThjZDU5IiwidCI6IjkyZTI3Mzg0LWI2YjAtNGIxMy05ZWU4LTFkOGY2ZGI5YzdmNSJ9"
-
+power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiYzhjNGUzMDItMTVkZS00MjllLWFjMWUtYjc1YThjMTU5N2Y5IiwidCI6IjkyZTI3Mzg0LWI2YjAtNGIxMy05ZWU4LTFkOGY2ZGI5YzdmNSJ9"
 # Inserta el iframe como HTML
 iframe_html = f"""
 <iframe

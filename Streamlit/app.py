@@ -104,7 +104,7 @@ pagina5 = st.Page(
 
 pagina6 = st.Page(
     page = 'pagina6.py',
-    title ='Análisis Financiero',
+    title ='Análisis Financiero Vehículos Eléctricos',
     icon = '📈'
 )
 
