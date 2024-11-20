@@ -458,8 +458,8 @@ with col5:
     st.markdown(  
           
             
-            """**Proporción de Mercado (Viajes)**: Este indicador mide la participación de mercado según la cantidad de viajes realizados.
-                **Objetivo del KPI**:  
+            """**Proporción de Mercado (Viajes)**: Este indicador mide la participación de mercado según la cantidad de viajes realizados.  
+            **Objetivo del KPI**:  
                 Se quiere lograr una participación del 1% en la cantidad de viajes realizados mensualmente en el mercado global de transporte. 
                 Este KPI permitirá medir la competitividad de la empresa en términos de actividad operativa, 
                 evaluando de forma continua el impacto de nuestras estrategias de crecimiento en el volumen de viajes realizados y en nuestra expansión dentro del mercado.
@@ -477,7 +477,7 @@ with col8:
                 
                 """**Ahorro de CO2**: Esta proporción se calcula comparando la cantidad de carbono emitido por milla en el mes 
                 usando el mix de vehículos REAL (incluyendo convencionales y eléctricos) 
-                con la cantidad de carbono que se emitiría si toda la flota fuera de vehículos convencionales..
+                con la cantidad de carbono que se emitiría si toda la flota fuera de vehículos convencionales.  
                 **Objetivo del KPI**:  
                 El objetivo es lograr una reducción del 30% en las emisiones de carbono en comparación con una flota totalmente convencional.
                 """)
