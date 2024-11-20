@@ -1,0 +1,13 @@
+streamlit == 1.40.0
+pandas
+numpy
+matplotlib
+scikit-learn
+ipywidgets
+jupyter
+google-cloud-bigquery
+joblib
+plotly
+prophet
+joblib
+numpy_financial
