@@ -91,13 +91,13 @@ columns = filtered_df['column'].unique()
 selected_column = st.selectbox("Seleccione la variable a predecir:", options=columns)
 
 # Crear un selector para el número de períodos
-selected_periods = st.slider("Seleccione el número de períodos:", min_value=1, max_value=64, step=1)
+selected_periods = st.slider("Seleccione el número de períodos (meses):", min_value=1, max_value=64, step=1)
 
 # Mostrar los resultados seleccionados
 st.write("### Selección")
 st.write(f"**Industria seleccionada:** {selected_industry}")
 st.write(f"**Variable seleccionada:** {selected_column}")
-st.write(f"**Períodos seleccionados:** {selected_periods}")
+st.write(f"**Períodos (Meses) seleccionados:** {selected_periods}")
 
 
 
