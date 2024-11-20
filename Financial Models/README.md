@@ -96,7 +96,7 @@ En terminos de impacto promedio actual (Incremental):
 -  El ROI (Retorno de Inversión Anual) también disminuye en promedio un 1.19%.
   
 En terminos de impacto promedio (Comparación VE vs. Flota Mixta)
--  Incluir un vehículo convencional reduce el VAN en un 4.93%.
+-  Incluir un vehículo convencional aumenta el VAN en un 4.93%.
 - La inclusión de un vehículo convencional reduce la TIR en un 146.48%, indicando una disminución significativa en la rentabilidad relativa.
 -   El ROI anual disminuye en un 164.44% al combinar vehículos convencionales, reflejando una reducción sustancial en la eficiencia financiera.
 -   El tiempo de recuperación de la inversión aumenta en un 25% al incluir vehículos convencionales, demorando más el retorno del capital.
