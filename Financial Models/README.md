@@ -46,7 +46,7 @@ La piedra angular de este estudio es el flujo de caja, el cual proporciona la in
 ### ROI (Return On Investment)
 
 <p align="center">
-<img src="./Images/ROI.png">
+<img src="main/Images/ROI.png">
 </p>
 
 Es una métrica financiera utilizada para evaluar la rentabilidad de una inversión. El ROI muestra el rendimiento de una inversión en términos porcentuales. Es útil para comparar diferentes inversiones, evaluar su viabilidad económica y tomar decisiones informadas sobre dónde asignar recursos. Además, es de gran utilidad para inversores o gerentes a la hora de decidir si se debe proceder con un proyecto, basándose en su capacidad para generar beneficios sobre el capital invertido.
@@ -54,7 +54,7 @@ Es una métrica financiera utilizada para evaluar la rentabilidad de una inversi
 ### IR (Índice de Rentabilidad)
 
 <p align="center">
-<img src="./Images/IR.png"  style="max-width: 100%; height: auto;">
+<img src="main/Images/IR.png"  style="max-width: 100%; height: auto;">
 </p>
 
 Es un indicador financiero que mide la rentabilidad de una inversión, similar al ROI, pero se calcula de manera diferente. Se usa para evaluar la relación entre los beneficios obtenidos y el costo de la inversión, considerando también el valor del dinero en el tiempo. El IR indica cuánto valor genera una inversión por cada dólar invertido. Si el valor del IR es mayor a 1, la inversión es rentable; si es menor a 1, la inversión no cubre su costo.
