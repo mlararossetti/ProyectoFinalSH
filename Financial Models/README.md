@@ -93,6 +93,7 @@ Los resultados de este análisis se reflejan en las siguientes conclusiones:
 -   La inclusión de un vehículo convencional reduce la TIR en un 146.48%, indicando una disminución significativa en la rentabilidad relativa.
 -   El ROI anual disminuye en un 164.44% al combinar vehículos convencionales, reflejando una reducción sustancial en la eficiencia financiera.
 -   El tiempo de recuperación de la inversión aumenta en un 25% al incluir vehículos convencionales, demorando más el retorno del capital.
+-   En promedio, la inclusión de un auto convencional reduce las métricas financieras en un 72.71%. Esto indica que los vehículos convencionales tienen un impacto considerablemente negativo en el desempeño financiero de la flota.
 - Los modelos de autos que representan la mejor rentabilidad son «Mii Electric», «EQ forfour», «EQ fortwo coupe», «Me-Up!», «CITIGOe iV».
 - Desde un punto de vista integral, involucrando la sustentabilidad, los modelos con mejor desempeño monetario y ambiental son «Mii Electric», «e-Up!» y «CITIGOe iV».
 
