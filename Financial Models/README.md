@@ -89,6 +89,10 @@ Los resultados de este análisis se reflejan en las siguientes conclusiones:
 
 - A pesar del alto precio de los vehículos eléctricos, estos son más rentables que un auto convencional a gasolina.
 - La eficiencia (kWh/milla) es el aspecto que determina el desempeño rentable de los autos eléctricos, ya que permite que sus costos operativos sean menores en comparación con los de un auto convencional, además de los incentivos por parte del gobierno que se traducen en descuentos y exenciones de costos de trámites legales.
+-  Incluir un vehículo convencional reduce el VAN en un 4.93%.
+-   La inclusión de un vehículo convencional reduce la TIR en un 146.48%, indicando una disminución significativa en la rentabilidad relativa.
+-   El ROI anual disminuye en un 164.44% al combinar vehículos convencionales, reflejando una reducción sustancial en la eficiencia financiera.
+-   El tiempo de recuperación de la inversión aumenta en un 25% al incluir vehículos convencionales, demorando más el retorno del capital.
 - Los modelos de autos que representan la mejor rentabilidad son «Mii Electric», «EQ forfour», «EQ fortwo coupe», «Me-Up!», «CITIGOe iV».
 - Desde un punto de vista integral, involucrando la sustentabilidad, los modelos con mejor desempeño monetario y ambiental son «Mii Electric», «e-Up!» y «CITIGOe iV».
 
