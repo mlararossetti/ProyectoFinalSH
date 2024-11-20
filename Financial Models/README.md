@@ -89,8 +89,13 @@ Los resultados de este análisis se reflejan en las siguientes conclusiones:
 
 - A pesar del alto precio de los vehículos eléctricos, estos son más rentables que un auto convencional a gasolina.
 - La eficiencia (kWh/milla) es el aspecto que determina el desempeño rentable de los autos eléctricos, ya que permite que sus costos operativos sean menores en comparación con los de un auto convencional, además de los incentivos por parte del gobierno que se traducen en descuentos y exenciones de costos de trámites legales.
+En terminos de impacto promedio actual (Incremental):
+-  El VAN (Valor Actual Neto) tiene un impacto positivo promedio de USD 1291.40 al incluir un vehículo convencional adicional.
+-  La TIR (Tasa Interna de Retorno) disminuye en promedio un 2.07% por cada vehículo convencional adicional.
+-  El ROI (Retorno de Inversión Anual) también disminuye en promedio un 1.19%.
+En terminos de impacto promedio (Comparación VE vs. Flota Mixta)
 -  Incluir un vehículo convencional reduce el VAN en un 4.93%.
--   La inclusión de un vehículo convencional reduce la TIR en un 146.48%, indicando una disminución significativa en la rentabilidad relativa.
+- La inclusión de un vehículo convencional reduce la TIR en un 146.48%, indicando una disminución significativa en la rentabilidad relativa.
 -   El ROI anual disminuye en un 164.44% al combinar vehículos convencionales, reflejando una reducción sustancial en la eficiencia financiera.
 -   El tiempo de recuperación de la inversión aumenta en un 25% al incluir vehículos convencionales, demorando más el retorno del capital.
 -   En promedio, la inclusión de un auto convencional reduce las métricas financieras en un 72.71%. Esto indica que los vehículos convencionales tienen un impacto considerablemente negativo en el desempeño financiero de la flota.
