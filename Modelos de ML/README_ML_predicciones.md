@@ -1,9 +1,9 @@
 # Proyecto de Machine Learning: Predicción de Series de Tiempo
 
 **Dataset de Entrenamiento**
-Utilizando un datset depurado de Taxis de Nueva York mensuales, construiremos un modelo de serie tiempo para la predicción de ciertas variables del negocio.
 
-Utilizando un datset depurado de Taxis de Nueva York mensuales, se construyó un modelo de serie tiempo para la predicción de ciertas variables del negocio.
+Utilizando un dataset depurado de Taxis de Nueva York mensuales, se construyó un modelo de serie tiempo para la predicción de ciertas variables del negocio.
+
 Este proyecto tiene como objetivo realizar una proyección del mercado para el análisis de la inversión en la industria de taxis usando modelos de series de tiempo. Se utilizó **Prophet** para construir un modelo que permita proyectar valores futuros con base en datos históricos.
 
 ## Objetivos
@@ -77,7 +77,7 @@ En esta etapa, para ejecutar el análisis y realizar predicciones, el usuario po
 El modelo se encuentra configurado para predicciones automáticas. Los usuarios pueden seleccionar:
 
 1. La columna objetivo a predecir (e.g., total_trips, avg_trip_distance).
-2. El horizonte de predicción deseado (e.g., meses o años).
+2. El horizonte de predicción deseado (e.g., cantidad de meses).
 3. Opcionalmente, ajustar hiperparámetros para mejorar el rendimiento del modelo.
    Las predicciones se guardan en un archivo .csv y se visualizan mediante gráficas interactivas generadas en los notebooks.
 
