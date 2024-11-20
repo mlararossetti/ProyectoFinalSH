@@ -236,6 +236,31 @@ def calcular_metricas_flota(tasa_descuento, cantidad_ve, cantidad_conv):
     return df_resultados
 
 
+class AutoElectrico(Auto): #Descuento de 5% al 10% en licencia ; Excencion del impuesto de venta
+    def __init__(self,tasa_descuento, precio, eficiencia, iva=0, licencia_1=495,licencia_2=100, placa = 300,
+                 seguro=1500, inspeccion = 100, mantenimiento=0.03, wallbox=600, 
+                 recambio_bateria=5000, #mantenimiento = USD x Milla
+                 recorrido_anual=promedio_millas, ingresos_anuales=promedio_ingresos): 
+        super().__init__(tasa_descuento, precio, iva, licencia_1, licencia_2, placa, inspeccion, seguro, recorrido_anual, 
+                         ingresos_anuales)
+        self.eficiencia = eficiencia
+        self.mantenimiento = mantenimiento
+        self.wallbox = wallbox
+        self.recambio_bateria = recambio_bateria
+        self.tasa_descuento = tasa_descuento
+        self.licencia_1=licencia_1
+    
+    def inversion_inicial(self):
+        return self.precio + self.licencia_1 + self.wallbox
+    
+    def costos_operativos(self):
+        precio_electricidad_kWh = 0.13 #USD x kHw
+        costo_electricidad_anual = (self.recorrido_anual * self.eficiencia) * precio_electricidad_kWh
+        costo_mantenimiento = self.mantenimiento * self.recorrido_anual
+        costo_anual_bateria = self.recambio_bateria / 12.5
+        costo_anual_salario = 2342 * 22 # Promedio de horas de menejo de un conductor por año * Precio promedio de la hora de un chofer de taxis en NY para VE.
+        return costo_electricidad_anual + costo_mantenimiento + costo_anual_bateria + self.seguro + self.licencia_2 + self.placa + self.inspeccion + costo_anual_salario
+
 # Primer Parámetro : Cantidad VE; Segundo Parámetro : Cantidad Autos Convencional
 # Crear un selector para la cantidad de autos
 cantidad_ve = st.slider("Seleccione cantidad de autos eléctricos:",min_value=0, max_value=1500, step=1)
