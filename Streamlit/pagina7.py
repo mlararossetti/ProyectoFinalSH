@@ -421,19 +421,27 @@ st.write("Este tablero muestra los KPIs calculados en función de los objetivos 
 # KPI: ROI Anual
 col1, col2 = st.columns([1, 1])
 with col1:
-    st.markdown("""  
-                  
-                  
-                **ROI Anual**: Este indicador mide el rendimiento de la inversión anual basado en los vehículos eléctricos y convencionales seleccionados.  
-                **Objetivo del KPI**  
-                Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad mensual.  
-                Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización""")
+    st.markdown(
+        """
+        <div style="display: flex; align-items: center; justify-content: center; height: 100%; text-align: center;">
+            <p>
+                <strong>ROI Anual</strong>: Este indicador mide el rendimiento de la inversión anual basado en los vehículos eléctricos y convencionales seleccionados.<br><br>
+                <strong>Objetivo del KPI</strong><br>
+                Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad mensual.<br><br>
+                Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización.
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 with col2:
     st.plotly_chart(kpi_roi_anual(), use_container_width=True)
 
 
+
 # KPI: Proporción por cantidad de autos
-col3, col4 = st.columns([1, 1])
+col3, col4 = st.columns([1, 1], vertical_alignment = 'center')
 with col3:
     st.plotly_chart(kpi_proporcion_autos(), use_container_width=True)    
 with col4:
