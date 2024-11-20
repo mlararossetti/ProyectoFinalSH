@@ -415,35 +415,39 @@ def kpi_ahorro_CO2():
 
 # Interfaz de Streamlit con columnas
 st.subheader("Indicadores Clave de Desempeño (KPIs)")
-st.write("Este tablero muestra los KPIs calculados en función de los objetivos y la flota elegida de vehículos eléctricos y convencionales.")
+st.write("Este tablero muestra los KPIs calculados en función de los objetivos propuestos y la flota elegida de vehículos eléctricos y convencionales.")
 
 # KPI: ROI Anual
 col1, col2 = st.columns([1, 1.5])
 with col1:
-    st.plotly_chart(kpi_roi_anual(), use_container_width=True)
+    st.markdown(""" **ROI Anual**: Este indicador mide el rendimiento de la inversión anual basado en los vehículos eléctricos y convencionales seleccionados.  **Objetivo del KPI**  
+                Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad mensual.  
+                Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización""")
 with col2:
-    st.markdown("**ROI Anual**: Este indicador mide el rendimiento de la inversión anual basado en los vehículos eléctricos y convencionales seleccionados.")
+    st.plotly_chart(kpi_roi_anual(), use_container_width=True)
+
 
 # KPI: Proporción por cantidad de autos
 col3, col4 = st.columns([1, 1.5])
 with col3:
-    st.plotly_chart(kpi_proporcion_autos(), use_container_width=True)
-with col4:
     st.markdown("**Proporción de Mercado (Autos)**: Este KPI refleja el porcentaje del mercado en función de la cantidad de autos disponibles.")
+with col4:
+    st.plotly_chart(kpi_proporcion_autos(), use_container_width=True)
+
 
 # KPI: Proporción por cantidad de viajes
 col5, col6 = st.columns([1, 1.5])
 with col5:
-    st.plotly_chart(kpi_proporcion_viajes(), use_container_width=True)
-with col6:
     st.markdown("**Proporción de Mercado (Viajes)**: Este indicador mide la participación de mercado según la cantidad de viajes realizados.")
+with col6:
+    st.plotly_chart(kpi_proporcion_viajes(), use_container_width=True)
 
 # KPI: Ahorro de CO2
 col7, col8 = st.columns([1, 1.5])
 with col7:
-    st.plotly_chart(kpi_ahorro_CO2(), use_container_width=True)
-with col8:
     st.markdown("**Ahorro de CO2**: Este KPI evalúa la reducción en las emisiones de CO2 al optar por flotas de vehículos eléctricos.")
+with col8:
+    st.plotly_chart(kpi_ahorro_CO2(), use_container_width=True)
 
 # Interfaz de Streamlit
 #st.subheader("Indicadores Clave de Desempeño (KPIs)")
