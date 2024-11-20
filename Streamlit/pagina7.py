@@ -444,7 +444,7 @@ def create_kpi_dashboard():
     return fig
 
 # Interfaz de Streamlit
-st.title("Dashboard de Indicadores Clave de Desempeño (KPIs)")
+st.subtitle("Indicadores Clave de Desempeño (KPIs)")
 st.write("Este tablero muestra los KPIs calculados en funcion de los objetivos.")
 
 # Generar y mostrar el gráfico
