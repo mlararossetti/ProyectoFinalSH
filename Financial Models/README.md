@@ -46,7 +46,7 @@ La piedra angular de este estudio es el flujo de caja, el cual proporciona la in
 ### ROI (Return On Investment)
 
 <p align="center">
-![ROI](C:\Users\Cristian\Desktop\Proyecto\ProyectoFinalSH\Images\ROI.png)
+![ROI](Images\ROI.png)
 </p>
 
 Es una métrica financiera utilizada para evaluar la rentabilidad de una inversión. El ROI muestra el rendimiento de una inversión en términos porcentuales. Es útil para comparar diferentes inversiones, evaluar su viabilidad económica y tomar decisiones informadas sobre dónde asignar recursos. Además, es de gran utilidad para inversores o gerentes a la hora de decidir si se debe proceder con un proyecto, basándose en su capacidad para generar beneficios sobre el capital invertido.
@@ -54,7 +54,7 @@ Es una métrica financiera utilizada para evaluar la rentabilidad de una inversi
 ### IR (Índice de Rentabilidad)
 
 <p align="center">
-![IR](C:\Users\Cristian\Desktop\Proyecto\ProyectoFinalSH\Images\IR.png)
+![IR](Images\IR.png)
 </p>
 
 Es un indicador financiero que mide la rentabilidad de una inversión, similar al ROI, pero se calcula de manera diferente. Se usa para evaluar la relación entre los beneficios obtenidos y el costo de la inversión, considerando también el valor del dinero en el tiempo. El IR indica cuánto valor genera una inversión por cada dólar invertido. Si el valor del IR es mayor a 1, la inversión es rentable; si es menor a 1, la inversión no cubre su costo.
@@ -62,7 +62,7 @@ Es un indicador financiero que mide la rentabilidad de una inversión, similar a
 ### VNA (Valor Neto Actual)
 
 <p align="center">
-![VNA](C:\Users\Cristian\Desktop\Proyecto\ProyectoFinalSH\Images\VNA.png)
+![VNA](Images\VNA.png)
 </p>
 
 Es una herramienta financiera utilizada para evaluar la rentabilidad de una inversión considerando el valor del dinero en el tiempo. El VNA calcula la diferencia entre el valor actual de los ingresos futuros esperados y la inversión inicial. Se utiliza para determinar si un proyecto o inversión será rentable a lo largo del tiempo. Si el VNA es positivo, el proyecto es rentable, ya que indica que los ingresos futuros superan el costo de la inversión. Si el VNA es negativo, significa que el proyecto no cubre su costo y no generará valor.
@@ -70,7 +70,7 @@ Es una herramienta financiera utilizada para evaluar la rentabilidad de una inve
 ### TIR (Tasa Interna de Retorno)
 
 <p align="center">
-![TIR](C:\Users\Cristian\Desktop\Proyecto\ProyectoFinalSH\Images\TIR.png)
+![TIR](Images\TIR.png)
 </p>
 
 Es un indicador financiero que mide la rentabilidad de una inversión o proyecto. Representa la tasa de descuento que iguala el valor presente de los flujos de caja futuros de un proyecto con la inversión inicial. En otras palabras, la TIR es la tasa de interés a la cual el Valor Neto Actual (VNA) de los flujos de caja es igual a cero. Es utilizada para evaluar si un proyecto o inversión es viable económicamente.
@@ -78,7 +78,7 @@ Es un indicador financiero que mide la rentabilidad de una inversión o proyecto
 ### Payback Period (Período de Recuperación)
 
 <p align="center">
-![Payback](C:\Users\Cristian\Desktop\Proyecto\ProyectoFinalSH\Images\Payback.png)
+![Payback](Images\Payback.png)
 </p>
 
 Es un indicador financiero que mide el tiempo que se tarda en recuperar la inversión inicial de un proyecto a través de sus flujos de caja futuros. En otras palabras, indica cuántos años se necesitarán para que la suma de los flujos de caja generados por el proyecto sea igual a la inversión inicial. El Payback Period es más útil para evaluar proyectos que requieren un retorno rápido de la inversión, lo que lo hace atractivo en contextos donde se priorizan los proyectos con menor riesgo a largo plazo.
