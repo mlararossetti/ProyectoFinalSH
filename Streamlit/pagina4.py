@@ -46,7 +46,7 @@ st.markdown("[Ir al Dashboard N°3](./pagina5)")
 
 st.markdown(
     """
-    #### Dashboard 4: Análisis Financiero
+    #### Dashboard 4: Análisis Financiero Vehículos Eléctricos
    """
 )
 # Crear un enlace a otra página
