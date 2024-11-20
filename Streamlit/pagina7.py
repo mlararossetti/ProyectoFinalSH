@@ -305,150 +305,153 @@ ahorro_CO2 = (1 - CO2_real/CO2_convencional) * 100
 
 best_roi = resultados_flota['ROI Anual (%)'].iloc[0]
 
-
-# Crear el gráfico con subplots
-def create_kpi_dashboard():
-    fig = make_subplots(
-        rows=2, cols=2, 
-        specs=[[{"type": "indicator"}, {"type": "indicator"}],
-               [{"type": "indicator"}, {"type": "indicator"}]],
-        horizontal_spacing=0.05, 
-        vertical_spacing=0.2
-    )
-
-    # KPI: ROI Anual
+# Crear gráfico individual para KPI: ROI Anual
+def kpi_roi_anual():
     valor_actual = best_roi
     rango_max = 30
     threshold_value = 8
 
-    fig.add_trace(
-        go.Indicator(
-            mode="gauge+number",
-            value=valor_actual,
-            gauge={
-                'axis': {'range': [0, rango_max]},
-                'bar': {'color': "yellow"},
-                'steps': [
-                    {'range': [0, valor_actual], 'color': "lightblue"},
-                    {'range': [valor_actual, rango_max], 'color': "white"}
-                ],
-                'threshold': {
-                    'line': {'color': "darkblue", 'width': 4},
-                    'thickness': 0.75,
-                    'value': threshold_value
-                }
-            },
-            number={'suffix': "%"},
-            title={'text': "KPI: ROI Anual"}
-        ),
-        row=1, col=1
-    )
+    fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=valor_actual,
+        gauge={
+            'axis': {'range': [0, rango_max]},
+            'bar': {'color': "yellow"},
+            'steps': [
+                {'range': [0, valor_actual], 'color': "lightblue"},
+                {'range': [valor_actual, rango_max], 'color': "white"}
+            ],
+            'threshold': {
+                'line': {'color': "darkblue", 'width': 4},
+                'thickness': 0.75,
+                'value': threshold_value
+            }
+        },
+        number={'suffix': "%"},
+        title={'text': "KPI: ROI Anual"}
+    ))
+    return fig
 
-    # KPI: Proporción por cantidad de autos
+# Crear gráfico individual para KPI: Proporción por cantidad de autos
+def kpi_proporcion_autos():
     valor_actual = (cantidad_conv + cantidad_ve) / unique_vehicles * 100
     rango_max = valor_actual * 2
     threshold_value = 1
 
-    fig.add_trace(
-        go.Indicator(
-            mode="gauge+number",
-            value=valor_actual,
-            gauge={
-                'axis': {'range': [0, rango_max]},
-                'bar': {'color': "purple"},
-                'steps': [
-                    {'range': [0, valor_actual], 'color': "lightblue"},
-                    {'range': [valor_actual, rango_max], 'color': "white"}
-                ],
-                'threshold': {
-                    'line': {'color': "darkblue", 'width': 4},
-                    'thickness': 0.75,
-                    'value': threshold_value
-                }
-            },
-            number={'suffix': "%"},
-            title={'text': "Proporción de Mercado (Cantidad de Autos)"}
-        ),
-        row=1, col=2
-    )
+    fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=valor_actual,
+        gauge={
+            'axis': {'range': [0, rango_max]},
+            'bar': {'color': "purple"},
+            'steps': [
+                {'range': [0, valor_actual], 'color': "lightblue"},
+                {'range': [valor_actual, rango_max], 'color': "white"}
+            ],
+            'threshold': {
+                'line': {'color': "darkblue", 'width': 4},
+                'thickness': 0.75,
+                'value': threshold_value
+            }
+        },
+        number={'suffix': "%"},
+        title={'text': "Proporción de Mercado (Cantidad de Autos)"}
+    ))
+    return fig
 
-    # KPI: Proporción por cantidad de viajes
+# Crear gráfico individual para KPI: Proporción por cantidad de viajes
+def kpi_proporcion_viajes():
     valor_actual = (cantidad_conv + cantidad_ve) * avg_trips_per_vehicle / total_trips * 100
     rango_max = valor_actual * 2
     threshold_value = 1
 
-    fig.add_trace(
-        go.Indicator(
-            mode="gauge+number",
-            value=valor_actual,
-            gauge={
-                'axis': {'range': [0, rango_max]},
-                'bar': {'color': "pink"},
-                'steps': [
-                    {'range': [0, valor_actual], 'color': "lightblue"},
-                    {'range': [valor_actual, rango_max], 'color': "white"}
-                ],
-                'threshold': {
-                    'line': {'color': "darkblue", 'width': 4},
-                    'thickness': 0.75,
-                    'value': threshold_value
-                }
-            },
-            number={'suffix': "%"},
-            title={'text': "Proporción de Mercado (Cantidad de Viajes)"}
-        ),
-        row=2, col=1
-    )
+    fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=valor_actual,
+        gauge={
+            'axis': {'range': [0, rango_max]},
+            'bar': {'color': "pink"},
+            'steps': [
+                {'range': [0, valor_actual], 'color': "lightblue"},
+                {'range': [valor_actual, rango_max], 'color': "white"}
+            ],
+            'threshold': {
+                'line': {'color': "darkblue", 'width': 4},
+                'thickness': 0.75,
+                'value': threshold_value
+            }
+        },
+        number={'suffix': "%"},
+        title={'text': "Proporción de Mercado (Cantidad de Viajes)"}
+    ))
+    return fig
 
-    # KPI: Ahorro de CO2
+# Crear gráfico individual para KPI: Ahorro de CO2
+def kpi_ahorro_CO2():
     valor_actual = ahorro_CO2
     rango_max = 100
     threshold_value = 30
 
-    fig.add_trace(
-        go.Indicator(
-            mode="gauge+number",
-            value=valor_actual,
-            gauge={
-                'axis': {'range': [0, rango_max]},
-                'bar': {'color': "blue"},
-                'steps': [
-                    {'range': [0, valor_actual], 'color': "lightblue"},
-                    {'range': [valor_actual, rango_max], 'color': "white"}
-                ],
-                'threshold': {
-                    'line': {'color': "darkblue", 'width': 4},
-                    'thickness': 0.75,
-                    'value': threshold_value
-                }
-            },
-            number={'suffix': "%"},
-            title={'text': "Ahorro de CO2 respecto de flota convencional"}
-        ),
-        row=2, col=2
-    )
-
-    # Actualizar el diseño
-    fig.update_layout(
-        height=1000,
-        width=1000,
-        title={
-            'text': "Indicadores Clave de Desempeño (KPIs)",
-            'x': 0.5,
-            'xanchor': 'center',
-            'yanchor': 'top',
-            'font': {
-                'size': 20,
-                'color': 'black'
+    fig = go.Figure(go.Indicator(
+        mode="gauge+number",
+        value=valor_actual,
+        gauge={
+            'axis': {'range': [0, rango_max]},
+            'bar': {'color': "blue"},
+            'steps': [
+                {'range': [0, valor_actual], 'color': "lightblue"},
+                {'range': [valor_actual, rango_max], 'color': "white"}
+            ],
+            'threshold': {
+                'line': {'color': "darkblue", 'width': 4},
+                'thickness': 0.75,
+                'value': threshold_value
             }
-        }
-    )
+        },
+        number={'suffix': "%"},
+        title={'text': "Ahorro de CO2 respecto de flota convencional"}
+    ))
     return fig
 
-# Interfaz de Streamlit
+# Interfaz de Streamlit con columnas
 st.subheader("Indicadores Clave de Desempeño (KPIs)")
-st.write("Este tablero muestra los KPIs calculados en funcion de los objetivos y la flota elegida de vehículos eléctricos y convencionales.")
+st.write("Este tablero muestra los KPIs calculados en función de los objetivos y la flota elegida de vehículos eléctricos y convencionales.")
+
+# KPI: ROI Anual
+col1, col2 = st.columns([1, 1.5])
+with col1:
+    st.plotly_chart(kpi_roi_anual(), use_container_width=True)
+with col2:
+    st.markdown("**ROI Anual**: Este indicador mide el rendimiento de la inversión anual basado en los vehículos eléctricos y convencionales seleccionados.")
+
+# KPI: Proporción por cantidad de autos
+col3, col4 = st.columns([1, 1.5])
+with col3:
+    st.plotly_chart(kpi_proporcion_autos(), use_container_width=True)
+with col4:
+    st.markdown("**Proporción de Mercado (Autos)**: Este KPI refleja el porcentaje del mercado en función de la cantidad de autos disponibles.")
+
+# KPI: Proporción por cantidad de viajes
+col5, col6 = st.columns([1, 1.5])
+with col5:
+    st.plotly_chart(kpi_proporcion_viajes(), use_container_width=True)
+with col6:
+    st.markdown("**Proporción de Mercado (Viajes)**: Este indicador mide la participación de mercado según la cantidad de viajes realizados.")
+
+# KPI: Ahorro de CO2
+col7, col8 = st.columns([1, 1.5])
+with col7:
+    st.plotly_chart(kpi_ahorro_CO2(), use_container_width=True)
+with col8:
+    st.markdown("**Ahorro de CO2**: Este KPI evalúa la reducción en las emisiones de CO2 al optar por flotas de vehículos eléctricos.")
+
+# Interfaz de Streamlit
+#st.subheader("Indicadores Clave de Desempeño (KPIs)")
+#st.write("Este tablero muestra los KPIs calculados en funcion de los objetivos y la flota elegida de vehículos eléctricos y convencionales.")
+
+
+
 
 # Generar y mostrar el gráfico
-fig = create_kpi_dashboard()
-st.plotly_chart(fig, use_container_width=True)
+#fig = create_kpi_dashboard()
+#st.plotly_chart(fig, use_container_width=True)
