@@ -264,10 +264,11 @@ def calcular_metricas_flota(tasa_descuento, cantidad_ve, cantidad_conv):
 
     return df_resultados
 
-tasa_descuento = 0.10 # Primer Parámetro : Cantidad VE; Segundo Parámetro : Cantidad Autos Convencional
+# Primer Parámetro : Cantidad VE; Segundo Parámetro : Cantidad Autos Convencional
 # Crear un selector para la cantidad de autos
 cantidad_ve = st.slider("Seleccione cantidad de autos eléctricos:",min_value=0, max_value=1500, step=1)
 cantidad_conv = st.slider("Seleccione cantidad de autos convencionales:",min_value=0, max_value=1500, step=1)
+tasa_descuento = st.slider('Seleccione la tasa de descuento', min_value=0.05, max_value = 0.15, step = 0.01) 
 resultados_flota = calcular_metricas_flota(tasa_descuento, cantidad_ve, cantidad_conv)
 # Mostrar el DataFrame resultante
 st.write("Tabla de Resultados:")
