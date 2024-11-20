@@ -46,7 +46,7 @@ La piedra angular de este estudio es el flujo de caja, el cual proporciona la in
 ### ROI (Return On Investment)
 
 <p align="center">
-![ROI](Images/ROI.png)
+![ROI](https://github.com/mlararossetti/ProyectoFinalSH/blob/bead24b25a42a33913de9bbe1b8a429a4c146d63/Images/Logo%20PNG%20BLACK.png)
 </p>
 
 Es una métrica financiera utilizada para evaluar la rentabilidad de una inversión. El ROI muestra el rendimiento de una inversión en términos porcentuales. Es útil para comparar diferentes inversiones, evaluar su viabilidad económica y tomar decisiones informadas sobre dónde asignar recursos. Además, es de gran utilidad para inversores o gerentes a la hora de decidir si se debe proceder con un proyecto, basándose en su capacidad para generar beneficios sobre el capital invertido.
