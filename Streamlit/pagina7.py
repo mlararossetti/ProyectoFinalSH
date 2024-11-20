@@ -265,7 +265,7 @@ class AutoElectrico(Auto): #Descuento de 5% al 10% en licencia ; Excencion del i
 
 # Primer Parámetro : Cantidad VE; Segundo Parámetro : Cantidad Autos Convencional
 # Crear un selector para la cantidad de autos
-cantidad_ve = st.slider("Seleccione cantidad de autos eléctricos:",min_value=0, max_value=1500, step=1)
+cantidad_ve = st.slider("Seleccione cantidad de autos eléctricos:",min_value=1, max_value=1500, step=1)
 cantidad_conv = st.slider("Seleccione cantidad de autos convencionales:",min_value=0, max_value=1500, step=1)
 tasa_desc = st.slider('Seleccione la tasa de descuento %', min_value=5, max_value = 15, step = 1)
 tasa_descuento = tasa_desc/100 
