@@ -307,7 +307,7 @@ best_roi = resultados_flota['ROI Anual (%)'].iloc[0]
 
 # Crear gráfico individual para KPI: ROI Anual
 def kpi_roi_anual():
-    valor_actual = 12  # Ejemplo de valor actual
+    valor_actual = best_roi  # Ejemplo de valor actual
     rango_max = 30
     threshold_value = 8
 
@@ -427,7 +427,7 @@ with col1:
                   
                 **ROI Anual**: Este indicador mide el rendimiento de la inversión anual basado en los vehículos eléctricos y convencionales seleccionados.  
                 **Objetivo del KPI**  
-                Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad mensual.  
+                Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad anual.  
                 Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar 
                 que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización""")
 
