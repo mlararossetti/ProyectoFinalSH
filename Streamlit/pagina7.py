@@ -4,7 +4,7 @@ import numpy_financial as npf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-future_data = pd.read_csv(r"datasets\2. Depurados\TLC Aggregated Data\ML_TS_Output_Anualized.csv")
+future_data = pd.read_csv("datasets/2. Depurados/TLC Aggregated Data/ML_TS_Output_Anualized.csv")
 future_data = future_data[future_data['industry']=='FHV - High Volume']
 
 future_data.rename(columns={
@@ -15,7 +15,7 @@ future_data.rename(columns={
 future_data =  future_data[future_data['year']>=2025]
 
 # Dataset de VE
-df_autos = pd.read_csv(r'..\datasets\2. Depurados\ElectricCarData_Clean.csv')#"df_modelo.csv")
+df_autos = pd.read_csv('datasets/2. Depurados/ElectricCarData_Clean.csv')#"df_modelo.csv")
 df_autos.rename(columns={
     'brand': 'Brand',
     'model': 'Model',
@@ -263,7 +263,7 @@ df5 = resultados_flota.head(5)
 
 st.dataframe(df5)
 ###################### KPIS Y FUNCIONES NUEVAS
-actual_data = pd.read_csv(r"..\datasets\2. Depurados\TLC Aggregated Data\merged_taxi_data.csv")
+actual_data = pd.read_csv('datasets/2. Depurados/TLC Aggregated Data/merged_taxi_data.csv')
 max_date = actual_data['date'].max()
 actual_data = actual_data[(actual_data['industry']=='FHV - High Volume') & (actual_data['date']==max_date)]
 
@@ -420,7 +420,7 @@ def create_kpi_dashboard():
 
 # Interfaz de Streamlit
 st.title("Dashboard de Indicadores Clave de Desempeño (KPIs)")
-st.write("Este tablero muestra métricas clave para el análisis de flota.")
+st.write("Este tablero muestra los KPIs calculados en funcion de los objetivos.")
 
 # Generar y mostrar el gráfico
 fig = create_kpi_dashboard()
