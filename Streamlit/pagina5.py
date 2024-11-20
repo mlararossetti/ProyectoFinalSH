@@ -18,7 +18,7 @@ st.markdown(
    """
 )
 # Crear un enlace a otra página
-st.markdown("[Ir al Dashboard N°1](./pagina3)")
+st.markdown("[Ir al Dashboard N°2](./pagina4)")
 st.markdown(
     """
     #### Dashboard 3: Análisis Impacto Ambiental
