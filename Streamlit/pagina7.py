@@ -307,7 +307,7 @@ best_roi = resultados_flota['ROI Anual (%)'].iloc[0]
 
 # Crear gráfico individual para KPI: ROI Anual
 def kpi_roi_anual():
-    valor_actual = best_roi
+    valor_actual = 12  # Ejemplo de valor actual
     rango_max = 30
     threshold_value = 8
 
@@ -316,13 +316,13 @@ def kpi_roi_anual():
         value=valor_actual,
         gauge={
             'axis': {'range': [0, rango_max]},
-            'bar': {'color': "yellow"},
+            'bar': {'color': "rgb(72, 66, 146)"},  # AZUL RGB
             'steps': [
-                {'range': [0, valor_actual], 'color': "lightblue"},
-                {'range': [valor_actual, rango_max], 'color': "white"}
+                {'range': [0, valor_actual], 'color': "rgb(56, 55, 124)"},  # Azul claro en RGB
+                {'range': [valor_actual, rango_max], 'color': "rgb(255, 255, 255)"}  # Blanco en RGB
             ],
             'threshold': {
-                'line': {'color': "darkblue", 'width': 4},
+                'line': {'color': "rgb(0, 0, 139)", 'width': 4},  # Azul oscuro en RGB
                 'thickness': 0.75,
                 'value': threshold_value
             }
@@ -331,6 +331,36 @@ def kpi_roi_anual():
         title={'text': "KPI: ROI Anual"}
     ))
     return fig
+
+# Llamar a la función para generar el gráfico
+fig = kpi_roi_anual()
+fig.show()
+
+# def kpi_roi_anual():
+#     valor_actual = best_roi
+#     rango_max = 30
+#     threshold_value = 8
+
+#     fig = go.Figure(go.Indicator(
+#         mode="gauge+number",
+#         value=valor_actual,
+#         gauge={
+#             'axis': {'range': [0, rango_max]},
+#             'bar': {'color': "yellow"},
+#             'steps': [
+#                 {'range': [0, valor_actual], 'color': "lightblue"},
+#                 {'range': [valor_actual, rango_max], 'color': "white"}
+#             ],
+#             'threshold': {
+#                 'line': {'color': "darkblue", 'width': 4},
+#                 'thickness': 0.75,
+#                 'value': threshold_value
+#             }
+#         },
+#         number={'suffix': "%"},
+#         title={'text': "KPI: ROI Anual"}
+#     ))
+#     return fig
 
 # Crear gráfico individual para KPI: Proporción por cantidad de autos
 def kpi_proporcion_autos():
@@ -420,7 +450,11 @@ st.write("Este tablero muestra los KPIs calculados en función de los objetivos 
 # KPI: ROI Anual
 col1, col2 = st.columns([1, 1.5])
 with col1:
-    st.markdown(""" **ROI Anual**: Este indicador mide el rendimiento de la inversión anual basado en los vehículos eléctricos y convencionales seleccionados.  **Objetivo del KPI**  
+    st.markdown("""  
+                  
+                  
+                **ROI Anual**: Este indicador mide el rendimiento de la inversión anual basado en los vehículos eléctricos y convencionales seleccionados.  
+                **Objetivo del KPI**  
                 Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad mensual.  
                 Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización""")
 with col2:
@@ -430,24 +464,47 @@ with col2:
 # KPI: Proporción por cantidad de autos
 col3, col4 = st.columns([1, 1.5])
 with col3:
-    st.markdown("**Proporción de Mercado (Autos)**: Este KPI refleja el porcentaje del mercado en función de la cantidad de autos disponibles.")
+    st.plotly_chart(kpi_proporcion_autos(), use_container_width=True)    
 with col4:
-    st.plotly_chart(kpi_proporcion_autos(), use_container_width=True)
+    st.markdown("""
+                
+                
+                **Proporción de Mercado (Autos)**: Este KPI refleja el porcentaje del mercado que cubre la empresa en función de la cantidad de autos disponibles.  
+                **Objetivo del KPI**  
+                La meta de la empresa es alcanzar una participación de mercado del 1% mensual en términos de flota operativa en el mercado global de vehículos. 
+                Este KPI permitirá evaluar el progreso mensual en la competitividad, 
+                midiendo de forma continua cómo contribuyen las diferentes estrategias de crecimiento y expansión.""")
 
 
 # KPI: Proporción por cantidad de viajes
 col5, col6 = st.columns([1, 1.5])
 with col5:
-    st.markdown("**Proporción de Mercado (Viajes)**: Este indicador mide la participación de mercado según la cantidad de viajes realizados.")
+    st.markdown(   
+        
+        
+                """**Proporción de Mercado (Viajes)**: Este indicador mide la participación de mercado según la cantidad de viajes realizados.
+                **Objetivo del KPI**:  
+                Se quiere lograr una participación del 1% en la cantidad de viajes realizados mensualmente en el mercado global de transporte. 
+                Este KPI permitirá medir la competitividad de la empresa en términos de actividad operativa, 
+                evaluando de forma continua el impacto de nuestras estrategias de crecimiento en el volumen de viajes realizados y en nuestra expansión dentro del mercado.
+                """)
 with col6:
     st.plotly_chart(kpi_proporcion_viajes(), use_container_width=True)
 
 # KPI: Ahorro de CO2
 col7, col8 = st.columns([1, 1.5])
 with col7:
-    st.markdown("**Ahorro de CO2**: Este KPI evalúa la reducción en las emisiones de CO2 al optar por flotas de vehículos eléctricos.")
-with col8:
     st.plotly_chart(kpi_ahorro_CO2(), use_container_width=True)
+with col8:
+        st.markdown(  
+                
+                
+                """**Ahorro de CO2**: Esta proporción se calcula comparando la cantidad de carbono emitido por milla en el mes 
+                usando el mix de vehículos REAL (incluyendo convencionales y eléctricos) 
+                con la cantidad de carbono que se emitiría si toda la flota fuera de vehículos convencionales..
+                **Objetivo del KPI**:  
+                El objetivo es lograr una reducción del 30% en las emisiones de carbono en comparación con una flota totalmente convencional.
+                """)
 
 # Interfaz de Streamlit
 #st.subheader("Indicadores Clave de Desempeño (KPIs)")

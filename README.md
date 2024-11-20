@@ -128,15 +128,15 @@ Participación mensual en el mercado (%) = (Cantidad de viajes realizados por la
 Se quiere lograr una participación del 1% en la cantidad de viajes realizados mensualmente en el mercado global de transporte. Este KPI permitirá medir la competitividad de la empresa en términos de actividad operativa, evaluando de forma continua el impacto de nuestras estrategias de crecimiento en el volumen de viajes realizados y en nuestra expansión dentro del mercado.
 
 ## 4) Retorno sobre la Inversión (ROI): 
-Este KPI mide la rentabilidad de las inversiones realizadas por la empresa por mes, reflejando el retorno financiero generado en relación con la inversión total mensual. 
+Este KPI mide la rentabilidad de las inversiones realizadas por la empresa por año, reflejando el retorno financiero generado en relación con la inversión total. 
 Se utiliza para evaluar la eficiencia de las inversiones en función de las ganancias obtenidas.
 ### `Fórmula de Cálculo` 
-Retorno sobre la Inversión (ROI) (%) = (Ganancias mensuales obtenidas – Inversión mensual total) / Inversión total ∗ 100 
+Retorno sobre la Inversión (ROI) (%) = (Ganancias obtenidas – Inversión total) / Inversión total ∗ 100 
 ### `Parámetros`
-- Ganancias obtenidas: Total de ingresos o beneficios generados a partir de la inversión durante el mes de análisis. 
-- Inversión total: Monto total invertido en el proyecto durante el mismo mes. 
+- Ganancias obtenidas: Total de ingresos o beneficios generados a partir de la inversión durante el período de análisis. 
+- Inversión total: Monto total invertido en el proyecto. 
 ### `Objetivo del KPI` 
-Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad mensual. Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización.
+Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad anual. Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización.
 
 
 # Tecnologías
