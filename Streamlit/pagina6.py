@@ -30,7 +30,7 @@ st.markdown("[Ir al Dashboard N°3](./pagina5)")
 
 st.markdown(
     """
-    ####Dashboard 4: Análisis Financiero de Vehículos Eléctricos
+    ####  Dashboard 4: Análisis Financiero de Vehículos Eléctricos
  
 Contiene una primera instancia de evaluación financiera personalizada. 
 Esta sección dinámica del dashboard permite analizar de manera específica los indicadores financieros clave 
