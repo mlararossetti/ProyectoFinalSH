@@ -327,7 +327,7 @@ def create_kpi_dashboard():
             value=valor_actual,
             gauge={
                 'axis': {'range': [0, rango_max]},
-                'bar': {'color': "blue"},
+                'bar': {'color': "yellow"},
                 'steps': [
                     {'range': [0, valor_actual], 'color': "lightblue"},
                     {'range': [valor_actual, rango_max], 'color': "white"}
@@ -355,7 +355,7 @@ def create_kpi_dashboard():
             value=valor_actual,
             gauge={
                 'axis': {'range': [0, rango_max]},
-                'bar': {'color': "blue"},
+                'bar': {'color': "purple"},
                 'steps': [
                     {'range': [0, valor_actual], 'color': "lightblue"},
                     {'range': [valor_actual, rango_max], 'color': "white"}
@@ -383,7 +383,7 @@ def create_kpi_dashboard():
             value=valor_actual,
             gauge={
                 'axis': {'range': [0, rango_max]},
-                'bar': {'color': "blue"},
+                'bar': {'color': "pink"},
                 'steps': [
                     {'range': [0, valor_actual], 'color': "lightblue"},
                     {'range': [valor_actual, rango_max], 'color': "white"}
