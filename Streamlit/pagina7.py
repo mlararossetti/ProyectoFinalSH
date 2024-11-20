@@ -418,22 +418,18 @@ def kpi_ahorro_CO2():
 st.subheader("Indicadores Clave de Desempeño (KPIs)")
 st.write("Este tablero muestra los KPIs calculados en función de los objetivos propuestos y la flota elegida de vehículos eléctricos y convencionales.")
 
+
 # KPI: ROI Anual
-col1, col2 = st.columns([1, 1])
+col1, col2 = st.columns([1, 1], vertical_alignment = 'center')
 with col1:
-    st.markdown(
-        """
-        <div style="display: flex; align-items: center; justify-content: center; height: 100%; text-align: center;">
-            <p>
-                <strong>ROI Anual</strong>: Este indicador mide el rendimiento de la inversión anual basado en los vehículos eléctricos y convencionales seleccionados.<br><br>
-                <strong>Objetivo del KPI</strong><br>
-                Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad mensual.<br><br>
-                Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización.
-            </p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.markdown("""  
+                  
+                  
+                **ROI Anual**: Este indicador mide el rendimiento de la inversión anual basado en los vehículos eléctricos y convencionales seleccionados.  
+                **Objetivo del KPI**  
+                Este KPI permite a la empresa evaluar la efectividad de sus inversiones, estableciendo una meta de superar el 8% de rentabilidad mensual.  
+                Con este indicador, la empresa puede identificar áreas de oportunidad para maximizar el retorno, optimizar la asignación de recursos y asegurar 
+                que las estrategias de inversión estén alineadas con el crecimiento financiero y la sostenibilidad de la organización""")
 
 with col2:
     st.plotly_chart(kpi_roi_anual(), use_container_width=True)
@@ -457,7 +453,7 @@ with col4:
 
 
 # KPI: Proporción por cantidad de viajes
-col5, col6 = st.columns([1, 1])
+col5, col6 = st.columns([1, 1],  vertical_alignment = 'center')
 with col5:
     st.markdown(  
           
@@ -472,7 +468,7 @@ with col6:
     st.plotly_chart(kpi_proporcion_viajes(), use_container_width=True)
 
 # KPI: Ahorro de CO2
-col7, col8 = st.columns([1, 1])
+col7, col8 = st.columns([1, 1], vertical_alignment = 'center')
 with col7:
     st.plotly_chart(kpi_ahorro_CO2(), use_container_width=True)
 with col8:
