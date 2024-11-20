@@ -4,6 +4,8 @@ import numpy_financial as npf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
+st.title('Flujo de fondos de la flota elegida')
+
 future_data = pd.read_csv("datasets/2. Depurados/TLC Aggregated Data/ML_TS_Output_Anualized.csv")
 future_data = future_data[future_data['industry']=='FHV - High Volume']
 
@@ -444,8 +446,8 @@ def create_kpi_dashboard():
     return fig
 
 # Interfaz de Streamlit
-st.subtitle("Indicadores Clave de Desempeño (KPIs)")
-st.write("Este tablero muestra los KPIs calculados en funcion de los objetivos.")
+st.subheader("Indicadores Clave de Desempeño (KPIs)")
+st.write("Este tablero muestra los KPIs calculados en funcion de los objetivos y la flota elegida de vehículos eléctricos y convencionales.")
 
 # Generar y mostrar el gráfico
 fig = create_kpi_dashboard()
