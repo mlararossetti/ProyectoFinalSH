@@ -278,3 +278,6 @@ if df_prophet is not None and not df_prophet.empty and df_prophet['y'].notnull()
 #st.write("### Detalles de la industria seleccionada")
 #filtered_df = pd.DataFrame(filtered_df)
 #st.dataframe(filtered_df.style.format(precision=2, thousands=None))
+
+# Mostrar la imagen cargada
+st.image("Images/Piest.png", use_container_width=True)

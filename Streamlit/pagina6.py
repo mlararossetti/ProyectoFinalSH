@@ -61,3 +61,6 @@ iframe_html = f"""
 </iframe>
 """
 st.markdown(iframe_html, unsafe_allow_html=True)
+
+# Mostrar la imagen cargada
+st.image("Images/Piest.png", use_container_width=True)

@@ -492,3 +492,6 @@ with col8:
 # Generar y mostrar el gráfico
 #fig = create_kpi_dashboard()
 #st.plotly_chart(fig, use_container_width=True)
+
+# Mostrar la imagen cargada
+st.image("Images/Piest.png", use_container_width=True)

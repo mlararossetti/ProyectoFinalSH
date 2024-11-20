@@ -56,3 +56,6 @@ st.markdown(
 )
 # Crear un enlace a otra página
 st.markdown("[Ir al Dashboard N°4](./pagina6)")
+
+# Mostrar la imagen cargada
+st.image("Images/Piest.png", use_container_width=True)
