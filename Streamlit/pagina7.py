@@ -332,36 +332,7 @@ def kpi_roi_anual():
     ))
     return fig
 
-# Llamar a la función para generar el gráfico
-fig = kpi_roi_anual()
-fig.show()
-
-# def kpi_roi_anual():
-#     valor_actual = best_roi
-#     rango_max = 30
-#     threshold_value = 8
-
-#     fig = go.Figure(go.Indicator(
-#         mode="gauge+number",
-#         value=valor_actual,
-#         gauge={
-#             'axis': {'range': [0, rango_max]},
-#             'bar': {'color': "yellow"},
-#             'steps': [
-#                 {'range': [0, valor_actual], 'color': "lightblue"},
-#                 {'range': [valor_actual, rango_max], 'color': "white"}
-#             ],
-#             'threshold': {
-#                 'line': {'color': "darkblue", 'width': 4},
-#                 'thickness': 0.75,
-#                 'value': threshold_value
-#             }
-#         },
-#         number={'suffix': "%"},
-#         title={'text': "KPI: ROI Anual"}
-#     ))
-#     return fig
-
+# Crear gráfico individual para KPI: Proporción por cantidad de autos
 # Crear gráfico individual para KPI: Proporción por cantidad de autos
 def kpi_proporcion_autos():
     valor_actual = (cantidad_conv + cantidad_ve) / unique_vehicles * 100
@@ -373,9 +344,9 @@ def kpi_proporcion_autos():
         value=valor_actual,
         gauge={
             'axis': {'range': [0, rango_max]},
-            'bar': {'color': "purple"},
+            'bar': {'color': "rgb(0, 167, 193)"},
             'steps': [
-                {'range': [0, valor_actual], 'color': "lightblue"},
+                {'range': [0, valor_actual], 'color': "rgb(4, 144, 158)"},
                 {'range': [valor_actual, rango_max], 'color': "white"}
             ],
             'threshold': {
@@ -400,9 +371,9 @@ def kpi_proporcion_viajes():
         value=valor_actual,
         gauge={
             'axis': {'range': [0, rango_max]},
-            'bar': {'color': "pink"},
+            'bar': {'color': "rgb(255, 188, 50)"},
             'steps': [
-                {'range': [0, valor_actual], 'color': "lightblue"},
+                {'range': [0, valor_actual], 'color': "rgb(247, 168, 28)"},
                 {'range': [valor_actual, rango_max], 'color': "white"}
             ],
             'threshold': {
@@ -427,9 +398,9 @@ def kpi_ahorro_CO2():
         value=valor_actual,
         gauge={
             'axis': {'range': [0, rango_max]},
-            'bar': {'color': "blue"},
+            'bar': {'color': "rgb(236, 85, 108)"},
             'steps': [
-                {'range': [0, valor_actual], 'color': "lightblue"},
+                {'range': [0, valor_actual], 'color': "rgb(226, 61, 93)"},
                 {'range': [valor_actual, rango_max], 'color': "white"}
             ],
             'threshold': {
@@ -448,7 +419,7 @@ st.subheader("Indicadores Clave de Desempeño (KPIs)")
 st.write("Este tablero muestra los KPIs calculados en función de los objetivos propuestos y la flota elegida de vehículos eléctricos y convencionales.")
 
 # KPI: ROI Anual
-col1, col2 = st.columns([1, 1.5])
+col1, col2 = st.columns([1, 1])
 with col1:
     st.markdown("""  
                   
@@ -462,12 +433,13 @@ with col2:
 
 
 # KPI: Proporción por cantidad de autos
-col3, col4 = st.columns([1, 1.5])
+col3, col4 = st.columns([1, 1])
 with col3:
     st.plotly_chart(kpi_proporcion_autos(), use_container_width=True)    
 with col4:
-    st.markdown("""
-                
+    st.markdown("""  
+                  
+                  
                 
                 **Proporción de Mercado (Autos)**: Este KPI refleja el porcentaje del mercado que cubre la empresa en función de la cantidad de autos disponibles.  
                 **Objetivo del KPI**  
@@ -477,12 +449,12 @@ with col4:
 
 
 # KPI: Proporción por cantidad de viajes
-col5, col6 = st.columns([1, 1.5])
+col5, col6 = st.columns([1, 1])
 with col5:
-    st.markdown(   
-        
-        
-                """**Proporción de Mercado (Viajes)**: Este indicador mide la participación de mercado según la cantidad de viajes realizados.
+    st.markdown(  
+          
+            
+            """**Proporción de Mercado (Viajes)**: Este indicador mide la participación de mercado según la cantidad de viajes realizados.
                 **Objetivo del KPI**:  
                 Se quiere lograr una participación del 1% en la cantidad de viajes realizados mensualmente en el mercado global de transporte. 
                 Este KPI permitirá medir la competitividad de la empresa en términos de actividad operativa, 
@@ -492,12 +464,12 @@ with col6:
     st.plotly_chart(kpi_proporcion_viajes(), use_container_width=True)
 
 # KPI: Ahorro de CO2
-col7, col8 = st.columns([1, 1.5])
+col7, col8 = st.columns([1, 1])
 with col7:
     st.plotly_chart(kpi_ahorro_CO2(), use_container_width=True)
 with col8:
         st.markdown(  
-                
+              
                 
                 """**Ahorro de CO2**: Esta proporción se calcula comparando la cantidad de carbono emitido por milla en el mes 
                 usando el mix de vehículos REAL (incluyendo convencionales y eléctricos) 
