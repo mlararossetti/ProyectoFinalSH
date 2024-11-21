@@ -14,13 +14,14 @@ Se utilizó el dataset depurado de Taxis de Nueva York con agregación mensual r
 
 - Los datos de entrada al modelo surgen de el [`ETL_ML_Time_Series`](/notebooks/1.%20ETL/ETL_ML_Time_Series.ipynb) que se encarga de disponibilizar la información en el archivo [`ML_TS_Input.csv`](../datasets/2.%20Depurados/TLC%20Aggregated%20Data/ML_TS_Input.csv) el cual contiene un la un dataset depurado, filtrado por tipo de industria y variable a predecir. Además crea un tipo de industria "Total Mercado" para evaluar la evolución del mercado globalmente.
 
-- Este archivo contiene la siguinte información:
+- Este archivo contiene la siguiente información:
   - date: mes/año del registro.
   - industry: tipo de industria (Yellow Taxis, Green Taxis, FHV - HV, FHV - Other y Total Mercado)
   - total_trips: total de viajes realizados por mes
   - avg_trip_distance: distancia promedio por viaje.
   - total_amount: total facturado por mes.
   - total_co2_emission: emisión total de CO2 por mes.
+  - unique_vehicles: cantidad de vehículos en circulación en el mercado.
 
 ## Modelo utilizado
 
@@ -48,15 +49,15 @@ En el notebook `ML_Time_Series.ipynb`:
   - MAE (Mean Absolute Error): mide el error promedio entre las predicciones y los valores reales, tomando la media de las diferencias absolutas.
   - MAPE (Mean Absolute Percentage Error): mide el error promedio entre las predicciones y los valores reales en términos de porcentaje, útil para comparar la precisión de modelos en diferentes escalas ya que normaliza los errores.
 - Se evaluan los tiempos de entrenamiento de los modelos.
-- La totalidad de los resultados se guardan en [`metodos_los_resultados_modelos.csv`](/Modelos%20de%20ML/todos_los_resultados_modelos.csv) y los mejores resulados se guardan en [`mejores_modelos.csv`](/Modelos%20de%20ML/mejores_modelos.csv).
+- La totalidad de los resultados se guardan en [`todos_los_resultados_modelos.csv`](/Modelos%20de%20ML/todos_los_resultados_modelos.csv) y los mejores resulados se guardan en [`mejores_modelos.csv`](/Modelos%20de%20ML/mejores_modelos.csv).
 
 En el notebook `ML_Time_Series_Entrenado.ipynb`:
-- A partir de la configuración de los hiperparémtros resultantes para la minimización de los errores se levantan los modelos y se los entrena.
+- A partir de la configuración de los hiperparámetros resultantes para la minimización de los errores se levantan los modelos y se los entrena.
 - Se analizan los resultados a partir de un selector: de industria, variable y cantidad de periodos mensuales a pronosticar.
   - Industry:  Yellow Taxis, Green Taxis, FHV - HV, FHV - Other y Total Mercado
-  - Variables: total_trips, unique_vehicles, total_amount, avg_trip_distance, 'total_co2_emission']
+  - Variables: total_trips, unique_vehicles, total_amount, avg_trip_distance, 'total_co2_emission'
   - El horizonte de predicción deseado (e.g., cantidad de meses).
-- Este notebook se encarga de guardar los modelos finales entenados en utilizando la librería `joblib` que luego minimizarán los tiempos de consumo en Streamlit.
+- Este notebook se encarga de guardar los modelos finales entrenados en utilizando la librería `joblib` que luego minimizarán los tiempos de consumo en Streamlit.
 - Adicionalmente generan un archivo de salida  [`ML_TS_Output.csv`](../datasets/2.%20Depurados/TLC%20Aggregated%20Data/ML_TS_Output.csv) con los valores de las previsiones realizadas para ser consumidas por el Modelos de Flujo de Fondos.
 
 
