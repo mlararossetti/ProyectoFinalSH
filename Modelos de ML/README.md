@@ -52,7 +52,7 @@ En el notebook `ML_Time_Series.ipynb`:
 - La totalidad de los resultados se guardan en [`todos_los_resultados_modelos.csv`](/Modelos%20de%20ML/todos_los_resultados_modelos.csv) y los mejores resulados se guardan en [`mejores_modelos.csv`](/Modelos%20de%20ML/mejores_modelos.csv).
 
 En el notebook `ML_Time_Series_Entrenado.ipynb`:
-- A partir de la configuración de los hiperparémtros resultantes para la minimización de los errores se levantan los modelos y se los entrena.
+- A partir de la configuración de los hiperparámetros resultantes para la minimización de los errores se levantan los modelos y se los entrena.
 - Se analizan los resultados a partir de un selector: de industria, variable y cantidad de periodos mensuales a pronosticar.
   - Industry:  Yellow Taxis, Green Taxis, FHV - HV, FHV - Other y Total Mercado
   - Variables: total_trips, unique_vehicles, total_amount, avg_trip_distance, 'total_co2_emission'
