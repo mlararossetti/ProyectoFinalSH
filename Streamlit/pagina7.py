@@ -29,30 +29,30 @@ df_autos['Precio Dolar'] = df_autos['price_euro'] * 1.06
 
 promedio_ingresos = round(future_data["Income_per_Vehicle (USD)"].mean(),2)
 promedio_millas = round(future_data["Miles_per_Vehicle"].mean(),2)
-print(f'El promedio de ingresos anuales es: {promedio_ingresos}')
-print(f'El promedio de millas recorridas anualmente es : {promedio_millas}')
+#print(f'El promedio de ingresos anuales es: {promedio_ingresos}')
+#print(f'El promedio de millas recorridas anualmente es : {promedio_millas}')
 
 año = 2025
 for _, row in future_data.iterrows():  # iterrows() en lugar de interrows()
     globals()[f'Ingresos_año_{año}'] = round(row["Income_per_Vehicle (USD)"],2)
-    print(f'Los ingresos para el año {año} son {globals()[f"Ingresos_año_{año}"]}')
+    #print(f'Los ingresos para el año {año} son {globals()[f"Ingresos_año_{año}"]}')
     año += 1
 
 ingresos_años = []
 for _, row in future_data.iterrows():
     ingresos_años.append(round(row["Income_per_Vehicle (USD)"],2))
-print(ingresos_años)
+#print(ingresos_años)
 
 año = 2025
 for _, row in future_data.iterrows():
     globals()[f'Millas_Año_{año}'] = round(row["Miles_per_Vehicle"],2)
-    print(f'Las Millas recorridas en el año {año} son {globals()[f"Millas_Año_{año}"]}')
+    #print(f'Las Millas recorridas en el año {año} son {globals()[f"Millas_Año_{año}"]}')
     año+=1
 
 millas_años = []
 for _, row in future_data.iterrows():
     millas_años.append(round(row["Miles_per_Vehicle"],2))
-print(millas_años)
+#print(millas_años)
 
 
 class Auto:
