@@ -96,16 +96,18 @@ pagina5 = st.Page(
      title = 'Análisis Impacto Ambiental',
      icon = '🌎')
 
+
+pagina6 = st.Page(
+    page = 'pagina6.py',
+    title ='Análisis Financiero VE',
+    icon = '📊'
+)
+
 pagina2 = st.Page(
      page = 'pagina2.py',
      title = 'Modelos de predicción',
      icon = '📈')
 
-pagina6 = st.Page(
-    page = 'pagina6.py',
-    title ='Análisis Financiero Vehículos Eléctricos',
-    icon = '📈'
-)
 
 pagina7 = st.Page(
     page = 'pagina7.py',
@@ -113,7 +115,8 @@ pagina7 = st.Page(
     icon = '💵'
 )
 
-pg = st.navigation(pages=[pagina1,pagina3, pagina4, pagina5,pagina2,pagina6,pagina7])
+
+pg = st.navigation(pages=[pagina1,pagina3, pagina4, pagina5,pagina6,pagina2,pagina7])
 pg.run()
 
 
