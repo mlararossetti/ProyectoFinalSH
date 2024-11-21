@@ -48,7 +48,7 @@ Por último un apartado de análisis comparativo de las mejores opciones. En est
 )
 
 # URL del dashboard de Power BI
-power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiOWI3MWRjODQtYjVlYS00Y2NmLTk3N2MtOTAwZTM3ZTUzNzI5IiwidCI6IjkyZTI3Mzg0LWI2YjAtNGIxMy05ZWU4LTFkOGY2ZGI5YzdmNSJ9"
+power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiMjQwY2FjZjAtZmVjNC00N2NlLTg1MmQtNjI2Njg1M2RiNDJlIiwidCI6IjkyZTI3Mzg0LWI2YjAtNGIxMy05ZWU4LTFkOGY2ZGI5YzdmNSJ9"
 
 # Inserta el iframe como HTML
 iframe_html = f"""
