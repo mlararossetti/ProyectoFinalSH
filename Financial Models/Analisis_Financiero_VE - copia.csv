@@ -1,4 +1,4 @@
-Brand,Model,Tipo de Auto,Segmento,Efficiency (kWh/mile),Precio (USD),Inversión Inicial Total (USD),VNA (USD),TIR (%),ROI (%),ROI Mensualizado(%),IR (USD),Payback Period (Años)
+Brand,Model,Tipo de Auto,Segmento,Efficiency kWhxmile,Precio USD,Inversión Inicial Total USD,VNA USD,TIR %,ROI %,ROI Mensualizado%,IR USD,Payback Period Años
 SEAT ,Mii Electric ,Hatchback,A,0.028031866672200003,21336.7,22431.74,24883.2,41.11,110.93,1.32,13.9,3
 Smart ,EQ fortwo coupe,Hatchback,A,0.0282007333389,22670.2,23765.22,23548.4,38.05,99.09,1.18,13.12,3
 Volkswagen ,e-Up! ,Hatchback,A,0.028031866672200003,22706.3,23801.260000000002,23513.7,37.97,98.79,1.18,13.1,3
