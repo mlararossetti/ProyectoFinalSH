@@ -20,7 +20,7 @@ Este dashboard ofrece una visión detallada de las áreas de mayor actividad de 
 )
 
 # URL del dashboard de Power BI
-power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiZTNmYWZjMWMtZmEzYS00N2IzLTk1MDctYWExNDFlNDQxMGUzIiwidCI6IjkyZTI3Mzg0LWI2YjAtNGIxMy05ZWU4LTFkOGY2ZGI5YzdmNSJ9"
+power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiYTEyMzljNzItM2UxMC00ZjlmLWI4OGQtM2ZhZGJlZTRjNDkyIiwidCI6IjkyZTI3Mzg0LWI2YjAtNGIxMy05ZWU4LTFkOGY2ZGI5YzdmNSJ9"
 
 # Inserta el iframe como HTML
 iframe_html = f"""

@@ -59,9 +59,9 @@ st.subheader('Series de tiempo')
 
 st.markdown("""
 En esta página, podrás explorar las predicciones futuras para distintas variables dentro de la industria de taxis de Nueva York, separando por Yellow, Green, FH - Otros y FHV. Las predicciones incluyen:
-
-- **Cantidad de vehículos (unique_vehicles)**: Estimación de la cantidad de vehículos activos en la flota.
-- **Tarifa Total (total_amount)**: Pronóstico de la tarifa total diaria en USD.
+            
+- **Cantidad de vehículos (unique_vehicles)**: Estimación de la cantidad de vehículos activos por mes.
+- **Tarifa Total (total_amount)**: Pronóstico de la facturación mensual en USD.
 - **Distancia Promedio (avg_trip_distance)**: Estimación de la distancia promedio recorrida por cada viaje en millas.
 - **Viajes Totales (total_trips)**: Predicción del número total de viajes realizados por mes proporcionando una visión general de la actividad en la flota.
 - **Emisiones de CO2 (total_co2_emission)**: Estimación de las emisiones de dióxido de carbono generadas por los vehículos, medido en toneladas equivalentes.
