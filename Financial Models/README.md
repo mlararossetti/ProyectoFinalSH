@@ -87,18 +87,22 @@ Es un indicador financiero que mide el tiempo que se tarda en recuperar la inver
 
 Los resultados de este análisis se reflejan en las siguientes conclusiones:
 
+<<<<<<< HEAD
 - El precio de los vehículos eléctricos tiene gran impacto en la rentabilidad del proyecto haciéndolos más rentables que un auto convencional a gasolina.
+=======
+- El precio de los vehículos eléctricos tiene gran impacto en la viabilidad financiera del proyecto haciendolos más rentables que un auto convencional a gasolina.
+>>>>>>> 3a464e2b1569efc02f96ea67c5531ffcf1cd5bff
 - La eficiencia (kWh/milla) es el aspecto que determina el desempeño rentable de los autos eléctricos, ya que permite que sus costos operativos sean menores en comparación con los de un auto convencional, además de los incentivos por parte del gobierno que se traducen en descuentos y exenciones de costos de trámites legales.
 
 En terminos de impacto promedio actual (Incremental):
--  El VAN (Valor Actual Neto) tiene un impacto positivo promedio de USD 1291.40 al incluir un vehículo convencional adicional.
+-  El VAN (Valor Actual Neto) solamente tiene un impacto positivo promedio de USD 1291.40 al incluir un vehículo convencional adicional. (Mientras que al incluir un vehiculo electrico el aumento es de USD 24883).
 -  La TIR (Tasa Interna de Retorno) disminuye en promedio un 2.07% por cada vehículo convencional adicional.
 -  El ROI (Retorno de Inversión Anual) también disminuye en promedio un 1.19%.
 -  El Tiempo de Recuperación (Payback) aumenta un 12%
 -  El IR (Indice de Rentabilidad) disminuye un 47.33%
   
 En términos de impacto promedio (Comparación VE vs. Flota Mixta)
--  Incluir un vehículo convencional aumenta el VAN en un 4.93%.
+-  Incluir un vehículo convencional solamente aumenta el VAN en un 4.93%. (Mientras que un vehiculo electrico lo incrementa en un 95.06%). 
 -  La inclusión de un vehículo convencional reduce la TIR en un 146.48%, indicando una disminución significativa en la rentabilidad relativa.
 -  El ROI anual disminuye en un 164.44% al combinar vehículos convencionales, reflejando una reducción sustancial en la eficiencia financiera.
 -  El tiempo de recuperación de la inversión aumenta en un 25% al incluir vehículos convencionales, demorando más el retorno del capital.
