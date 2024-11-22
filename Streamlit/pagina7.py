@@ -434,6 +434,17 @@ def kpi_proporcion_viajes():
         number={'suffix': "%"},
         title={'text': "Proporción de Mercado (Cantidad de Viajes)"}
     ))
+
+    # Agregar una anotación para mostrar el valor del threshold
+    fig.add_annotation(
+    x=0.5,  # Posición horizontal en coordenadas del gráfico
+    y=0,    # Posición vertical
+    text=f"Objetivo: {threshold_value}%",  # Texto que se muestra
+    showarrow=False,  # Sin flecha
+    font=dict(size=12, color="darkblue"),  # Estilo del texto
+    xanchor="center",
+    yanchor="top")
+    
     return fig
 
 # Crear gráfico individual para KPI: Ahorro de CO2
