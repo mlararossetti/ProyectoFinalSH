@@ -162,6 +162,8 @@ def calcular_metricas_flota(tasa_descuento, cantidad_ve, cantidad_conv):
         # Se extraen los datos del Dataset
         marca = fila['Brand']
         modelo = fila['Model']
+        tipo_de_auto = fila['body_style']
+        segmento = fila['segment']
         precio_ve = fila['Precio Dolar']
         eficiencia_ve = fila['Efficiency (kWh/mile)']
         eficiencia_conv = 25
@@ -219,6 +221,8 @@ def calcular_metricas_flota(tasa_descuento, cantidad_ve, cantidad_conv):
         resultados.append({
             'Brand': marca,
             'Model': modelo,
+            'Tipo de Auto': tipo_de_auto,
+            'Segmento':segmento,
             'Efficiency Total (kWh/mile)' : round(eficiencia_total,4),
             'Inversión Inicial Total (USD)': round(inversion_comb,0),
             #'Relación Inversión/Eficiencia (USD.mile/kWh)': round (inversion_comb/eficiencia_total,2),
@@ -270,6 +274,40 @@ cantidad_conv = st.slider("Seleccione cantidad de autos convencionales:",min_val
 tasa_desc = st.slider('Seleccione la tasa de descuento %', min_value=5, max_value = 15, step = 1)
 tasa_descuento = tasa_desc/100 
 resultados_flota = calcular_metricas_flota(tasa_descuento, cantidad_ve, cantidad_conv)
+# Obtener los valores únicos y ordenarlos alfabéticamente
+tipo_de_auto = sorted(resultados_flota['Tipo de Auto'].unique())
+tipo_de_auto.insert(0, "Todos")
+
+segmento = sorted(resultados_flota['Segmento'].unique())
+segmento.insert(0, "Todos")
+
+# Crear widgets en Streamlit
+tipo_de_auto_selector = st.selectbox('Tipo de Auto:',options=tipo_de_auto)
+segmento_selector = st.selectbox('Segmento:',options=segmento)
+
+# Función para filtrar
+def filtra(resultados_flota, tipo_de_auto, segmento):
+    if segmento == 'Todos':
+        if tipo_de_auto == 'Todos':
+            resultados_flota = resultados_flota
+        else:
+            resultados_flota = resultados_flota[resultados_flota['Tipo de Auto'] == tipo_de_auto]
+    elif tipo_de_auto == 'Todos':
+        resultados_flota = resultados_flota[resultados_flota['Segmento'] == segmento]
+    else:
+        resultados_flota = resultados_flota[
+            (resultados_flota['Tipo de Auto'] == tipo_de_auto) & 
+            (resultados_flota['Segmento'] == segmento)
+        ]
+    return resultados_flota
+
+# Aplicar filtros
+tipo_de_auto = tipo_de_auto_selector
+segmento = segmento_selector
+resultados_flota_aux = resultados_flota.copy()
+resultados_flota_aux = filtra(resultados_flota_aux, tipo_de_auto, segmento)
+resultados_flota_aux.head(5) 
+# head (5) para obtener el Ranking 
 # Mostrar el DataFrame resultante
 st.write("Tabla de Resultados:")
 st.markdown(f"""
@@ -277,18 +315,9 @@ En esta tabla se muestran los 5 mejores modelos de vehículos eléctricos en fun
 A su vez se calculan distintas métricas como Efficiency (kWh/mile), Inversión Inicial Total (USD), VNA(USD), TIR (%), ROI%, ROI% mensualizado, IR(USD) y Payback Period (Años) para la combinación de {cantidad_ve} vehículos eléctricos y {cantidad_conv} vehículos convencionales. 
             """)
 # Mostrar el DataFrame resultante
-
-df5 = resultados_flota.head(5)
-#df5['Inversión Inicial Total (USD)'] = df5['Inversión Inicial Total (USD)'].apply(lambda x: f'{x:,}'.replace(',', '.'))
-#df5['VNA (USD)'] = df5['VNA (USD)'].apply(lambda x: f'{x:,}'.replace(',', '.'))
-#df5['VNA (USD)'] = df5['VNA (USD)'].apply(lambda x: f'{x:,}'.replace(',', '.'))
-#df5['TIR (%)'] = df5['TIR (%)'].apply(lambda x: f'{x:,}'.replace(',', '.'))
-#df5['ROI (%)'] = df5['ROI (%)'].apply(lambda x: f'{x:,}'.replace(',', '.'))
-#df5['ROI Mensualizado(%)'] = df5['ROI Mensualizado(%)'].apply(lambda x: f'{x:,}'.replace(',', '.'))
-#df5['IR (USD)'] = df5['IR (USD)'].apply(lambda x: f'{x:,}'.replace(',', '.'))
-
-
+df5 = resultados_flota_aux.head(5)
 st.dataframe(df5)
+
 ###################### KPIS Y FUNCIONES NUEVAS
 actual_data = pd.read_csv('datasets/2. Depurados/TLC Aggregated Data/merged_taxi_data.csv')
 max_date = actual_data['date'].max()
@@ -303,33 +332,44 @@ CO2_convencional = (cantidad_conv+cantidad_ve) * avg_trips_per_vehicle * avg_tri
 CO2_real = (cantidad_conv) * avg_trips_per_vehicle * avg_trip_distance  * 400 /1000000 + cantidad_ve * avg_trips_per_vehicle * avg_trip_distance  * 42 /1000000
 ahorro_CO2 = (1 - CO2_real/CO2_convencional) * 100
 
-best_roi = resultados_flota['ROI Anual (%)'].iloc[0]
+best_roi = resultados_flota_aux['ROI Anual (%)'].iloc[0]
 
 # Crear gráfico individual para KPI: ROI Anual
 def kpi_roi_anual():
     valor_actual = best_roi  # Ejemplo de valor actual
     rango_max = 30
     threshold_value = 8
-
+# Crear el gráfico tipo gauge
     fig = go.Figure(go.Indicator(
         mode="gauge+number",
         value=valor_actual,
         gauge={
-            'axis': {'range': [0, rango_max]},
-            'bar': {'color': "rgb(72, 66, 146)"},  # AZUL RGB
+            'axis': {'range': [0, rango_max]},  # Rango del indicador
+            'bar': {'color': "blue"},  # Color de la barra del indicador
             'steps': [
-                {'range': [0, valor_actual], 'color': "rgb(56, 55, 124)"},  # Azul claro en RGB
-                {'range': [valor_actual, rango_max], 'color': "rgb(255, 255, 255)"}  # Blanco en RGB
+                {'range': [0, valor_actual], 'color': "lightblue"},  # Rango bajo
+                {'range': [valor_actual, rango_max], 'color': "white"}  # Rango alto
             ],
             'threshold': {
-                'line': {'color': "rgb(0, 0, 139)", 'width': 4},  # Azul oscuro en RGB
+                'line': {'color': "darkblue", 'width': 4},  # Línea del valor umbral
                 'thickness': 0.75,
-                'value': threshold_value
+                'value': threshold_value  # Valor del umbral
             }
         },
-        number={'suffix': "%"},
-        title={'text': "KPI: ROI Anual"}
+        number={'suffix': "%"},  # Agrega un sufijo de porcentaje al valor
+        title={'text': "KPI: ROI Anual"}  # Título del gráfico
     ))
+
+# Agregar una anotación para mostrar el valor del threshold
+    fig.add_annotation(
+        x=0.5,  # Coordenada x de la anotación (en términos de proporción)
+        y=-0,  # Coordenada y de la anotación
+        text=f"Objetivo: {threshold_value}%",  # Texto de la anotación
+        showarrow=False,  # Sin flecha
+        font=dict(size=12, color="darkblue"),  # Estilo del texto
+        xanchor="center",  # Anclaje horizontal
+        yanchor="top"  # Anclaje vertical
+)
     return fig
 
 # Crear gráfico individual para KPI: Proporción por cantidad de autos
@@ -358,6 +398,15 @@ def kpi_proporcion_autos():
         number={'suffix': "%"},
         title={'text': "Proporción de Mercado (Cantidad de Autos)"}
     ))
+
+    fig.add_annotation(
+    x=0.5,  # Posición horizontal en coordenadas del gráfico
+    y=0,    # Posición vertical
+    text=f"Objetivo: {threshold_value}%",  # Texto que se muestra
+    showarrow=False,  # Sin flecha
+    font=dict(size=12, color="darkblue"),  # Estilo del texto
+    xanchor="center",
+    yanchor="top")
     return fig
 
 # Crear gráfico individual para KPI: Proporción por cantidad de viajes
@@ -385,6 +434,17 @@ def kpi_proporcion_viajes():
         number={'suffix': "%"},
         title={'text': "Proporción de Mercado (Cantidad de Viajes)"}
     ))
+
+    # Agregar una anotación para mostrar el valor del threshold
+    fig.add_annotation(
+    x=0.5,  # Posición horizontal en coordenadas del gráfico
+    y=0,    # Posición vertical
+    text=f"Objetivo: {threshold_value}%",  # Texto que se muestra
+    showarrow=False,  # Sin flecha
+    font=dict(size=12, color="darkblue"),  # Estilo del texto
+    xanchor="center",
+    yanchor="top")
+    
     return fig
 
 # Crear gráfico individual para KPI: Ahorro de CO2
@@ -412,6 +472,17 @@ def kpi_ahorro_CO2():
         number={'suffix': "%"},
         title={'text': "Ahorro de CO2 respecto de flota convencional"}
     ))
+
+    # Agregar una anotación para mostrar el valor del threshold
+    fig.add_annotation(
+    x=0.5,  # Posición horizontal en coordenadas del gráfico
+    y=0,    # Posición vertical
+    text=f"Objetivo: {threshold_value}%",  # Texto que se muestra
+    showarrow=False,  # Sin flecha
+    font=dict(size=12, color="darkblue"),  # Estilo del texto
+    xanchor="center",
+    yanchor="top")
+
     return fig
 
 # Interfaz de Streamlit con columnas
