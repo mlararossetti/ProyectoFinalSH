@@ -30,7 +30,7 @@ En la parte inferior se incorpora un KPI relevante para monitorear el rendimient
 )
 
 # URL del dashboard de Power BI
-power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiZjE2ODUxNGEtMWE4Mi00Yzg0LTlmN2ItMDAxMjNiYTA4YzZmIiwidCI6IjkyZTI3Mzg0LWI2YjAtNGIxMy05ZWU4LTFkOGY2ZGI5YzdmNSJ9"
+power_bi_url = "https://app.powerbi.com/view?r=eyJrIjoiOGQ1NWE3ZmYtN2Y2Ni00NjllLTlkNDItNDdlMTdhNDAxNGU3IiwidCI6IjkyZTI3Mzg0LWI2YjAtNGIxMy05ZWU4LTFkOGY2ZGI5YzdmNSJ9"
 
 
 # Inserta el iframe como HTML
