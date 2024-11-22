@@ -332,7 +332,7 @@ CO2_convencional = (cantidad_conv+cantidad_ve) * avg_trips_per_vehicle * avg_tri
 CO2_real = (cantidad_conv) * avg_trips_per_vehicle * avg_trip_distance  * 400 /1000000 + cantidad_ve * avg_trips_per_vehicle * avg_trip_distance  * 42 /1000000
 ahorro_CO2 = (1 - CO2_real/CO2_convencional) * 100
 
-best_roi = resultados_flota['ROI Anual (%)'].iloc[0]
+best_roi = resultados_flota_aux['ROI Anual (%)'].iloc[0]
 
 # Crear gráfico individual para KPI: ROI Anual
 def kpi_roi_anual():
