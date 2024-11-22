@@ -162,6 +162,8 @@ def calcular_metricas_flota(tasa_descuento, cantidad_ve, cantidad_conv):
         # Se extraen los datos del Dataset
         marca = fila['Brand']
         modelo = fila['Model']
+        tipo_de_auto = fila['body_style']
+        segmento = fila['segment']
         precio_ve = fila['Precio Dolar']
         eficiencia_ve = fila['Efficiency (kWh/mile)']
         eficiencia_conv = 25
@@ -219,6 +221,8 @@ def calcular_metricas_flota(tasa_descuento, cantidad_ve, cantidad_conv):
         resultados.append({
             'Brand': marca,
             'Model': modelo,
+            'Tipo de Auto': tipo_de_auto,
+            'Segmento':segmento,
             'Efficiency Total (kWh/mile)' : round(eficiencia_total,4),
             'Inversión Inicial Total (USD)': round(inversion_comb,0),
             #'Relación Inversión/Eficiencia (USD.mile/kWh)': round (inversion_comb/eficiencia_total,2),
