@@ -8,19 +8,15 @@ Este proceso genera dos archivos agregados de forma mensual: por [industria](/da
 ## PIPELINE
 A través de un proceso de web scraping, implementado mediante una función de Google Cloud Functions programada para ejecutarse mensualmente, se identifican y extraen los nuevos reportes diarios y mensuales disponibles en el sitio web de la TLC.
 
-El proceso llama desde el [main.py](/Cloud/main.py) a la función [get_start_date_from_csv] implementada en [functions.py](/Cloud/functions.py) que detecta la última fecha procesada del archivo [Fechas_Levantadas.csv] que se encuentra en el Bucket de Google.
+El proceso llama desde el [main.py](/Cloud/main.py) a la función *get_start_date_from_csv* implementada en [functions.py](/Cloud/functions.py) que detecta la última fecha procesada del archivo [Fechas_Archivos_Levantados.csv](/datasets/2.%20Depurados/Fechas_Archivos_Levantados.csv) que se encuentra en el Bucket de Google.
 
-Luego se corre la función [download_and_upload_to_gcs] para poder:
+Luego se corre la función *download_and_upload_to_gcs* para poder:
 
 1. Descargar los archivos parquet de la web de TLC y los disponibiliza en el Bucket.
-2. Descarga el archivo mensual de la web de TLC y lo disponibiliza en el Bucket
-3. Escribe en el csv [Fechas_Levantadas.csv] el mes nuevo levantado.
+2. Descarga el archivo [mensual](/datasets/2.%20Depurados/TLC%20Aggregated%20Data/data_reports_monthly.csv) de la web de TLC y lo disponibiliza en el Bucket
+3. Escribe en el csv [Fechas_Archivos_Levantados.csv](/datasets/2.%20Depurados/Fechas_Archivos_Levantados.csv) el nuevo mes levantado.
 
+Una vez descargados todos los archivos en el Bucket se corre el proceso de ETL definido en [functions_ETL.py](/Cloud/functions_ETL.py) similar al elaborado para la carga inicial de datos.
+En este proceso se crean dos archivos similares a los de la carga inicial pero sólo con el mes levantado: por **industria** y por **zona de pickuop y dropoff**. Estos datasets también se almacenan el bucket de Google Cloud Storage y luego se realiza un merge entre el archivo **mensual**, creando un archivo final llamado [merged_taxi_data](/datasets/2.%20Depurados/TLC%20Aggregated%20Data/merged_taxi_data.csv).
 
-
-
-
-
-
-Posteriormente, los datos recopilados son procesados y transformados para integrarse de manera eficiente a las tablas existentes en los buckets de almacenamiento.
-Finalmente, los datasets procesados se ponen a disposición en formato de tablas utilizando la herramienta BigQuery, facilitando así su consulta y análisis. De esta manera, pueden ser consumidos por PowerBI para generar dashboards interactivos con datos actualizados.
+Por último, la función [SQL Big Query](/Cloud/SQL_Big_Query.py), disponibiliza los archivos en Big Query realizando las consultas pertinentes para la carga incremental.
