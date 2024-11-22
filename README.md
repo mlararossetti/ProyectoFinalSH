@@ -238,8 +238,8 @@ Una vez concluido el analisis detallado previamente procederemos a entregar a nu
 
 ## _Andrew Garcia Gomez_
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https:/../www.linkedin.com/in/guido-biotti/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://githu..b.com/Guido-Biotti)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrew-garc%C3%ADa-g%C3%B3mez-98221831a/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)]([https://githu..b.com/Guido-Biotti](https://github.com/skyandrew7))
 
 #
 
