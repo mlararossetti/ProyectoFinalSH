@@ -87,12 +87,7 @@ Es un indicador financiero que mide el tiempo que se tarda en recuperar la inver
 
 Los resultados de este análisis se reflejan en las siguientes conclusiones:
 
-<<<<<<< HEAD
 - El precio de los vehículos eléctricos tiene gran impacto en la rentabilidad del proyecto haciéndolos más rentables que un auto convencional a gasolina.
-=======
-
-- El precio de los vehículos eléctricos tiene gran impacto en la viabilidad financiera del proyecto haciendolos más rentables que un auto convencional a gasolina.
->>>>>>> 2fd55528a60dc6617bc251d404af7aa132d2fec2
 - La eficiencia (kWh/milla) es el aspecto que determina el desempeño rentable de los autos eléctricos, ya que permite que sus costos operativos sean menores en comparación con los de un auto convencional, además de los incentivos por parte del gobierno que se traducen en descuentos y exenciones de costos de trámites legales.
 
 En terminos de impacto promedio actual (Incremental):
